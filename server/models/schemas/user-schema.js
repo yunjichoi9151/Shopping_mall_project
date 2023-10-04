@@ -1,8 +1,8 @@
-import Schema from "mongoose";
+const Schema = require("mongoose");
 
 const userSchema = new Schema({
     // objectID 사용
-    _id: ObjectId(),
+    // _id: ObjectId(),
     phoneNumber: {
         type: String,
         required: true,
@@ -13,4 +13,4 @@ const userSchema = new Schema({
     },
 });
 
-model.exports = userSchema;
+module.exports = userSchema;

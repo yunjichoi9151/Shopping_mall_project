@@ -1,7 +1,8 @@
 // Schema 작성
-import Schema from "mongoose";
+const { Schema } = require("mongoose");
 
-const joinInfoSchema = new Schema ({
+const joinInfoSchema = new Schema({
+	// _id: ObjectId(),
 	name: {
 		type: String,
 		required: true
@@ -10,7 +11,7 @@ const joinInfoSchema = new Schema ({
 		type: String,
 		required: true
 	},
-	password:{
+	password: {
 		type: String,
 		required: true
 	},
@@ -18,13 +19,13 @@ const joinInfoSchema = new Schema ({
 		// Date.now();
 		type: Date,
 		default: Date.now()
-},
-// default 값이 null, 만약 DELETE 요청을 했을 경우 Date.now() 입력
-deletedAt: {
-	type: Date,
-	default: null,
-}
+	},
+	// default 값이 null, 만약 DELETE 요청을 했을 경우 Date.now() 입력
+	deletedAt: {
+		type: Date,
+		default: null,
+	}
 	
-})
+});
 
-model.exports = joinInfoSchema;
+module.exports = joinInfoSchema;

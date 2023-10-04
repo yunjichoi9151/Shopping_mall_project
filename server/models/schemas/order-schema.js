@@ -1,4 +1,4 @@
-import Schema from "mongoose";
+const Schema = require("mongoose");
 
 const orderSchema = new Schema({
 	itemInfo: [{ 
@@ -29,4 +29,4 @@ const orderSchema = new Schema({
 },
 });
 
-model.exports = orderSchema;
+module.exports = orderSchema;

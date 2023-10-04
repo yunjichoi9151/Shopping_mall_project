@@ -1,4 +1,4 @@
-import Schema from "mongoose";
+const Schema = require("mongoose");
 
 const categorySchema = new Schema({
 	name: {
@@ -14,4 +14,4 @@ const categorySchema = new Schema({
 	}],
 });
 
-model.exports = categorySchema;
+module.exports = categorySchema;

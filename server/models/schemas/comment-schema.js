@@ -1,4 +1,4 @@
-import Schema from "mongoose";
+const Schema = require("mongoose");
 
 const commentSchema = new Schema({
 	owner: [{
@@ -17,4 +17,4 @@ const commentSchema = new Schema({
 	},
 });
 
-model.exports = commentSchema;
+module.exports = commentSchema;
