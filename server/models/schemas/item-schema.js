@@ -1,0 +1,29 @@
+import Schema from "mongoose";
+
+const itemSchema = new Schema({
+	name: {
+		type:String,
+		required: true,
+	},
+	category: {
+		type: Number,
+		required: true,
+	},
+	price: {
+		type: Number,
+		required: true,
+	},
+	itemDetail: {
+		type: String,
+		required: true,
+	},
+	imgUrl: {
+		type: String,
+		required: true,
+	},
+	comments: [{
+		type: Schema.Types.ObjectId, ref: “Comment”
+	}],
+});
+
+model.exports = itemSchema;
