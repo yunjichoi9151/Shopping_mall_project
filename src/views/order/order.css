@@ -1,0 +1,104 @@
+body {
+  background-color: white; /* 연회색 배경 */
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.order-container {
+  background-color: lightgrey;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2 {
+  color: #333; /* 어두운 회색 텍스트 색상 */
+}
+
+.order-info,
+.payment-method,
+.shipping-info,
+.terms {
+  margin-top: 20px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+select,
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #4caf50; /* 초록색 배경 */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 150px;
+}
+
+button:hover {
+  background-color: #45a049; /* 더 진한 초록색 배경 */
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+#terms-details {
+  margin-left: 5px;
+}
+
+.order-summary {
+  margin-top: 50px;
+}
+
+/* 테이블 스타일 */
+.order-items {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+/* 테이블 헤더 스타일 */
+.order-items th {
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold; /* 굵은 글씨체 적용 */
+}
+
+/* 테이블 셀 스타일 */
+.order-items td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center; /* 셀 가운데 정렬 */
+}
+
+/* 이미지 스타일 */
+.order-items img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+/* 수량, 가격 셀 가운데 정렬 */
+.order-items td:nth-child(3),
+.order-items td:nth-child(4) {
+  text-align: center;
+}
