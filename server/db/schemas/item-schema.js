@@ -14,7 +14,7 @@ const itemSchema = new Schema({
 		required: true,
 	},
 	itemDetail: {
-		type: String,
+		type: ,
 		required: true,
 	},
 	imgUrl: {

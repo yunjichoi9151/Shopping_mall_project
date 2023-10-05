@@ -1,8 +1,7 @@
 // 회원가입하기
 // CRUD 구현하기
 const { Router } = require("express");
-const { Data } = require("../models/schemas/joinInfo-schema");
-const { serialize } = require("v8");
+const { Data } = require("../db/schemas/joinInfo-schema");
 
 const router = Router();
 
