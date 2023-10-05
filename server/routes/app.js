@@ -2,7 +2,6 @@
 // CRUD 구현하기
 const { Router } = require("express");
 const { Data } = require("../models/schemas/joinInfo-schema");
-const { serialize } = require("v8");
 
 const router = Router();
 
