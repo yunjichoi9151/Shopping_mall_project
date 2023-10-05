@@ -1,0 +1,25 @@
+/* footer */
+.footer {
+  width: 1000px;
+  margin: 0 auto;
+  background-color: darkorange;
+  padding-left: 25px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.footer .footerBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  padding-top: 10px;
+}
+.footer .footerOffice {
+  width: 500px;
+}
+.footer .footerCs {
+  width: 250px;
+}
+.footer .footerTime {
+  width: 250px;
+}
