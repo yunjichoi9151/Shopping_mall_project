@@ -2,6 +2,7 @@ const cartItems = document.getElementById("cart-items");
 const totalPriceElement = document.getElementById("total-price");
 const shipPriceElement = document.getElementById("ship-price");
 
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 // !!!! 서버에서 장바구니 정보 받아와서 products로 넣어줘야함 !!!!
 const products = [
   {
@@ -17,7 +18,12 @@ const products = [
     price: 50000,
   },
   { id: 3, name: "지웨이 요가 매트", quantity: 1, price: 10000 },
+  { id: 4, name: "지웨이 3kg 아령", quantity: 1, price: 15000 },
+  { id: 5, name: "지웨이 단백질 에너지 바", quantity: 1, price: 5000 },
+  { id: 6, name: "지웨이 종합 비타민", quantity: 1, price: 40000 },
+  { id: 7, name: "지웨이 마라 닭가슴살", quantity: 1, price: 10000 },
 ];
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
 // 카드 내의 아이템 정렬
 function renderCartItems() {
@@ -59,6 +65,7 @@ function renderCartItems() {
     });
   });
 
+  // 총 주문금액 화면에 표시
   totalPriceElement.textContent = totalPrice;
 
   // 총 주문금액이 0원이거나 10만원 이상이면 배송비 0 원
@@ -70,9 +77,31 @@ function renderCartItems() {
   } else {
     shipPrice = 0;
   }
+
+  // 배송비 화면에 표시
   shipPriceElement.textContent = shipPrice;
 }
 
+// 카트의 각 제품 삭제 버튼 클릭 시 실행
+function removeItem(productId) {
+  const index = products.findIndex((product) => product.id === productId);
+  if (index !== -1) {
+    // 로컬 스토리지에서 해당 상품을 삭제
+    const cartInfo = JSON.parse(localStorage.getItem("cartInfo"));
+    const updatedCartInfo = cartInfo.filter(
+      (product) => product.id !== productId
+    );
+    localStorage.setItem("cartInfo", JSON.stringify(updatedCartInfo));
+
+    // 상품 배열에서도 해당 상품을 삭제
+    products.splice(index, 1);
+
+    // 카트 내의 아이템 재배열
+    renderCartItems();
+  }
+}
+
+// 총 주문금액 업데이트
 function updateTotalPrice() {
   let totalPrice = 0;
 
@@ -113,17 +142,6 @@ function decreaseQuantity(productId) {
     product.quantity -= 1;
     updateTotalPrice(); // 총 주문금액 업데이트
     renderCartItems(); // 장바구니 아이템을 다시 렌더링하여 화면에 반영
-  }
-}
-
-// 카트의 각 제품 삭제 버튼 클릭 시 실행
-function removeItem(productId) {
-  const index = products.findIndex((product) => product.id === productId);
-  if (index !== -1) {
-    products.splice(index, 1);
-
-    // 카트 내의 아이템 재배열
-    renderCartItems();
   }
 }
 

@@ -8,8 +8,8 @@ body {
 }
 
 .cart-container {
-  max-width: 800px;
-  width: 100%;
+  margin-top: 300px;
+  width: 800px;
   padding: 20px;
   position: relative;
 }
@@ -81,4 +81,28 @@ body {
 
 .quantity-input {
   width: 50px; /* 원하는 가로 길이로 조절 */
+}
+
+/* header, footer css 설정 필요 */
+#headerHtml {
+  width: 100%;
+  background-color: burlywood; /* 헤더 배경색 */
+  color: white; /* 헤더 텍스트 색상 */
+  text-align: center;
+  padding: 10px 0; /* 위아래 10px, 좌우 0 */
+  position: fixed; /* 고정 위치 설정 */
+  top: 0; /* 화면 상단에 고정 */
+  z-index: 1000; /* 다른 요소보다 위에 표시되도록 설정 */
+}
+/* 푸터 스타일 */
+#footerHtml {
+  color: white;
+  position: fixed; /* 고정 위치 설정 */
+  bottom: 0; /* 화면 하단에 고정 */
+  width: 1000px;
+  margin: 0 auto;
+  background-color: darkorange;
+  padding-left: 25px;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
