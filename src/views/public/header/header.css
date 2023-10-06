@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 헤더*/
+.header {
+  margin: 0 auto;
+  width: 1264px;
+  background-color: burlywood;
+}
+.header .headerBackground {
+  width: 100%;
+}
+.header .headerBackground .headerContainer {
+  width: 1080px;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.header .headerBackground .headerContainer .inputBox {
+}
+.header .headerBackground .headerContainer .inputBox .text {
+}
+.header .headerBackground .headerContainer .inputBox i {
+}
+
+/* 로고 */
+.header .headerBackground .headerContainer .logo {
+}
+.header .headerBackground .headerContainer .logo a {
+}
+.header .headerBackground .headerContainer .logo a h1 {
+}
+
+/* nav */
+.navContainer {
+}
+.navContainer .nav {
+  width: 900px;
+  height: 60px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navContainer nav ul {
+}
+.navContainer nav li {
+}

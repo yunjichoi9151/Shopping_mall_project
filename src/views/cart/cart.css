@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.cart-container {
+  max-width: 800px;
+  width: 100%;
+  padding: 20px;
+  position: relative;
+}
+.cart-h1 {
+  font-weight: bold;
+}
+.cart-items {
+  margin-top: 30px;
+  border-top: 1px solid #000;
+  width: 100%;
+  border-collapse: separate; /* 셀 간격을 추가 */
+  border-spacing: 0 10px; /* 수직 간격은 10px로 지정 (원하는 크기로 조절 가능) */
+}
+
+.cart-items th,
+.cart-items td {
+  padding: 10px;
+  text-align: center;
+  background-color: #f2f2f2; /* 배경색을 연한 회색으로 설정 */
+}
+
+.cart-items td {
+  text-align: center;
+}
+/* 나머지 스타일 유지 */
+
+.cart-summary {
+  text-align: right;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+.cart-items th {
+  background-color: #f2f2f2;
+}
+
+.cart-summary {
+  text-align: right;
+}
+
+.cart-tr {
+  background-color: white;
+  border: #ccc;
+}
+
+.cart-tr th {
+  background-color: white; /* 배경색을 흰색으로 설정 */
+  border: none; /* 테두리를 없앰 */
+}
+
+.delete-btn {
+  cursor: pointer;
+  color: red;
+  font-weight: bold;
+}
+
+.ship-price {
+  font-size: large;
+}
+.total-price {
+  font-size: large;
+  margin-bottom: 30px;
+}
+
+.cart-items img {
+  width: 100px;
+  height: 100px;
+}
+
+.quantity-input {
+  width: 50px; /* 원하는 가로 길이로 조절 */
+}
