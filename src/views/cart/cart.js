@@ -17,6 +17,9 @@ const products = [
     price: 50000,
   },
   { id: 3, name: "지웨이 요가 매트", quantity: 1, price: 10000 },
+  { id: 4, name: "지웨이 3kg 아령", quantity: 1, price: 15000 },
+  { id: 5, name: "지웨이 마라 닭가슴살", quantity: 1, price: 20000 },
+  { id: 6, name: "지웨이 비타민", quantity: 1, price: 25000 },
 ];
 
 // 카드 내의 아이템 정렬

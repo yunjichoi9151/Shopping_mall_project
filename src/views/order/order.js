@@ -51,29 +51,6 @@ function renderOrderItems(products, element) {
   });
 }
 
-// const userSame = document.getElementById("user-same");
-// userSame.addEventListener("change", function () {
-//   if (this.checked) {
-//     // 서버로부터 받아온 계정 정보로 교환 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-//     const userInformation = {
-//       userName: "John Doe",
-//       userContact: "123-456-7890",
-//       userPostcode: "12345",
-//       userAddress: "123 Main St",
-//       userDetailsAddress: "Apt 4B",
-//     };
-//     // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-
-//     // 수령인, 연락처, 우편번호, 주소, 상세주소 입력란에 주문자 정보 값 채우기
-//     document.getElementById("recipient").value = userInformation.userName;
-//     document.getElementById("contact").value = userInformation.userContact;
-//     document.getElementById("postcode").value = userInformation.userPostcode;
-//     document.getElementById("address").value = userInformation.userAddress;
-//     document.getElementById("details-address").value =
-//       userInformation.userDetailsAddress;
-//   }
-// });
-
 const sameAsAccountCheckbox = document.getElementById("order-same");
 const recipientInput = document.getElementById("recipient");
 const contactInput = document.getElementById("contact");
@@ -81,10 +58,11 @@ const postcodeInput = document.getElementById("postcode");
 const addressInput = document.getElementById("address");
 const detailsAddressInput = document.getElementById("details-address");
 
+// 주문자 정보와 동일 radio 버튼 클릭 시 계정 정보로 작성란 채워줌
 sameAsAccountCheckbox.addEventListener("change", () => {
   if (sameAsAccountCheckbox.checked) {
     // !! 서버로부터 계정 정보 받아온 로직 추가해야함 !!
-    const accountInfo = getAccountInfo(); // 예시 함수, 서버로부터 정보를 가져오는 함수를 구현해야 합니다.
+    const accountInfo = getAccountInfo();
 
     // 가져온 계정 정보를 주문 정보에 넣어줌
     recipientInput.value = accountInfo.recipient;
@@ -105,10 +83,10 @@ sameAsAccountCheckbox.addEventListener("change", () => {
 // 계정 정보 불러오는 함수 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 function getAccountInfo() {
   // 서버 API를 호출하여 데이터를 받아오고 return 해줌 !!! 구현필요
-  const addressData = {};
+  const userData = {};
   return {
     // 예시 - 목업 data !!!!!
-    recipient: addressData.recipient,
+    recipient: userData.recipient,
     contact: "010-5118-1571",
     postcode: "12345",
     address: "서울시 양천구 목동동로 50",
@@ -148,6 +126,9 @@ sameAsAccountCheckbox.addEventListener("change", () => {
   }
 });
 
+const nameInput = document.getElementById("name");
+const phoneInput = document.getElementById("phone");
+const emailInput = document.getElementById("email");
 // 동의버튼
 const orderAgreeCheckbox = document.getElementById("order-agree");
 // 결제수단
@@ -166,7 +147,7 @@ orderSubmitButton.addEventListener("click", () => {
     contactInput.value === "" ||
     postcodeInput.value === "" ||
     addressInput.value === "" ||
-    detailAddressInput.value === "" ||
+    detailsAddressInput.value === "" ||
     deliveryNoteSelect.value === ""
   ) {
     alert("주문 정보를 모두 작성해주세요.");
@@ -180,9 +161,7 @@ orderSubmitButton.addEventListener("click", () => {
     alert("결제수단을 확인해주세요.");
   }
   // 모두 제대로 됐을 때
-  else {
-    const orderInfoJSON = Json.stringify(orderInfo);
-    localStorage.setItem("orderInfo", orderInfoJSON);
-    window.location.href = "../order/orderComplete.html";
-  }
+  const orderInfoJSON = JSON.stringify(orderInfo);
+  localStorage.setItem("orderInfo", orderInfoJSON);
+  window.location.href = "../order/orderComplete.html";
 });
