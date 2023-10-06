@@ -1,10 +1,4 @@
-import mongoose from "mongoose";
-import categorySchema from "./schemas/category-schema";
-import commentSchema from "./schemas/comment-schema";
-import itemSchema from "./schemas/item-schema";
-import joinInfoSchema from "./schemas/joinInfo-schema";
-import orderSchema from "./schemas/order-schema";
-import userSchema from "./schemas/user-schema";
+const mongoose = require("mongoose");
 
 mongoose.connect(process.env.MONGO_URI);
 const db = mongoose.connection;
@@ -16,4 +10,12 @@ db.on("error", (error) =>
   console.error("\nMongoDB 연결에 실패하였습니다...\n" + DB_URL + "\n" + error)
 );
 
-exports.Data = mongoose.model("Data", categorySchema);
+// require 코드를 간결하게
+// 다른 코드에서 require시 require("../db"); 로 가능
+export * from "./models/category-model";
+export * from "./models/comment-model";
+export * from "./models/item-model";
+export * from "./models/itemImage-model";
+export * from "./models/order-model";
+export * from "./models/user-model";
+export * from "./models/userPrivate-model";
