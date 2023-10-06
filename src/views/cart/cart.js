@@ -123,6 +123,14 @@ function decreaseQuantity(productId) {
 function removeItem(productId) {
   const index = products.findIndex((product) => product.id === productId);
   if (index !== -1) {
+    // 로컬 스토리지에서 해당 상품을 삭제
+    const cartInfo = JSON.parse(localStorage.getItem("cartInfo"));
+    const updatedCartInfo = cartInfo.filter(
+      (product) => product.id !== productId
+    );
+    localStorage.setItem("cartInfo", JSON.stringify(updatedCartInfo));
+
+    // 상품 배열에서도 해당 상품을 삭제
     products.splice(index, 1);
 
     // 카트 내의 아이템 재배열
