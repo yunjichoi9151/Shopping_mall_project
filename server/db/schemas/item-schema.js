@@ -1,8 +1,10 @@
 const Schema = require("mongoose");
+const { ItemImage } = require("../models/itemImage-model");
 
-const itemSchema = new Schema({
+// item을 array에 저장하기 위해 변경
+const itemSchema = new Schema([{
 	name: {
-		type:String,
+		type: String,
 		required: true,
 	},
 	category: {
@@ -14,7 +16,7 @@ const itemSchema = new Schema({
 		required: true,
 	},
 	itemDetail: {
-		type: ,
+		type: String,
 		required: true,
 	},
 	imgUrl: {
@@ -22,8 +24,9 @@ const itemSchema = new Schema({
 		required: true,
 	},
 	comments: [{
-		type: Schema.Types.ObjectId, ref: “Comment”
+		type: Schema.Types.ObjectId, ref: 'Comment'
 	}],
-});
+
+}]);
 
 module.exports = itemSchema;
