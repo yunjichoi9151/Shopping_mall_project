@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const dataRouter = require("./routes/app");
+const dataRouter = require("./routers/user-routers");
 const { MONGO_URI } = process.env;
 
 // mongoose settings (4)

@@ -5,12 +5,8 @@ const categorySchema = new Schema({
 		type: String,
 		required: true,
 	},
-	index: {
-		type: Number,
-		required: true,
-	},
 	items: [{
-		type: Schema.Types.ObjectId, ref: “Item”
+		type: Schema.Types.ObjectId, ref: 'Item'
 	}],
 });
 

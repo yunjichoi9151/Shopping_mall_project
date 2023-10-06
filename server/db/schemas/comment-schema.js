@@ -2,10 +2,10 @@ const Schema = require("mongoose");
 
 const commentSchema = new Schema({
 	owner: [{
-		type: Schema.Types.ObjectId, ref: “User”
+		type: Schema.Types.ObjectId, ref: 'User'
 	}],
 	itemNumber: [{
-		type: Schema.Types.ObjectId, ref: “Item”
+		type: Schema.Types.ObjectId, ref: 'Item'
 	}],
 	content: {
 		type: String,
