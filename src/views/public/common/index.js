@@ -16,9 +16,9 @@ function loadHeader() {
       return response.text();
     })
     .then((data) => {
-      document.getElementById("headerHtml").innerHTML = data;
-    });
-}
+    document.getElementById("headerHtml").innerHTML = data;
+  });
+  }
 
 // footer.html 불러오기
 function loadFooter() {
@@ -27,9 +27,9 @@ function loadFooter() {
       return response.text();
     })
     .then((data) => {
-      document.getElementById("footerHtml").innerHTML = data;
-    });
-}
+    document.getElementById("footerHtml").innerHTML = data;
+  });
+  }
 
 // innerHTML 와 Element DOM API의 장단점의 비교와 분석을 해야된다.
 // GPT 지양 >> 개념 예시만 물어보도록 하기
