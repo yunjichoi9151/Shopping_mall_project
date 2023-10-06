@@ -17,6 +17,9 @@ const products = [
     price: 50000,
   },
   { id: 3, name: "지웨이 요가 매트", quantity: 1, price: 10000 },
+  { id: 4, name: "지웨이 3kg 아령", quantity: 1, price: 15000 },
+  { id: 5, name: "지웨이 마라 닭가슴살", quantity: 1, price: 20000 },
+  { id: 6, name: "지웨이 비타민", quantity: 1, price: 25000 },
 ];
 
 // 카드 내의 아이템 정렬
@@ -120,6 +123,14 @@ function decreaseQuantity(productId) {
 function removeItem(productId) {
   const index = products.findIndex((product) => product.id === productId);
   if (index !== -1) {
+    // 로컬 스토리지에서 해당 상품을 삭제
+    const cartInfo = JSON.parse(localStorage.getItem("cartInfo"));
+    const updatedCartInfo = cartInfo.filter(
+      (product) => product.id !== productId
+    );
+    localStorage.setItem("cartInfo", JSON.stringify(updatedCartInfo));
+
+    // 상품 배열에서도 해당 상품을 삭제
     products.splice(index, 1);
 
     // 카트 내의 아이템 재배열
