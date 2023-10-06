@@ -1,0 +1,30 @@
+.order-complete-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: lightgray;
+  width: 30%;
+  padding: 30px;
+  height: 470px;
+  border-radius: 5%;
+}
+.homeBtn {
+  margin-top: 70px;
+  width: 100%;
+}
+.title {
+  text-align: center;
+  border-bottom: 1px solid black;
+  padding-bottom: 30px;
+}
+.content {
+  text-align: center;
+}
+.poter {
+  padding-top: 20px;
+  border-top: 1px solid black;
+}
+p {
+  padding: 10px;
+}

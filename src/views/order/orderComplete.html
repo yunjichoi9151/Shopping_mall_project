@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../public/header/header.css" />
+    <link rel="stylesheet" href="../public/footer/footer.css" />
+    <link rel="stylesheet" href="orderComplete.css" />
+    <script src="../public/common/index.js"></script>
+    <title>주문완료</title>
+  </head>
+  <body>
+    <header id="headerHtml"></header>
+    <div class="order-complete-container">
+      <h1 class="title">주문 완료</h1>
+      <div class="content">
+        <p>
+          <strong>총 주문금액 :</strong> <span id="order-total-price"></span>
+        </p>
+        <p><strong>주문 일자 :</strong> <span id="order-date"></span></p>
+        <p><strong>주문자 성함 :</strong> <span id="order-name"></span></p>
+        <p><strong>주문자 연락처 :</strong> <span id="order-phone"></span></p>
+        <p><strong>배송지:</strong> <span id="order-address"></span></p>
+        <p>
+          <strong>상세 주소 :</strong> <span id="order-detail-address"></span>
+        </p>
+        <p class="poter"><strong>배송 방법 :</strong> <span>택배</span></p>
+        <button class="homeBtn" id="homeBtn">홈으로</button>
+      </div>
+    </div>
+    <!-- <footer id="footerHtml"></footer> -->
+  </body>
+  <script src="orderComplete.js"></script>
+</html>
