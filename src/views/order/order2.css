@@ -5,7 +5,7 @@ body {
 }
 
 .order-container {
-  border: 0.5px solid lightgray;
+  border: 0.3px solid lightgray;
   width: 700px;
   margin: 20px auto;
   padding: 20px;
@@ -123,7 +123,7 @@ button:hover {
 #total-price,
 #ship-price {
   width: 80px;
+  background-color: lightgray;
   text-align: center;
   border-radius: 10%;
-  border: 0.2px solid black;
 }
