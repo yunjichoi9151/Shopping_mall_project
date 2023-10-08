@@ -8,13 +8,17 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fascinate&family=Nanum+Gothic&family=Noto+Sans+KR:wght@100;200&family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+
     <title>장바구니</title>
   </head>
 
   <body>
-    <script>
-      loadHTML("header.html");
-    </script>
     <div class="cart-container">
       <h1 class="cart-h1">장바구니</h1>
       <table class="cart-items">
@@ -36,11 +40,15 @@
         <p class="total-price">
           총 주문금액 : <span id="total-price">0</span>원
         </p>
-        <button class="button is-primary" id="order-button" onclick="order()">
+        <button
+          class="button is-info is-outlined"
+          id="order-button"
+          onclick="order()"
+        >
           주문하기
         </button>
         <button
-          class="button is-info"
+          class="button is-info is-outlined"
           id="home-button"
           onclick="continueShopping()"
         >

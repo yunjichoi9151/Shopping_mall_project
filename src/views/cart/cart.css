@@ -1,5 +1,4 @@
 body {
-  font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,9 +11,11 @@ body {
   width: 100%;
   padding: 20px;
   position: relative;
+  font-family: "Nanum Gothic", sans-serif;
 }
 .cart-h1 {
   font-weight: bold;
+  font-size: x-large;
 }
 .cart-items {
   margin-top: 30px;
@@ -27,15 +28,7 @@ body {
 .cart-items th,
 .cart-items td {
   padding: 10px;
-  text-align: center;
-  background-color: #f2f2f2; /* 배경색을 연한 회색으로 설정 */
 }
-
-.cart-items td {
-  text-align: center;
-}
-/* 나머지 스타일 유지 */
-
 .cart-summary {
   text-align: right;
   border-top: 1px solid #ccc;
@@ -80,5 +73,25 @@ body {
 }
 
 .quantity-input {
-  width: 50px; /* 원하는 가로 길이로 조절 */
+  width: 100px;
+  text-align: center;
+}
+
+.button.is-primary {
+  width: 20px;
+  height: 40px;
+}
+.input.is-hovered {
+  width: 50px;
+}
+
+#order-button {
+  width: 120px;
+}
+#home-button {
+  width: 120px;
+}
+
+.is-vcentered {
+  vertical-align: middle;
 }
