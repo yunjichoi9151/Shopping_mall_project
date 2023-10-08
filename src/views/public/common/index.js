@@ -40,10 +40,11 @@ async function loadProducts() {
   try {
     const response = await fetch("../data/bestItem.json");
     const products = await response.json();
-    document.getElementById("productContainer");
+    console.log("Products:", products); // "Products:" 접두사 추가
+
     const container = document.querySelector(".productContainer");
 
-    products.map((product) => {
+    products.forEach((product) => {
       const productLink = document.createElement("a");
       productLink.href = product.link || "#";
 
