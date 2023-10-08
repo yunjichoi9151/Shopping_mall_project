@@ -37,12 +37,11 @@ function calculateShipPrice(totalPrice) {
 const findAddressBtn = document.getElementById("find-address");
 findAddressBtn.addEventListener("click", daumAddress);
 
-// Daum 주소 api 활용 함수
+// Daum 우편번호 서비스 활용
+// https://postcode.map.daum.net/guide 참조
 function daumAddress() {
   new daum.Postcode({
     oncomplete: function (data) {
-      // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
       var addr = ""; // 주소 변수
 
       //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
