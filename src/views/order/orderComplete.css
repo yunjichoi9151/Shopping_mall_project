@@ -3,28 +3,49 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: lightgray;
-  width: 30%;
+  /* background-color: #f5f5f5; */
+  border: 0.5px solid lightgray;
+  width: 35%;
   padding: 30px;
-  height: 470px;
-  border-radius: 5%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  font-family: "Nanum Gothic", sans-serif;
 }
-.homeBtn {
-  margin-top: 70px;
-  width: 100%;
-}
+
 .title {
   text-align: center;
-  border-bottom: 1px solid black;
-  padding-bottom: 30px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 20px;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
+
 .content {
-  text-align: center;
+  text-align: left;
+}
+
+button#homeBtn {
+  margin-top: 30px;
+  width: 100%;
+  color: black;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button#homeBtn:hover {
+  background-color: oldlace;
+}
+.total-price-p {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #333;
 }
 .poter {
   padding-top: 20px;
-  border-top: 1px solid black;
+  border-top: 1px solid #333;
 }
-p {
-  padding: 10px;
+.detail-p {
+  padding-bottom: 5px;
 }

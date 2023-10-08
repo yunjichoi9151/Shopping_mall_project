@@ -33,6 +33,35 @@ function calculateShipPrice(totalPrice) {
   return shipPrice;
 }
 
+// 주소찾기 버튼 클릭시 실행
+const findAddressBtn = document.getElementById("find-address");
+findAddressBtn.addEventListener("click", daumAddress);
+
+// Daum 우편번호 서비스 활용
+// https://postcode.map.daum.net/guide 참조
+function daumAddress() {
+  new daum.Postcode({
+    oncomplete: function (data) {
+      var addr = ""; // 주소 변수
+
+      //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+      if (data.userSelectedType === "R") {
+        // 사용자가 도로명 주소를 선택했을 경우
+        addr = data.roadAddress;
+      } else {
+        // 사용자가 지번 주소를 선택했을 경우(J)
+        addr = data.jibunAddress;
+      }
+
+      // 우편번호와 주소 정보를 해당 필드에 넣는다.
+      postcodeInput.value = data.zonecode;
+      addressInput.value = addr;
+      // 커서를 상세주소 필드로 이동한다.
+      detailAddressInput.focus();
+    },
+  }).open();
+}
+
 // 주문하기로 넘어온 아이템 그려줌
 function renderOrderItems(products, element) {
   products.forEach((product) => {
@@ -56,7 +85,7 @@ const recipientInput = document.getElementById("recipient");
 const contactInput = document.getElementById("contact");
 const postcodeInput = document.getElementById("postcode");
 const addressInput = document.getElementById("address");
-const detailsAddressInput = document.getElementById("details-address");
+const detailAddressInput = document.getElementById("detail-address");
 
 // 주문자 정보와 동일 radio 버튼 클릭 시 계정 정보로 작성란 채워줌
 sameAsAccountCheckbox.addEventListener("change", () => {
@@ -69,14 +98,14 @@ sameAsAccountCheckbox.addEventListener("change", () => {
     contactInput.value = accountInfo.contact;
     postcodeInput.value = accountInfo.postcode;
     addressInput.value = accountInfo.address;
-    detailsAddressInput.value = accountInfo.detailsAddress;
+    detailAddressInput.value = accountInfo.detailAddress;
   } else {
     // 체크를 해제하면 필드를 비워줌
     recipientInput.value = "";
     contactInput.value = "";
     postcodeInput.value = "";
     addressInput.value = "";
-    detailsAddressInput.value = "";
+    detailAddressInput.value = "";
   }
 });
 
@@ -90,23 +119,13 @@ function getAccountInfo() {
     contact: "010-5118-1571",
     postcode: "12345",
     address: "서울시 양천구 목동동로 50",
-    detailsAddress: "목동아파트",
+    detailAddress: "목동아파트 12단지 ",
   };
 }
 // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
 // 빈 칸이 있으는지 확인
 const deliveryNoteSelect = document.getElementById("delivery-note");
-
-// 주문완료로 넘겨줄 주문 관련 정보
-const orderInfo = {
-  totalPrice: totalPrice,
-  recipient: recipientInput,
-  contect: contactInput,
-  address: addressInput,
-  detailAdress: detailsAddressInput,
-  orderTime: new Date(),
-};
 
 sameAsAccountCheckbox.addEventListener("change", () => {
   if (sameAsAccountCheckbox.checked) {
@@ -115,14 +134,14 @@ sameAsAccountCheckbox.addEventListener("change", () => {
     contactInput.value = accountInfo.contact;
     postcodeInput.value = accountInfo.postcode;
     addressInput.value = accountInfo.address;
-    detailsAddressInput.value = accountInfo.detailsAddress;
+    detailAddressInput.value = accountInfo.detailAddress;
   } else {
     // 체크를 해제하면 필드를 비워줌
     recipientInput.value = "";
     contactInput.value = "";
     postcodeInput.value = "";
     addressInput.value = "";
-    detailsAddressInput.value = "";
+    detailAddressInput.value = "";
   }
 });
 
@@ -138,6 +157,26 @@ const paymentCash = document.getElementById("bank-transfer");
 // 결제하기 눌렀을 때
 const orderSubmitButton = document.getElementById("submit-order");
 orderSubmitButton.addEventListener("click", () => {
+  const currentDate = new Date();
+
+  // 2023-10-05 15:30:00 형식으로 시간과 날짜 만들어줌
+  const year = currentDate.getFullYear();
+  const month = String(currentDate.getMonth() + 1).padStart(2, "0");
+  const day = String(currentDate.getDate()).padStart(2, "0");
+  const hours = String(currentDate.getHours()).padStart(2, "0");
+  const minutes = String(currentDate.getMinutes()).padStart(2, "0");
+  const seconds = String(currentDate.getSeconds()).padStart(2, "0");
+  const orderFormatDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+  // 주문완료로 넘겨줄 주문 관련 정보
+  const orderInfo = {
+    totalPrice: totalPrice,
+    orderTime: orderFormatDate,
+    recipient: recipientInput.value,
+    contact: contactInput.value,
+    address: addressInput.value,
+    detailAddress: detailAddressInput.value,
+    email: emailInput.value,
+  };
   // 빈 칸 있을 때
   if (
     nameInput.value === "" ||
@@ -147,8 +186,7 @@ orderSubmitButton.addEventListener("click", () => {
     contactInput.value === "" ||
     postcodeInput.value === "" ||
     addressInput.value === "" ||
-    detailsAddressInput.value === "" ||
-    deliveryNoteSelect.value === ""
+    detailAddressInput.value === ""
   ) {
     alert("주문 정보를 모두 작성해주세요.");
   }
@@ -159,9 +197,10 @@ orderSubmitButton.addEventListener("click", () => {
   // 결제수단 결정 안 되었을 때
   else if (!paymentCard.checked && !paymentCash.checked) {
     alert("결제수단을 확인해주세요.");
+  } else {
+    // 모두 제대로 됐을 때
+    const orderInfoJSON = JSON.stringify(orderInfo);
+    localStorage.setItem("orderInfo", orderInfoJSON);
+    window.location.href = "../order/orderComplete.html";
   }
-  // 모두 제대로 됐을 때
-  const orderInfoJSON = JSON.stringify(orderInfo);
-  localStorage.setItem("orderInfo", orderInfoJSON);
-  window.location.href = "../order/orderComplete.html";
 });
