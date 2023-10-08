@@ -40,7 +40,6 @@ async function loadProducts() {
   try {
     const response = await fetch("../data/bestItem.json");
     const products = await response.json();
-    console.log("Products:", products); // "Products:" 접두사 추가
 
     const container = document.querySelector(".productContainer");
 
