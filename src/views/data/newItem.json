@@ -22,29 +22,5 @@
     "name": "지웨이 크레아틴 모노 하이드레이트",
     "price": "21,300원",
     "imgSrc": "../public/img/newItem4.jpg"
-  },
-  {
-    "id": 5,
-    "name": "지웨이 포켓 프로틴 단백질 보충제",
-    "price": "30,000원",
-    "imgSrc": "../public/img/newItem5.jpg"
-  },
-  {
-    "id": 6,
-    "name": "매일 마시는 단백질 보충제",
-    "price": "7,900원",
-    "imgSrc": "../public/img/newItem6.jpg"
-  },
-  {
-    "id": 7,
-    "name": "지웨이 크레아틴 모노 하이드레이트",
-    "price": "21,300원",
-    "imgSrc": "../public/img/newItem7.jpg"
-  },
-  {
-    "id": 8,
-    "name": "지웨이 크레아틴 모노 하이드레이트",
-    "price": "21,300원",
-    "imgSrc": "../public/img/newItem8.jpg"
   }
 ]
