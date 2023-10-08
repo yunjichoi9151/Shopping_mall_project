@@ -73,7 +73,8 @@ body {
 }
 
 .quantity-input {
-  width: 50px;
+  width: 100px;
+  text-align: center;
 }
 
 .button.is-primary {
