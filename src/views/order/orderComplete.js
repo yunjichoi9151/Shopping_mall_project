@@ -1,7 +1,6 @@
 // localStorage에서 주문 정보를 가져옴
 const orderInfoJSON = localStorage.getItem("orderInfo");
 const orderInfo = JSON.parse(orderInfoJSON);
-const userEmail = orderInfo.email;
 
 // 주문 정보를 화면에 표시
 if (orderInfo) {
@@ -25,6 +24,8 @@ homeButton.addEventListener("click", () => {
   window.location.href = "../home/home.html";
 });
 
+// 주문정보를 통해 사용자 email 찾음
+const userEmail = orderInfo.email;
 // orderInfo로 부터 들어온 이메일과 같은 이메일을 가진 회원의 구매내역에 구매정보 넣어줘야함
 function findUser(userEmail) {
   // db로부터 받아온 유저들 중 이메일이 일치하는 유저의 구매내역에 추가해야함

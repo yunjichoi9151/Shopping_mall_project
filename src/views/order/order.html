@@ -3,11 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="order2.css" />
+    <link rel="stylesheet" href="order.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fascinate&family=Nanum+Gothic&family=Noto+Sans+KR:wght@100;200&family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
     <title>주문하기</title>
@@ -81,7 +88,7 @@
                 >구매조건 확인 및 결제진행에 동의</label
               >
             </div>
-            <button class="button is-primary" id="submit-order">
+            <button class="button is-outlined" id="submit-order">
               결제하기
             </button>
           </div>
@@ -93,7 +100,7 @@
             <input type="text" id="recipient" required />
             <label for="contact">연락처</label>
             <input type="tel" id="contact" required />
-            <button class="button is-primary" id="find-address">
+            <button class="button is-outlined" id="find-address">
               주소 찾기
             </button>
             <br />
@@ -126,6 +133,6 @@
         </div>
       </div>
     </div>
-    <script src="order2.js"></script>
+    <script src="order.js"></script>
   </body>
 </html>
