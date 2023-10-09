@@ -18,79 +18,41 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // 신상품
-
-// 신상품 슬라이드
-async function loadNewProductsToContainer() {
+async function newLoadProducts() {
   try {
     const response = await fetch("../data/newItem.json");
     const products = await response.json();
-    const newProductWrap = document.querySelector(".newProductContainer");
+    document.getElementById("newProductContainer");
+    const container = document.querySelector(".newProductContainer");
 
-    products.forEach((product) => {
-      const newProductItem = document.createElement("a");
-      newProductItem.className = "newProductItem";
+    products.map((product) => {
+      const productLink = document.createElement("a");
+      productLink.href = product.link || "#";
 
-      const newProductImg = document.createElement("img");
-      newProductImg.src = product.imgSrc;
-      newProductItem.appendChild(newProductImg);
+      const productDiv = document.createElement("div");
+      productDiv.className = "productItem";
 
-      const newProductName = document.createElement("p");
-      newProductName.className = "newProductName";
-      newProductName.textContent = product.name;
-      newProductItem.appendChild(newProductName);
+      const img = document.createElement("img");
+      img.className = "productImg";
+      img.src = product.imgSrc;
+      productDiv.appendChild(img);
 
-      const newProductPrice = document.createElement("b");
-      newProductPrice.className = "newProductPrice";
-      newProductPrice.textContent = product.price;
-      newProductItem.appendChild(newProductPrice);
+      const productName = document.createElement("p");
+      productName.className = "productName";
+      productName.textContent = product.name;
+      productDiv.appendChild(productName);
 
-      newProductWrap.appendChild(newProductItem);
+      const productPrice = document.createElement("b");
+      productPrice.className = "productPrice";
+      productPrice.textContent = product.price;
+      productDiv.appendChild(productPrice);
+
+      productLink.appendChild(productDiv);
+      container.appendChild(productLink);
     });
-
-    setupDragFeature(); // 드래그 기능 활성화
   } catch (error) {
-    console.error("Error loading new products:", error.message);
+    console.error("Error loading products:", error.message);
   }
 }
 
-let isDragging = false;
-let startPointerPosition = 0;
-let currentTranslate = 0;
-let previousTranslate = 0;
-
-const newProductContainer = document.querySelector(".newProductContainer");
-
-function setupDragFeature() {
-  newProductContainer.addEventListener("mousedown", (e) => {
-    isDragging = true;
-    startPointerPosition = e.clientX;
-    previousTranslate = currentTranslate;
-    newProductContainer.style.transition = "none";
-  });
-
-  window.addEventListener("mouseup", () => {
-    isDragging = false;
-    newProductContainer.style.transition = "transform 0.3s";
-  });
-
-  window.addEventListener("mousemove", (e) => {
-    if (!isDragging) return;
-
-    const currentPointerPosition = e.clientX;
-    currentTranslate =
-      previousTranslate + (currentPointerPosition - startPointerPosition);
-
-    const maxTranslate =
-      newProductContainer.clientWidth -
-      document.querySelector(".newItem").clientWidth;
-    currentTranslate = Math.min(0, Math.max(-maxTranslate, currentTranslate));
-
-    setSliderPosition();
-  });
-}
-
-function setSliderPosition() {
-  newProductWrap.style.transform = `translateX(${currentTranslate}px)`;
-}
-
-loadNewProductsToContainer();
+newLoadProducts();

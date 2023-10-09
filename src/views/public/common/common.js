@@ -40,10 +40,10 @@ async function loadProducts() {
   try {
     const response = await fetch("../data/bestItem.json");
     const products = await response.json();
-    document.getElementById("productContainer");
+
     const container = document.querySelector(".productContainer");
 
-    products.map((product) => {
+    products.forEach((product) => {
       const productLink = document.createElement("a");
       productLink.href = product.link || "#";
 

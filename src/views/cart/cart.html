@@ -15,51 +15,55 @@
       href="https://fonts.googleapis.com/css2?family=Fascinate&family=Nanum+Gothic&family=Noto+Sans+KR:wght@100;200&family=Roboto:wght@100&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="../public/header/header.css" />
+    <link rel="stylesheet" href="../public/footer/footer.css" />
 
     <title>장바구니</title>
   </head>
 
   <body>
-    <div class="cart-container">
-      <h1 class="cart-h1">장바구니</h1>
-      <table class="cart-items">
-        <thead class="cart-tr">
-          <tr>
-            <th>상품</th>
-            <th>상품명</th>
-            <th>수량</th>
-            <th>상품 가격</th>
-            <th>삭제</th>
-          </tr>
-        </thead>
-        <tbody id="cart-items">
-          <!-- 장바구니 상품 cart.js 통해서 들어올 테이블  -->
-        </tbody>
-      </table>
-      <div class="cart-summary">
-        <p class="ship-price">배송비 : <span id="ship-price">3000</span>원</p>
-        <p class="total-price">
-          총 주문금액 : <span id="total-price">0</span>원
-        </p>
-        <button
-          class="button is-info is-outlined"
-          id="order-button"
-          onclick="order()"
-        >
-          주문하기
-        </button>
-        <button
-          class="button is-info is-outlined"
-          id="home-button"
-          onclick="continueShopping()"
-        >
-          계속 쇼핑하기
-        </button>
+    <header id="headerHtml"></header>
+    <main>
+      <div class="cart-container">
+        <h1 class="cart-h1">장바구니</h1>
+        <table class="cart-items">
+          <thead class="cart-tr">
+            <tr>
+              <th>상품</th>
+              <th>상품명</th>
+              <th>수량</th>
+              <th>상품 가격</th>
+              <th>삭제</th>
+            </tr>
+          </thead>
+          <tbody id="cart-items">
+            <!-- 장바구니 상품 cart.js 통해서 들어올 테이블  -->
+          </tbody>
+        </table>
+        <div class="cart-summary">
+          <p class="ship-price">배송비 : <span id="ship-price">3000</span>원</p>
+          <p class="total-price">
+            총 주문금액 : <span id="total-price">0</span>원
+          </p>
+          <button
+            class="button is-info is-outlined"
+            id="order-button"
+            onclick="order()"
+          >
+            주문하기
+          </button>
+          <button
+            class="button is-info is-outlined"
+            id="home-button"
+            onclick="continueShopping()"
+          >
+            계속 쇼핑하기
+          </button>
+        </div>
       </div>
-    </div>
-    <script>
-      loadHTML('footer.html');
-    </script>
+    </main>
+    <footer id="footerHtml"></footer>
     <script src="cart.js"></script>
+    <script src="../public/common/index.js"></script>
   </body>
 </html>

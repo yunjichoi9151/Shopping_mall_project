@@ -115,23 +115,31 @@
   background: url("../public/img/icon4.png");
 }
 
-/* 신상품 슬라이드 */
-.newProductSlider {
-  cursor: grab;
+/* 신상품 */
+.newItem {
+  width: 1264px;
+  margin: 0 auto;
 }
-
-.newProductSlider.grabbing {
-  cursor: grabbing;
+.newItem > h1 {
+  padding: 20px 0;
 }
-
+.newProductContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.newProductContainer > a {
+  color: black;
+}
 /* 베스트 html */
 .bestItem {
   width: 1264px;
   height: 600px;
   margin: 0 auto;
-  padding-top: 100px;
+  padding-top: 50px;
 }
-
+.bestItem > h1 {
+  padding: 20px 0;
+}
 .newProductSlider {
   width: 100%;
   display: flex;
