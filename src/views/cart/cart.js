@@ -31,23 +31,26 @@ function renderCartItems() {
   products.forEach((product) => {
     const row = document.createElement("tr");
     row.innerHTML = `
-            <td><img src="product-image.jpg" alt="${
+    <td class="is-vcentered" id="cartImg"><img src="product-image.jpg" alt="${
+      product.id
+    }사진" width="50"></td>
+            <td class="is-vcentered" id="cartText">${product.name}</td>
+            <td class="is-vcentered">
+            <button class="button is-outlined" onclick="decreaseQuantity(${
               product.id
-            }사진" width="50"></td>
-            <td>${product.name}</td>
-            <td>
-                <button class="quantity-btn" onclick="decreaseQuantity(${
-                  product.id
-                })">-</button>
-                <input type="number" class="quantity-input" value="${
-                  product.quantity
-                }" min="1">
-                <button class="quantity-btn" onclick="increaseQuantity(${
-                  product.id
-                })">+</button>
+            })">-</button>
+            <input type="number" class="input is-hovered quantity-input" value="${
+              product.quantity
+            }" min="1">
+            <button class="button is-outlined" onclick="increaseQuantity(${
+              product.id
+            })">+</button>
+            
             </td>
-            <td>${product.price * product.quantity}원</td>
-            <td><button class="delete-btn" >X</button></td>
+            <td class="is-vcentered" id="cartText">${
+              product.price * product.quantity
+            }원</td>
+            <td class="is-vcentered" id="cartBtn"><button class="delete is-medium" >X</button></td>
         `;
 
     cartItems.appendChild(row);
@@ -55,7 +58,7 @@ function renderCartItems() {
   });
 
   // 장바구니 내 상품 삭제 기능
-  const deleteButtons = document.querySelectorAll(".delete-btn");
+  const deleteButtons = document.querySelectorAll(".delete");
   deleteButtons.forEach((button, index) => {
     button.addEventListener("click", () => {
       removeItem(products[index].id); // 해당 제품의 id를 전달하여 removeItem 함수 호출
@@ -124,7 +127,7 @@ function removeItem(productId) {
   const index = products.findIndex((product) => product.id === productId);
   if (index !== -1) {
     // 로컬 스토리지에서 해당 상품을 삭제
-    const cartInfo = JSON.parse(localStorage.getItem("cartInfo"));
+    const cartInfo = JSON.parse(localStorage.getItem("cartInfo")) || [];
     const updatedCartInfo = cartInfo.filter(
       (product) => product.id !== productId
     );

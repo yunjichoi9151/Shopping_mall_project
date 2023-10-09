@@ -1,16 +1,22 @@
-body {
-  background-color: white; /* 연회색 배경 */
-  font-family: Arial, sans-serif;
-  margin: 0;
+main {
+  background-color: white;
+  margin-bottom: 150px;
 }
 
 .order-container {
-  background-color: lightgrey;
-  max-width: 600px;
+  border: 0.5px solid lightgray;
+  width: 700px;
   margin: 20px auto;
+  margin-top: 250px;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+.order-tr {
+  border: 1px solid #ddd;
+  text-align: center;
 }
 
 h1,
@@ -40,7 +46,7 @@ button {
 }
 
 button {
-  background-color: #4caf50; /* 초록색 배경 */
+  background-color: lightgray;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -48,7 +54,7 @@ button {
 }
 
 button:hover {
-  background-color: #45a049; /* 더 진한 초록색 배경 */
+  background-color: #fdcf1a;
 }
 
 .checkbox-container {
@@ -64,10 +70,6 @@ button:hover {
   margin-left: 5px;
 }
 
-.order-summary {
-  margin-top: 50px;
-}
-
 /* 테이블 스타일 */
 .order-items {
   width: 100%;
@@ -77,7 +79,7 @@ button:hover {
 
 /* 테이블 헤더 스타일 */
 .order-items th {
-  background-color: #f2f2f2;
+  background-color: #fdcf1a;
   text-align: center;
   padding: 10px;
   font-weight: bold; /* 굵은 글씨체 적용 */
@@ -101,4 +103,38 @@ button:hover {
 .order-items td:nth-child(3),
 .order-items td:nth-child(4) {
   text-align: center;
+}
+
+.pay-and-agree {
+  padding-top: 75px;
+}
+
+#contact {
+  margin-bottom: 30px;
+}
+#order-same {
+  margin-top: 20px;
+}
+
+.is-size-5 {
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+#order-agree {
+  margin-bottom: 20px;
+}
+
+#total-price,
+#ship-price {
+  width: 100px;
+  text-align: center;
+  border-radius: 10%;
+  border: 0.2px solid black;
+}
+
+#submit-order,
+#find-address {
+  box-shadow: 1px 1px 1px;
 }
