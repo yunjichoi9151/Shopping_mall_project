@@ -3,7 +3,7 @@
 const { Router } = require("express");
 
 // const { Data } = require("../db/models/user-model"); 를 가져올때는 오류 발생
-const { Data } = require("../db/schemas/user-schema");
+const { Data } = require("../db/schemas/user-schemas");
 
 
 const router = Router();
