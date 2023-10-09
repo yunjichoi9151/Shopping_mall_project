@@ -1,5 +1,6 @@
 body {
   background-color: white; /* 연회색 배경 */
+  /* font-family: Arial, sans-serif; */
   margin: 0;
 }
 
@@ -10,7 +11,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 
 .order-tr {
@@ -30,9 +31,9 @@ h2 {
   margin-top: 20px;
 }
 
-input[type="text"],
-input[type="tel"],
-input[type="email"],
+input[type='text'],
+input[type='tel'],
+input[type='email'],
 select,
 button {
   width: 100%;
@@ -61,7 +62,7 @@ button:hover {
   align-items: center;
 }
 
-.checkbox-container input[type="checkbox"] {
+.checkbox-container input[type='checkbox'] {
   margin-right: 10px;
 }
 

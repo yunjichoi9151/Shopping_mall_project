@@ -1,4 +1,5 @@
 body {
+  /* font-family: Arial, sans-serif; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +12,7 @@ body {
   width: 100%;
   padding: 20px;
   position: relative;
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 .cart-h1 {
   font-weight: bold;
