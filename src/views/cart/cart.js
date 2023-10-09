@@ -127,7 +127,7 @@ function removeItem(productId) {
   const index = products.findIndex((product) => product.id === productId);
   if (index !== -1) {
     // 로컬 스토리지에서 해당 상품을 삭제
-    const cartInfo = JSON.parse(localStorage.getItem("cartInfo"));
+    const cartInfo = JSON.parse(localStorage.getItem("cartInfo")) || [];
     const updatedCartInfo = cartInfo.filter(
       (product) => product.id !== productId
     );

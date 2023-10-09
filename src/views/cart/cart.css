@@ -1,4 +1,4 @@
-body {
+main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,9 +87,19 @@ body {
 
 #order-button {
   width: 120px;
+  border: 0.5px solid lightgray;
+  color: black;
 }
 #home-button {
   width: 120px;
+  border: 0.5px solid lightgray;
+  color: black;
+}
+#home-button:hover {
+  background-color: #fdcf1a;
+}
+#order-button:hover {
+  background-color: #fdcf1a;
 }
 
 .is-vcentered {
