@@ -1,4 +1,4 @@
-body {
+main {
   /* font-family: Arial, sans-serif; */
   display: flex;
   justify-content: center;
@@ -12,7 +12,7 @@ body {
   width: 100%;
   padding: 20px;
   position: relative;
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: "Nanum Gothic", sans-serif;
 }
 .cart-h1 {
   font-weight: bold;
@@ -88,9 +88,19 @@ body {
 
 #order-button {
   width: 120px;
+  border: 0.5px solid lightgray;
+  color: black;
 }
 #home-button {
   width: 120px;
+  border: 0.5px solid lightgray;
+  color: black;
+}
+#home-button:hover {
+  background-color: #fdcf1a;
+}
+#order-button:hover {
+  background-color: #fdcf1a;
 }
 
 .is-vcentered {

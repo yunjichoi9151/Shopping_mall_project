@@ -16,119 +16,124 @@
     <title>주문하기</title>
   </head>
   <body>
-    <div class="order-container">
-      <div class="order-head order-cal">
-        <h1 class="is-size-3">주문하기</h1>
+    <header id="headerHtml"></header>
+    <main>
+      <div class="order-container">
+        <div class="order-head order-cal">
+          <h1 class="is-size-3">주문하기</h1>
+          <div class="columns">
+            <div class="column">
+              <h2 class="is-size-5">총 주문금액</h2>
+              <p id="total-price"></p>
+            </div>
+            <div class="column">
+              <h2 class="is-size-5">배송비</h2>
+              <p id="ship-price"></p>
+            </div>
+          </div>
+        </div>
+
+        <table class="order-items">
+          <thead class="order-tr">
+            <tr>
+              <th>상품</th>
+              <th>상품명</th>
+              <th>수량</th>
+              <th>가격</th>
+            </tr>
+          </thead>
+          <tbody id="order-items">
+            <!-- 장바구니 상품 cart.js 통해서 들어올 테이블  -->
+          </tbody>
+        </table>
+
         <div class="columns">
           <div class="column">
-            <h2 class="is-size-5">총 주문금액</h2>
-            <p id="total-price"></p>
+            <div class="order-info">
+              <h2 class="is-size-5">주문자 정보</h2>
+              <label for="name">이름</label>
+              <input type="text" id="name" required />
+              <label for="phone">연락처</label>
+              <input type="tel" id="phone" required />
+              <label for="email">이메일</label>
+              <input type="email" id="email" required />
+            </div>
+
+            <div class="pay-and-agree">
+              <div class="payment-method">
+                <h2 class="is-size-5">결제수단</h2>
+                <input
+                  type="radio"
+                  id="credit-card"
+                  name="payment-method"
+                  value="credit-card"
+                  required
+                />
+                <label for="credit-card">신용카드</label>
+                <input
+                  type="radio"
+                  id="bank-transfer"
+                  name="payment-method"
+                  value="bank-transfer"
+                  required
+                />
+                <label for="bank-transfer">무통장입금</label>
+              </div>
+              <div class="terms">
+                <h2 class="is-size-5">결제 동의</h2>
+                <input type="checkbox" id="order-agree" required />
+                <label for="terms-details"
+                  >구매조건 확인 및 결제진행에 동의</label
+                >
+              </div>
+              <button class="button is-outlined" id="submit-order">
+                결제하기
+              </button>
+            </div>
           </div>
           <div class="column">
-            <h2 class="is-size-5">배송비</h2>
-            <p id="ship-price"></p>
+            <div class="shipping-info">
+              <h2 class="is-size-5">배송 정보</h2>
+              <label for="recipient">수령인</label>
+              <input type="text" id="recipient" required />
+              <label for="contact">연락처</label>
+              <input type="tel" id="contact" required />
+              <button class="button is-outlined" id="find-address">
+                주소 찾기
+              </button>
+              <br />
+              <input
+                type="radio"
+                id="order-same"
+                name="order-same"
+                value="order-same"
+                required
+              />
+              <label for="order-same">계정 정보와 동일</label>
+              <br />
+              <br />
+              <label for="postcode">우편번호</label>
+              <input type="text" id="postcode" required />
+              <label for="address">주소</label>
+              <input type="text" id="address" required />
+              <label for="detail-address">상세주소</label>
+              <input type="text" id="detail-address" />
+              <label for="delivery-note">배송메모</label>
+              <select id="delivery-note">
+                <option value="" disabled selected>
+                  배송메모를 선택해 주세요.
+                </option>
+                <option value="empty">부재시 경비실에 맡겨주세요.</option>
+                <option value="messege">배송 출발 시 연락주세요.</option>
+                <option value="door">문 앞에 놓아주세요.</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
-
-      <table class="order-items">
-        <thead class="order-tr">
-          <tr>
-            <th>상품</th>
-            <th>상품명</th>
-            <th>수량</th>
-            <th>가격</th>
-          </tr>
-        </thead>
-        <tbody id="order-items">
-          <!-- 장바구니 상품 cart.js 통해서 들어올 테이블  -->
-        </tbody>
-      </table>
-
-      <div class="columns">
-        <div class="column">
-          <div class="order-info">
-            <h2 class="is-size-5">주문자 정보</h2>
-            <label for="name">이름</label>
-            <input type="text" id="name" required />
-            <label for="phone">연락처</label>
-            <input type="tel" id="phone" required />
-            <label for="email">이메일</label>
-            <input type="email" id="email" required />
-          </div>
-
-          <div class="pay-and-agree">
-            <div class="payment-method">
-              <h2 class="is-size-5">결제수단</h2>
-              <input
-                type="radio"
-                id="credit-card"
-                name="payment-method"
-                value="credit-card"
-                required
-              />
-              <label for="credit-card">신용카드</label>
-              <input
-                type="radio"
-                id="bank-transfer"
-                name="payment-method"
-                value="bank-transfer"
-                required
-              />
-              <label for="bank-transfer">무통장입금</label>
-            </div>
-            <div class="terms">
-              <h2 class="is-size-5">결제 동의</h2>
-              <input type="checkbox" id="order-agree" required />
-              <label for="terms-details"
-                >구매조건 확인 및 결제진행에 동의</label
-              >
-            </div>
-            <button class="button is-outlined" id="submit-order">
-              결제하기
-            </button>
-          </div>
-        </div>
-        <div class="column">
-          <div class="shipping-info">
-            <h2 class="is-size-5">배송 정보</h2>
-            <label for="recipient">수령인</label>
-            <input type="text" id="recipient" required />
-            <label for="contact">연락처</label>
-            <input type="tel" id="contact" required />
-            <button class="button is-outlined" id="find-address">
-              주소 찾기
-            </button>
-            <br />
-            <input
-              type="radio"
-              id="order-same"
-              name="order-same"
-              value="order-same"
-              required
-            />
-            <label for="order-same">계정 정보와 동일</label>
-            <br />
-            <br />
-            <label for="postcode">우편번호</label>
-            <input type="text" id="postcode" required />
-            <label for="address">주소</label>
-            <input type="text" id="address" required />
-            <label for="detail-address">상세주소</label>
-            <input type="text" id="detail-address" />
-            <label for="delivery-note">배송메모</label>
-            <select id="delivery-note">
-              <option value="" disabled selected>
-                배송메모를 선택해 주세요.
-              </option>
-              <option value="empty">부재시 경비실에 맡겨주세요.</option>
-              <option value="messege">배송 출발 시 연락주세요.</option>
-              <option value="door">문 앞에 놓아주세요.</option>
-            </select>
-          </div>
-        </div>
-      </div>
-    </div>
+    </main>
+    <footer id="footerHtml"></footer>
     <script src="order.js"></script>
+    <script src="../public/common/index.js"></script>
   </body>
 </html>
