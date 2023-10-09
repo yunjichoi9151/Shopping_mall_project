@@ -1,4 +1,4 @@
-const Schema = require("mongoose");
+const { Schema } = require("mongoose");
 
 const orderSchema = new Schema({
 	itemInfo: [{ 
@@ -14,19 +14,33 @@ const orderSchema = new Schema({
 		type: String,
 		required: true,
 },
-// 구매시간
-	createdAt:{
+// orderEditTime ==> updatedAt으로 수정 feat. 코치님 코드리뷰
+	createdAt: {
 		type: Date,
 		default: Date.now()
-},
+	},
 	deletedAt: {
 		type: Date,
 		default: null
-},
-	orderEditTime: {
+	},	
+
+	updatedAt:{
 		type: Date,
-		default: null
-},
+		default: Date.now()
+}
+//위 변경사항은 기존은 아래와 같았다
+// , createdAt:{
+// 	type: Date,
+// 	default: Date.now()
+// },
+// deleteAt: {
+// 	type: Date,
+// 	default: null
+// },orderEditTime: {
+// 	type: Date,
+// 	default: Date.now()
+// }
+
 });
 
 module.exports = orderSchema;
