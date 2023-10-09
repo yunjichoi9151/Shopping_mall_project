@@ -2,23 +2,23 @@
 // CRUD 구현하기
 const { Router } = require("express");
 
-const Data = require("../db/models/user-model");
+const UserModel = require("../db/models/user-model");
 
 const router = Router();
 
 // READ 구현하기 -> GET
 router.get("/user", async (req, res) => {
     console.log(Data);
-    const data = await Data.find({});
+    const data = await UserModel.find({});
 
     res.json(data);
     
     // console.log("data OK");
 });
 
-router.get("/user/:data_id", async (req, res) => {
-    const search_id = req.params.data_id;
-    const data = await Data.find({ _id: search_id });
+router.get("/user/:userId", async (req, res) => {
+    const search_id = req.params.userId;
+    const data = await UserModel.find({ _id: search_id });
 
     res.json(data);
 });
