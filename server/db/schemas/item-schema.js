@@ -26,7 +26,18 @@ const itemSchema = new Schema([{
 	comments: [{
 		type: Schema.Types.ObjectId, ref: 'Comment'
 	}],
-
+	createdAt: {
+		type: Date,
+		default: Date.now()
+	},
+	updatedAt: {
+		type: Date,
+		default: null
+	},
+	deletedAt: {
+		type: Date,
+		default: null
+	},
 }]);
 
 module.exports = itemSchema;

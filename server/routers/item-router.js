@@ -1,7 +1,7 @@
 const express = require("express");
 const { Router } = require('express');
-const { ItemService } = require("../services");
-const { Item } = require("../db/models/item-model");
+// const { ItemService } = require("../services");
+const Item = require("../db/models/item-model");
 
 const itemRouter = Router();
 // 상품 생성
@@ -116,3 +116,5 @@ itemRouter.delete("/:itemId", async (req, res, next) => {
         next(err);
     }
 })
+
+module.exports = itemRouter;

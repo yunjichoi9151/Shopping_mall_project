@@ -1,7 +1,7 @@
 const express = require("express");
 const { Router } = require('express');
-const { categoryService } = require("../services");
-const { Category } = require("../db/models/category-model");
+// const { categoryService } = require("../services");
+const Category = require("../db/models/category-model");
 
 const categoryRouter = Router();
 // 카테고리 생성
@@ -100,3 +100,5 @@ categoryRouter.delete("/:categoryId", async (req, res, next) => {
         next(err);
     }
 })
+
+module.exports = categoryRouter;
