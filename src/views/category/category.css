@@ -46,3 +46,9 @@ main {
   color: rgb(212, 170, 0);
   font-weight: bold;
 }
+
+.active {
+  background-color: #fdcf1a !important;
+  font-weight: bold;
+  color: white;
+}
