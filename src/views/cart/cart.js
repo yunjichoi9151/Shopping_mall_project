@@ -2,9 +2,8 @@ const cartItems = document.getElementById("cart-items");
 const totalPriceElement = document.getElementById("total-price");
 const shipPriceElement = document.getElementById("ship-price");
 
-// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 // !!!! 서버에서 장바구니 정보 받아와서 products로 넣어줘야함 !!!!
-// let nowProducts = [
+// const products = [
 //   {
 //     id: 1,
 //     name: "지웨이 프로틴 쉐이커",
@@ -22,11 +21,6 @@ const shipPriceElement = document.getElementById("ship-price");
 //   { id: 5, name: "지웨이 마라 닭가슴살", quantity: 1, price: 20000 },
 //   { id: 6, name: "지웨이 비타민", quantity: 1, price: 25000 },
 // ];
-
-// // 위의 목업 데이터 형태가 아닌
-// // 각 상품 디테일 페이지에서 장바구니에 넣기를 누르면 cartInfo에 넣어줘야함
-// let products = localStorage.setItem("cartInfo", JSON.stringify(nowProducts));
-// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
 let products;
 

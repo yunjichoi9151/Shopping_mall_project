@@ -3,13 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>7team category</title>
+  <title>7team header</title>
   <link rel="stylesheet" href="./header.css">
-  <link rel="stylesheet" href="../common/common.css">
-  <link rel="stylesheet" href="../../category/carbohydrate.css">
-  <link rel="stylesheet" href="../../category/protein.css">
-  <link rel="stylesheet" href="../../category/amino.css">
-  <link rel="stylesheet" href="../../home/home.css">
+  <link rel="stylesheet" href="../public/common/common.css" />
 </head>
 <body>
   <header class="header">
@@ -17,8 +13,8 @@
     <div class="headerBackground">
       <div class="headerContainer">
         <div class="inputBox">
-          <input type="text" placeholder="검색어를 입력하세요" />
-          <i>🔍</i>
+          <input type="text" id="searchInput" placeholder="검색어를 입력하세요" />
+          <i onclick="executeSearch()">🔍</i>
         </div>
         <div class="logo" >
           <a href="" onclick="homeMove(event)">
@@ -26,8 +22,8 @@
           </a>
         </div>
         <div class="userLogCart">
-          <a href="">🧑</a>
-          <a href="">🛒</a>
+          <a href="" onclick="mypageMove(event)">🧑</a>
+          <a href="" onclick="cartMove(event)">🛒</a>
         </div>
       </div>
       <nav class="navContainer">
@@ -49,8 +45,8 @@
       </nav>
     </div>
   </header>
-  <script src="../public/common/common.js"></script>
-  <script src="../../category/category.js"></script>
+  <script src="../common/common.js"></script>
+  <script src="./header.js"></script>
 </body>
 </html>
 

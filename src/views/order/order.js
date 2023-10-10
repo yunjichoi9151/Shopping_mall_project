@@ -11,6 +11,10 @@ orderTotalPrice.textContent = `${totalPrice} 원`;
 const shipPriceElement = document.getElementById("ship-price");
 const shipPrice = calculateShipPrice(totalPrice);
 shipPriceElement.textContent = `${shipPrice} 원`;
+// 우편번호
+const postCodeInput = document.querySelector("#postcode");
+const postCode = postCodeInput.value;
+
 // 주문 상품 그려줌
 renderOrderItems(products, orderItems);
 
@@ -119,6 +123,12 @@ function getAccountInfo() {
     postcode: "12345",
     address: "서울시 양천구 목동동로 50",
     detailAddress: "목동아파트 12단지 ",
+    // recipient: userData.recipient,
+    recipient: "홍길동",
+    contact: "010-5118-1571",
+    postcode: "12345",
+    address: "서울시 양천구 목동동로 50",
+    detailAddress: "목동아파트 12단지 ",
   };
 }
 // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
@@ -168,8 +178,8 @@ orderSubmitButton.addEventListener("click", () => {
   const orderFormatDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
   // 주문완료로 넘겨줄 주문 관련 정보
   const orderInfo = {
-    totalPrice: totalPrice,
     postCode: postcodeInput.value,
+    totalPrice: totalPrice,
     orderTime: orderFormatDate,
     recipient: recipientInput.value,
     contact: contactInput.value,
