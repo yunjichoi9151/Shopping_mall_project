@@ -89,7 +89,8 @@ button:hover {
 .order-items td {
   border: 1px solid #ddd;
   padding: 10px;
-  text-align: center; /* 셀 가운데 정렬 */
+  text-align: center;
+  vertical-align: middle;
 }
 
 /* 이미지 스타일 */
@@ -130,11 +131,16 @@ button:hover {
 #ship-price {
   width: 100px;
   text-align: center;
-  border-radius: 10%;
+  border-radius: 10px;
   border: 0.2px solid black;
 }
 
 #submit-order,
 #find-address {
   box-shadow: 1px 1px 1px;
+}
+
+tr {
+  text-align: center;
+  margin-top: 10px;
 }
