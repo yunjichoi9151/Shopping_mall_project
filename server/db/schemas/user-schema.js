@@ -24,8 +24,7 @@ const userSchema = new Schema({
 	deletedAt: {
 		type: Date,
 		default: null,
-	}
-	
+	}	
 });
 
 module.exports = userSchema;
