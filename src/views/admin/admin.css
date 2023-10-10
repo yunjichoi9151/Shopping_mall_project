@@ -13,35 +13,21 @@ main {
   width: 100%;
   display: flex;
   align-items: center;
-}
-#headerHtml {
-  width: 100%;
-}
-#footerHtml {
-  width: 100%;
+  justify-content: center;
 }
 .menuWrap {
-  width: 15%;
-  height: 200px;
-  margin: 10% 0% 0% 10%;
-  background-color: aqua;
-  text-align: left;
+  width: 370px;
+  margin-left: 160px;
+  padding: 100px 0;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
-.orderMenu {
-  width: 100%;
-  height: 100%;
-  font-size: 20px;
+.leftBar {
+  width: 190px;
 }
-.productMenu {
-  width: 100%;
-  height: 100%;
-  font-size: 20px;
+.leftBar ul li {
+  padding-bottom: 20px;
 }
-.categoryMenu {
+.contentWrap {
   width: 100%;
-  height: 100%;
-  font-size: 20px;
+  margin-right: 160px;
 }
