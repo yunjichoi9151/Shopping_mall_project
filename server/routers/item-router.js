@@ -1,7 +1,7 @@
 const express = require("express");
 const { Router } = require('express');
 // const { ItemService } = require("../services");
-const Item = require("../db/models/item-model");
+const ItemModel = require("../db/models/item-model");
 
 const itemRouter = Router();
 // 상품 생성
@@ -21,7 +21,7 @@ itemRouter.post("/", async (req, res, next) => {
     }
     try {
         const { name, category, price, itemDetail, imgUrl } = req.params;
-        const newItem = await Item.create({
+        const newItem = await ItemModel.create({
             name, 
             category, 
             price, 
@@ -38,7 +38,7 @@ itemRouter.post("/", async (req, res, next) => {
 itemRouter.get("/", async (req, res, next) => {
     console.log("모든 상품 조회");
     try {
-        const items = await Item.find({});
+        const items = await ItemModel.find({});
         return res.status(200).json({
             status: 200,
             msg: "상품 조회",
@@ -64,7 +64,7 @@ itemRouter.get("/:itemId", async (req, res, next) => {
     console.log("하나의 상품만 조회");
     try {
         const { itemId } = req.params;
-        const item = await Item.findOne({ _id: itemId});
+        const item = await ItemModel.findOne({ _id: itemId});
         res.json(item);
     } catch(err) {
         next(err);
@@ -82,7 +82,7 @@ itemRouter.put("/:itemId", async (req, res, next) => {
     try {
         const { itemId } = req.params;
         const { name, category, price, itemDetail, imgUrl } = req.body;
-        const item = await Item.updateOne(
+        const item = await ItemModel.updateOne(
             {
                 _id: itemId
             },
@@ -109,7 +109,7 @@ itemRouter.delete("/:itemId", async (req, res, next) => {
     }
     try {
         const { itemId } = req.params;
-        const deleteItem = await Item.deleteOne({ _id: itemId });
+        const deleteItem = await ItemModel.deleteOne({ _id: itemId });
         // deleteAt을 추가할 예정
         res.json(deleteItem);
     } catch(err) {

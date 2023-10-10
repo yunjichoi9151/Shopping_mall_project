@@ -1,5 +1,5 @@
-const Schema = require("mongoose");
-const { ItemImage } = require("../models/itemImage-model");
+const { Schema } = require("mongoose");
+//const { ItemImage } = require("../models/itemImage-model");
 
 // item을 array에 저장하기 위해 변경
 const itemSchema = new Schema([{

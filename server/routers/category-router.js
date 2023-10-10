@@ -1,7 +1,7 @@
 const express = require("express");
 const { Router } = require('express');
 // const { categoryService } = require("../services");
-const Category = require("../db/models/category-model");
+const CategoryModel = require("../db/models/category-model");
 
 const categoryRouter = Router();
 // 카테고리 생성
@@ -21,7 +21,7 @@ categoryRouter.post("/", async (req, res, next) => {
     }
     try {
         const { name, items } = req.params;
-        const newCategory = await Category.create({
+        const newCategory = await CategoryModel.create({
             name,
             items,
         });
@@ -32,10 +32,11 @@ categoryRouter.post("/", async (req, res, next) => {
 })
 
 // 모든 카테고리 조희
+// 메인 페이지에서 보여지도록
 categoryRouter.get("/", async (req, res, next) => {
     console.log("모든 카테고리 조회");
     try {
-        const categories = await Category.find({});
+        const categories = await CategoryModel.find({});
         return res.status(200).json({
             status: 200,
             msg: "카테고리 조회",
@@ -51,7 +52,7 @@ categoryRouter.get("/:categoryId", async (req, res, next) => {
     console.log("하나의 카테고리만 조회");
     try {
         const { categoryId } = req.params;
-        const category = await Category.findOne({ _id: categoryId});
+        const category = await CategoryModel.findOne({ _id: categoryId});
         res.json(category);
     } catch(err) {
         next(err);
@@ -69,7 +70,7 @@ categoryRouter.put("/:categoryId", async (req, res, next) => {
     try {
         const { categoryId } = req.params;
         const { name, items } = req.body;
-        const category = await Category.updateOne(
+        const category = await CategoryModel.updateOne(
             {
                 _id: categoryId
             },
@@ -93,7 +94,7 @@ categoryRouter.delete("/:categoryId", async (req, res, next) => {
     }
     try {
         const { categoryId } = req.params;
-        const deleteCategory = await Category.deleteOne({ _id: categoryId });
+        const deleteCategory = await CategoryModel.deleteOne({ _id: categoryId });
         // deleteAt을 추가할 예정
         res.json(deleteCategory);
     } catch(err) {
