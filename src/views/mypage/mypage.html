@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>7team mypage</title>
     <link rel="stylesheet" href="./mypage.css" />
+    <link rel="stylesheet" href="../public/common/common.css" />
   </head>
   <body>
     <header id="headerHtml"></header>
@@ -38,8 +39,8 @@
     <div class="modal" id="confirmDeleteModal">
       <div class="modal-content">
         <h1>회원탈퇴</h1>
-        <p>정말로 회원탈퇴를 하시겠습니까?</p>
-        <div>
+        <p class="message">정말로 회원탈퇴를 하시겠습니까?</p>
+        <div class="buttonWrap">
           <button onclick="closeModal('confirmDeleteModal')">취소</button>
           <button onclick="confirmDelete()">탈퇴하기</button>
         </div>

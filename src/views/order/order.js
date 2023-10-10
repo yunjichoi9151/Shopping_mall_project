@@ -115,7 +115,8 @@ function getAccountInfo() {
   const userData = {};
   return {
     // 예시 - 목업 data !!!!!
-    recipient: userData.recipient,
+    // recipient: userData.recipient,
+    recipient: '홍길동',
     contact: '010-5118-1571',
     postcode: '12345',
     address: '서울시 양천구 목동동로 50',
