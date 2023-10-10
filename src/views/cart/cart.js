@@ -2,8 +2,9 @@ const cartItems = document.getElementById('cart-items');
 const totalPriceElement = document.getElementById('total-price');
 const shipPriceElement = document.getElementById('ship-price');
 
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 // !!!! 서버에서 장바구니 정보 받아와서 products로 넣어줘야함 !!!!
-// const products = [
+// let nowProducts = [
 //   {
 //     id: 1,
 //     name: "지웨이 프로틴 쉐이커",
@@ -21,6 +22,11 @@ const shipPriceElement = document.getElementById('ship-price');
 //   { id: 5, name: "지웨이 마라 닭가슴살", quantity: 1, price: 20000 },
 //   { id: 6, name: "지웨이 비타민", quantity: 1, price: 25000 },
 // ];
+
+// // 위의 목업 데이터 형태가 아닌
+// // 각 상품 디테일 페이지에서 장바구니에 넣기를 누르면 cartInfo에 넣어줘야함
+// let products = localStorage.setItem("cartInfo", JSON.stringify(nowProducts));
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
 let products;
 
@@ -41,30 +47,25 @@ function renderCartItems() {
   let totalPrice = 0;
 
   // 장바구니에 들어있는 상품들 td 형태로 만들어줌
-  products.forEach((product) => {
+  products.forEach((product, index) => {
     const row = document.createElement('tr');
     row.innerHTML = `
-    <td class="is-vcentered" id="cartImg"><img src="${product.img}" alt="${
+      <td class="is-vcentered" id="cartImg"><img src="${product.img}" alt="${
       product.id
     }사진" width="50"></td>
-            <td class="is-vcentered" id="cartText">${product.name}</td>
-            <td class="is-vcentered">
-            <button class="button is-outlined" onclick="decreaseQuantity(${
-              product.id
-            })">-</button>
-            <input type="number" class="input is-hovered quantity-input" value="${
-              product.quantity
-            }" min="1">
-            <button class="button is-outlined" onclick="increaseQuantity(${
-              product.id
-            })">+</button>
-            
-            </td>
-            <td class="is-vcentered" id="cartText">${
-              product.price * product.quantity
-            }원</td>
-            <td class="is-vcentered" id="cartBtn"><button class="delete is-medium" >X</button></td>
-        `;
+      <td class="is-vcentered" id="cartText">${product.name}</td>
+      <td class="is-vcentered">
+        <button class="button is-outlined" onclick="decreaseQuantity(${index})">-</button>
+        <input type="number" class="input is-hovered quantity-input" value="${
+          product.quantity
+        }" min="1">
+        <button class="button is-outlined" onclick="increaseQuantity(${index})">+</button>
+      </td>
+      <td class="is-vcentered" id="cartText">${
+        product.price * product.quantity
+      }원</td>
+      <td class="is-vcentered" id="cartBtn"><button class="delete is-medium" onclick="removeProduct(${index})">X</button></td>
+    `;
 
     cartItems.appendChild(row);
     totalPrice += product.price * product.quantity;
@@ -116,8 +117,8 @@ function updateTotalPrice() {
 renderCartItems();
 
 // 카트의 각 제품 수량 증가 클릭 시 실행
-function increaseQuantity(productId) {
-  const product = products.find((item) => item.id === productId);
+function increaseQuantity(index) {
+  const product = products[index];
   if (product) {
     product.quantity += 1;
     updateTotalPrice(); // 총 주문금액 업데이트
@@ -126,8 +127,8 @@ function increaseQuantity(productId) {
 }
 
 // 카트의 각 제품 수량 감소 클릭 시 실행
-function decreaseQuantity(productId) {
-  const product = products.find((item) => item.id === productId);
+function decreaseQuantity(index) {
+  const product = products[index];
   if (product && product.quantity > 1) {
     product.quantity -= 1;
     updateTotalPrice(); // 총 주문금액 업데이트
