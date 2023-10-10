@@ -176,6 +176,7 @@ orderSubmitButton.addEventListener("click", () => {
     address: addressInput.value,
     detailAddress: detailAddressInput.value,
     email: emailInput.value,
+    orderProducts: products,
   };
   // 빈 칸 있을 때
   if (
