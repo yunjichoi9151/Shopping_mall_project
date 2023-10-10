@@ -34,6 +34,16 @@ function homeMove(event) {
   event.preventDefault();
   window.location.href = "../home/home.html";
 }
+// 사람 클릭 시 - mypage 으로 이동
+function mypageMove(event) {
+  event.preventDefault();
+  window.location.href = "../mypage/mypage.html";
+}
+// 장바구니 클릭 시 - cart 으로 이동
+function cartMove(event) {
+  event.preventDefault();
+  window.location.href = "../cart/cart.html";
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   const currentURL = window.location.pathname;
@@ -53,3 +63,15 @@ document.addEventListener("DOMContentLoaded", function () {
       .classList.add("active");
   }
 });
+
+// 검색
+function executeSearch() {
+  const input = document.getElementById("searchInput");
+  const searchTerm = input.value.trim(); // 공백 제거
+
+  if (searchTerm) {
+    console.log(`Searching for: ${searchTerm}`);
+  } else {
+    alert("검색어를 입력해주세요.");
+  }
+}
