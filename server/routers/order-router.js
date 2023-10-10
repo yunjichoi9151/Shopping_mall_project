@@ -1,6 +1,6 @@
 const express = require("express")
 const { Router } = require('express')
-const Order = require("./db/models/order-model")
+const Order = require("../db/models/order-model")
 
 const orderRouter = Router()
 
@@ -40,3 +40,5 @@ orderRouter.delete('/:orderId', async(req, res) =>{
 	const order = await Order.deleteOne({ _id: orderId})
 	res.json(order)
 })
+
+module.exports = orderRouter;

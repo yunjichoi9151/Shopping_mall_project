@@ -2,7 +2,7 @@
 // CRUD 구현하기
 const { Router } = require("express");
 
-const Data = require("../db/models/user-model");
+const UserModel = require("../db/models/user-model");
 
 const router = Router();
 
