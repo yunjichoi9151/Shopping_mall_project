@@ -8,7 +8,7 @@ const categorySchema = new Schema({
 	},
 	items: [{
 		type: Schema.Types.ObjectId, ref: 'Item'
-	}],
+	}]
 });
 
 module.exports = categorySchema;
