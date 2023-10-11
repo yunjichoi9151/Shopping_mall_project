@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 const userRouter = require("./routers/user-router");
 // orderRouter추가
 const orderRouter = require("./routers/order-router");
+//orderAdmin추가
+const orderAdminRouter = require("./routers/orderAdmin-router");
 const { MONGO_URI } = process.env;
 
 // mongoose settings (4)
@@ -25,6 +27,8 @@ app.get("/", (req, res) => {
 app.use("/api/user", userRouter);
 // app.use("/order", orderRouter);
 app.use("/api/order", orderRouter);
+
+app.use("/api/admin", orderAdminRouter)
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
