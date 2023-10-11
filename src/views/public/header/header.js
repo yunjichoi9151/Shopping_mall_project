@@ -45,14 +45,14 @@ function cartMove(event) {
   window.location.href = "../cart/cart.html";
 }
 
-// 검색
-// function executeSearch() {
-//   const input = document.getElementById("searchInput");
-//   const searchTerm = input.value.trim(); // 공백 제거
+검색;
+function executeSearch() {
+  const input = document.getElementById("searchInput");
+  const searchTerm = input.value.trim(); // 공백 제거
 
-//   if (searchTerm) {
-//     console.log(`Searching for: ${searchTerm}`);
-//   } else {
-//     alert("검색어를 입력해주세요.");
-//   }
-// }
+  if (searchTerm) {
+    console.log(`Searching for: ${searchTerm}`);
+  } else {
+    alert("검색어를 입력해주세요.");
+  }
+}

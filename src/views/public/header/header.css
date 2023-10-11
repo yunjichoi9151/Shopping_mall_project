@@ -40,7 +40,7 @@ body {
   border-radius: 20px;
   border: none;
   outline: none;
-  padding-left: 10px;
+  padding-left: 15px;
   font-size: 14px;
 }
 
@@ -49,10 +49,14 @@ body {
   font-size: 14px;
 }
 .header .headerBackground .headerContainer .inputBox i {
+  width: 20px;
+  height: 20px;
   position: absolute;
-  top: 15%;
-  left: 90%;
+  top: 20%;
+  right: -1%;
   cursor: pointer;
+  background-image: url("../img/readingglasses.png");
+  background-size: cover;
 }
 
 /* 로고 */
