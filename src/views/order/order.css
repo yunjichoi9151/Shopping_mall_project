@@ -7,11 +7,10 @@ main {
   border: 0.5px solid lightgray;
   width: 700px;
   margin: 20px auto;
-  margin-top: 250px;
+  margin-top: 100px;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  font-family: "Nanum Gothic", sans-serif;
 }
 
 .order-tr {
@@ -89,7 +88,8 @@ button:hover {
 .order-items td {
   border: 1px solid #ddd;
   padding: 10px;
-  text-align: center; /* 셀 가운데 정렬 */
+  text-align: center;
+  vertical-align: middle;
 }
 
 /* 이미지 스타일 */
@@ -106,7 +106,7 @@ button:hover {
 }
 
 .pay-and-agree {
-  padding-top: 75px;
+  padding-top: 0px;
 }
 
 #contact {
@@ -118,8 +118,8 @@ button:hover {
 
 .is-size-5 {
   font-weight: bold;
-  margin-top: 40px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 8px;
 }
 
 #order-agree {
@@ -130,11 +130,42 @@ button:hover {
 #ship-price {
   width: 100px;
   text-align: center;
-  border-radius: 10%;
+  border-radius: 10px;
   border: 0.2px solid black;
 }
 
 #submit-order,
 #find-address {
   box-shadow: 1px 1px 1px;
+}
+
+tr {
+  text-align: center;
+  margin-top: 10px;
+}
+.order-sum {
+  margin-top: 10px;
+}
+.order-sum-all {
+  border: 0.5px solid lightgray;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#order-sum-text {
+  padding-bottom: 10px;
+  border-bottom: 0.5px solid lightgray;
+  text-align: center;
+}
+#order-sum-num {
+  padding-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+.is-size-5.summery {
+  margin-top: 10px !important;
+}
+#delivery-note {
+  margin-top: 5px;
 }

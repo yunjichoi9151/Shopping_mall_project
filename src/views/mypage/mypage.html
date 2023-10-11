@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7team mypage</title>
+    <link rel="stylesheet" href="./mypage.css" />
+    <link rel="stylesheet" href="../public/common/common.css" />
+  </head>
+  <body>
+    <header id="headerHtml"></header>
+    <!-- 정보수정 모달 -->
+    <div class="modal" id="editInfoModal">
+      <div class="modal-content">
+        <h1>정보수정</h1>
+        <form>
+          <label for="email">이메일</label>
+          <input type="email" id="email" name="email" />
+
+          <label for="name">이름</label>
+          <input type="text" id="name" name="name" />
+
+          <label for="phone">연락처</label>
+          <input type="tel" id="phone" name="phone" />
+
+          <label for="address">주소</label>
+          <input type="text" id="address" name="address" />
+
+          <input
+            onclick="closeModal('editInfoModal')"
+            type="submit"
+            value="확인"
+          />
+        </form>
+      </div>
+    </div>
+
+    <!-- 회원탈퇴 모달 -->
+    <div class="modal" id="confirmDeleteModal">
+      <div class="modal-content">
+        <h1>회원탈퇴</h1>
+        <p class="message">정말로 회원탈퇴를 하시겠습니까?</p>
+        <div class="buttonWrap">
+          <button onclick="closeModal('confirmDeleteModal')">취소</button>
+          <button onclick="confirmDelete()">탈퇴하기</button>
+        </div>
+      </div>
+    </div>
+    <main>
+      <div class="maypageBackground">
+        <div class="leftBar">
+          <ul>
+            <li>
+              <a href="">
+                <span>주문조회</span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span>정보수정</span>
+              </a>
+            </li>
+            <li>
+              <a href="" id="deleteBtn">
+                <span>회원탈퇴</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="maypageMemberBox">
+          <div class="maypageMemberBoxBg">
+            <div class="userBox">
+              <div class="user">
+                <span>[회원]</span>
+                <span class="username"></span>
+              </div>
+              <span class="userCumulativeTotal"></span>
+            </div>
+            <i class="i"></i>
+            <div class="pointBox">
+              <p>포인트</p>
+              <span class="userPoint">0</span>
+            </div>
+          </div>
+          <div class="orderList">
+            <h2>주문조회</h2>
+            <div>주문 내역이 없습니다.</div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="footerHtml"></footer>
+    <script src="../public/common/common.js"></script>
+    <script src="./mypage.js"></script>
+  </body>
+</html>
