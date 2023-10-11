@@ -1,0 +1,140 @@
+main {
+  /* font-family: Arial, sans-serif; */
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  margin: 0;
+}
+
+.cart-container {
+  margin-top: 100px;
+  max-width: 800px;
+  width: 100%;
+  padding: 20px;
+  position: relative;
+}
+.cart-h1 {
+  font-weight: bold;
+  font-size: x-large;
+}
+.cart-items {
+  margin-top: 30px;
+  border-top: 1px solid #000;
+  width: 100%;
+  border-collapse: separate; /* 셀 간격을 추가 */
+  border-spacing: 0 10px; /* 수직 간격은 10px로 지정 (원하는 크기로 조절 가능) */
+}
+
+.cart-items th,
+.cart-items td {
+  padding: 10px;
+}
+.cart-summary {
+  text-align: right;
+  border-top: 1px solid #000;
+  padding-top: 50px;
+  margin-top: 10px;
+}
+.cart-items th {
+  background-color: #f2f2f2;
+}
+
+.cart-summary {
+  text-align: right;
+}
+
+.cart-tr {
+  background-color: white;
+  border: #ccc;
+}
+
+.cart-tr th {
+  background-color: white; /* 배경색을 흰색으로 설정 */
+  border: none; /* 테두리를 없앰 */
+}
+
+.delete-btn {
+  cursor: pointer;
+  color: red;
+  font-weight: bold;
+}
+
+.ship-price {
+  font-size: large;
+}
+.total-price {
+  font-size: large;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 0.5px solid lightgray;
+}
+
+.cart-items img {
+  width: 100px;
+  height: 100px;
+}
+
+.quantity-input {
+  width: 50px;
+  text-align: center;
+}
+
+.button.is-primary {
+  width: 20px;
+  height: 40px;
+}
+.input.is-hovered {
+  width: 50px;
+}
+
+#order-button {
+  width: 120px;
+  border: 0.5px solid lightgray;
+  color: black;
+}
+#home-button {
+  width: 120px;
+  border: 0.5px solid lightgray;
+  color: black;
+}
+#home-button:hover {
+  background-color: #fdcf1a;
+}
+#order-button:hover {
+  background-color: #fdcf1a;
+}
+
+.is-vcentered {
+  vertical-align: middle;
+}
+#cartBtn {
+  padding-left: 15px;
+}
+
+th .deleteBtn {
+  text-align: center !important;
+}
+
+.button.is-outlined.up,
+.button.is-outlined.down {
+  width: 40px !important;
+}
+
+.price-num {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 0.5px solid lightgray;
+}
+.order-display {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 0.5px solid lightgray;
+}
+.buttons {
+  display: flex !important;
+  justify-content: center !important;
+}

@@ -1,0 +1,58 @@
+const products = [
+  {
+    id: 1,
+    name: "지웨이 위드 쉐이커 2종",
+    price: "5,500원",
+    imgSrc: "../public/img/newItem1.jpg",
+    url: "product1.html",
+  },
+  {
+    id: 2,
+    name: "지웨이 크레아틴 모노 하이드레이트",
+    price: "21,300원",
+    imgSrc: "../public/img/newItem2.jpg",
+    url: "product1.html",
+  },
+  {
+    id: 3,
+    name: "트러스트 웨이 단백질",
+    price: "28,800원",
+    imgSrc: "../public/img/newItem3.jpg",
+    url: "product1.html",
+  },
+  {
+    id: 4,
+    name: "지웨이 크레아틴 모노 하이드레이트",
+    price: "21,300원",
+    imgSrc: "../public/img/newItem4.jpg",
+    url: "product1.html",
+  },
+  {
+    id: 5,
+    name: "지웨이 포켓 프로틴 단백질 보충제",
+    price: "30,000원",
+    imgSrc: "../public/img/newItem5.jpg",
+    url: "product1.html",
+  },
+  {
+    id: 6,
+    name: "매일 마시는 단백질 보충제",
+    price: "7,900원",
+    imgSrc: "../public/img/newItem6.jpg",
+    url: "product1.html",
+  },
+  {
+    id: 7,
+    name: "지웨이 크레아틴 모노 하이드레이트",
+    price: "21,300원",
+    imgSrc: "../public/img/newItem7.jpg",
+    url: "product1.html",
+  },
+  {
+    id: 8,
+    name: "지웨이 크레아틴 모노 하이드레이트",
+    price: "21,300원",
+    imgSrc: "../public/img/newItem8.jpg",
+    url: "product1.html",
+  },
+];

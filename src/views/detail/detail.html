@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Mall Project</title>
+    <script src="detail.js" type="module" defer></script>
+    <link rel="stylesheet" href="detail.css" />
+    <link rel="stylesheet" href="../public/common/common.css" />
+    <link rel="stylesheet" href="../public/header/header.css" />
+    <link rel="stylesheet" href="../public/footer/footer.css" />
+  </head>
+  <body>
+    <header id="headerHtml"></header>
+    <main class="main">
+      <div class="container">
+        <div class="infoWrap">
+          <div class="imgWrap">
+            <img
+              class="mainImg"
+              src="https://cdn.imweb.me/thumbnail/20230328/025628aef1b38.jpg"
+            />
+          </div>
+          <div class="totalInfo">
+            <div class="categoryInfo">
+              <a href=""><div class="categoryName">헬스보충제</div></a>
+            </div>
+            <div class="nameInfo">
+              <div class="itemName">
+                지플렉스웨이 WPI 단백질 보충제 웨이 프로틴 2kg 쿠키앤크림맛
+              </div>
+            </div>
+            <div class="priceInfo">
+              <div class="priceTag">판매가</div>
+              <div class="price">89,200원</div>
+            </div>
+            <hr />
+            <div class="finalInfo">
+              <div class="deliveryInfo">
+                <div class="deliveryWrap">
+                  <div class="deliveryText">배송 방법</div>
+                  <div class="deliveryHowInfo">택배</div>
+                </div>
+                <div class="deliveryWrap">
+                  <div class="deliveryText">배송비</div>
+                  <div class="deliveryPriceInfo">3,000원</div>
+                </div>
+                <div class="deliveryWrap">
+                  <div class="deliveryText">배송 안내</div>
+                  <div class="deliveryWhenInfo">오후 4시까지 당일발송</div>
+                </div>
+              </div>
+              <div class="orderInfo">
+                <div class="orderText">수량</div>
+                <div class="count">
+                  <button class="minusButton">-</button>
+                  <div class="salesCount">1</div>
+                  <button class="plusButton">+</button>
+                </div>
+              </div>
+              <div class="sellInfo">
+                <button class="buyNowButton">바로구매</button>
+                <button class="moveTocartButton">장바구니 담기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="detailInfo">
+          <div class="detailText">상세정보</div>
+          <div class="detailImgWrap">
+            <img
+              class="detailImg"
+              src="https://cdn.imweb.me/upload/S20221019d081aed7ecba5/5cb5de4a810c2.jpg"
+            />
+          </div>
+        </div>
+        <p id="details"></p>
+      </div>
+    </main>
+    <footer id="footerHtml"></footer>
+    <script src="../public/common/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </body>
+</html>

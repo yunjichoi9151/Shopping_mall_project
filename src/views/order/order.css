@@ -1,0 +1,171 @@
+main {
+  background-color: white;
+  margin-bottom: 150px;
+}
+
+.order-container {
+  border: 0.5px solid lightgray;
+  width: 700px;
+  margin: 20px auto;
+  margin-top: 100px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-tr {
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+h1,
+h2 {
+  color: #333; /* 어두운 회색 텍스트 색상 */
+}
+
+.order-info,
+.payment-method,
+.shipping-info,
+.terms {
+  margin-top: 20px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+select,
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  background-color: lightgray;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 150px;
+}
+
+button:hover {
+  background-color: #fdcf1a;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+#terms-details {
+  margin-left: 5px;
+}
+
+/* 테이블 스타일 */
+.order-items {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+/* 테이블 헤더 스타일 */
+.order-items th {
+  background-color: #fdcf1a;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold; /* 굵은 글씨체 적용 */
+}
+
+/* 테이블 셀 스타일 */
+.order-items td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* 이미지 스타일 */
+.order-items img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+/* 수량, 가격 셀 가운데 정렬 */
+.order-items td:nth-child(3),
+.order-items td:nth-child(4) {
+  text-align: center;
+}
+
+.pay-and-agree {
+  padding-top: 0px;
+}
+
+#contact {
+  margin-bottom: 30px;
+}
+#order-same {
+  margin-top: 20px;
+}
+
+.is-size-5 {
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+#order-agree {
+  margin-bottom: 20px;
+}
+
+#total-price,
+#ship-price {
+  width: 100px;
+  text-align: center;
+  border-radius: 10px;
+  border: 0.2px solid black;
+}
+
+#submit-order,
+#find-address {
+  box-shadow: 1px 1px 1px;
+}
+
+tr {
+  text-align: center;
+  margin-top: 10px;
+}
+.order-sum {
+  margin-top: 10px;
+}
+.order-sum-all {
+  border: 0.5px solid lightgray;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#order-sum-text {
+  padding-bottom: 10px;
+  border-bottom: 0.5px solid lightgray;
+  text-align: center;
+}
+#order-sum-num {
+  padding-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+.is-size-5.summery {
+  margin-top: 10px !important;
+}
+#delivery-note {
+  margin-top: 5px;
+}

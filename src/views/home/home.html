@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7team mainHome</title>
+    <link rel="stylesheet" href="./home.css" />
+    <link rel="stylesheet" href="../public/common/common.css" />
+  </head>
+  <body>
+    <header id="headerHtml"></header>
+    <main>
+      <div class="sliderWrapper">
+        <div class="sliderContent">
+          <div class="slide"></div>
+          <div class="slide"></div>
+          <div class="slide"></div>
+        </div>
+        <button class="btn btn1" onclick="moveToSlide(0)"></button>
+        <button class="btn btn2" onclick="moveToSlide(1)"></button>
+        <button class="btn btn3" onclick="moveToSlide(2)"></button>
+      </div>
+      <div class="categoriWrapper">
+        <a>
+          <div class="imgBox" onclick="categoryCarbohydrateMove(event)">
+            <p>헬스보충제</p>
+          </div>
+        </a>
+        <a href="" onclick="categoryNutrientsMove(event)">
+          <div class="imgBox">
+            <p>영양제</p>
+          </div>
+        </a>
+        <a href="" onclick="categoryFitnessMove(event)">
+          <div class="imgBox">
+            <p>헬스용품</p>
+          </div>
+        </a>
+        <a href="" onclick="categoryDietMove(event)">
+          <div class="imgBox">
+            <p>다이어트/보조식품</p>
+          </div>
+        </a>
+      </div>
+      <div class="newItem">
+        <h1>신상품👍</h1>
+        <div id="newProductContainer" class="newProductContainer"></div>
+      </div>
+      <div class="bestItem">
+        <h1>베스트👍</h1>
+        <div id="productContainer" class="productContainer"></div>
+      </div>
+    </main>
+    <footer id="footerHtml"></footer>
+    <script src="./home.js"></script>
+    <script src="../public/common/common.js"></script>
+  </body>
+</html>

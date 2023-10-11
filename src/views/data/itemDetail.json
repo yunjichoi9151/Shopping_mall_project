@@ -1,0 +1,8 @@
+{
+  "_id": "12345",
+  "name": "Example Product",
+  "category": "헬스보충제",
+  "price": 12000,
+  "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230328/d10a8883cbf32.jpg",
+  "detailImgUrl": "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/7e44e634e9730.jpg"
+}

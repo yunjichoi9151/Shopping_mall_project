@@ -1,0 +1,54 @@
+* {
+  list-style: none;
+  color: black;
+}
+main {
+  width: 1264px;
+  margin: 0 auto;
+}
+.categoryMainText {
+  width: 100%;
+}
+.categoryMainText h1 {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.subMenu {
+  width: 100%;
+}
+.subMenu ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subMenu ul li {
+  width: 222px;
+  height: 42px;
+  background-color: white;
+  border: 1px solid #dddddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 호버 */
+.subMenu ul li:hover {
+  background-color: #fdcf1a;
+  font-weight: bold;
+  color: white;
+}
+
+.bestItem > h2 {
+  padding: 30px 0;
+  color: rgb(212, 170, 0);
+  font-weight: bold;
+}
+
+.active {
+  background-color: #fdcf1a !important;
+  font-weight: bold;
+  color: white;
+}

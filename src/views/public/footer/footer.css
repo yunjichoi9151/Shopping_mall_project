@@ -1,0 +1,41 @@
+/* footer */
+.footer {
+  /* width: 100%; */
+  height: 150px;
+  margin: 0 auto;
+  background-color: #fafafa;
+  padding-left: 25px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-top: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.footer .logo {
+  margin: 0 auto;
+  width: 1000px;
+}
+.footer .logo a {
+}
+.footer .logo a img {
+  width: 155px;
+}
+.footer .footerBox {
+  margin: 0 auto;
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  padding-top: 10px;
+}
+.footer .footerOffice {
+  width: 500px;
+}
+.footer .footerCs {
+  width: 250px;
+}
+.footer .footerTime {
+  width: 250px;
+}
