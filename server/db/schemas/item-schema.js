@@ -8,13 +8,13 @@ const itemSchema = new Schema([{
 		required: true,
 	},
 	category: {
-		type: Number,
-		required: true,
+		type: String,
+		//required: true,
 	},
 	price: {
 		type: Number,
-		required: true,
-	},
+		//required: true,
+	},/*
 	itemDetail: {
 		type: String,
 		required: true,
@@ -25,7 +25,7 @@ const itemSchema = new Schema([{
 	},
 	comments: [{
 		type: Schema.Types.ObjectId, ref: 'Comment'
-	}],
+	}],*/
 	createdAt: {
 		type: Date,
 		default: Date.now()

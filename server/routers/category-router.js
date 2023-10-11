@@ -7,6 +7,8 @@ const categoryRouter = Router();
 // 카테고리 생성
 categoryRouter.post("/", async (req, res, next) => {
     console.log("카테고리 생성");
+    // request/response 확인을 위해 주석처리
+    /*
     const { curRole } = req;
     if(curRole !== "admin") {
         throw new Error("관리자 권한이 없습니다.");
@@ -19,8 +21,9 @@ categoryRouter.post("/", async (req, res, next) => {
             msg: "카테고리 이름을 입력해주세요.",
         })
     }
+    */
     try {
-        const { name, items } = req.params;
+        const { name, items } = req.body;
         const newCategory = await CategoryModel.create({
             name,
             items,
@@ -31,7 +34,7 @@ categoryRouter.post("/", async (req, res, next) => {
     }
 })
 
-// 모든 카테고리 조희
+// 모든 카테고리 조회
 // 메인 페이지에서 보여지도록
 categoryRouter.get("/", async (req, res, next) => {
     console.log("모든 카테고리 조회");
@@ -63,10 +66,11 @@ categoryRouter.get("/:categoryId", async (req, res, next) => {
 // 카테고리 수정
 categoryRouter.put("/:categoryId", async (req, res, next) => {
     console.log("카테고리 수정");
-    const { curRole } = req;
+    // request/response 확인을 위해 주석처리
+    /*const { curRole } = req;
     if(curRole !== "admin") {
         throw new Error("관리자 권한이 없습니다.");
-    }
+    }*/
     try {
         const { categoryId } = req.params;
         const { name, items } = req.body;
@@ -88,10 +92,12 @@ categoryRouter.put("/:categoryId", async (req, res, next) => {
 // 카테고리 삭제
 categoryRouter.delete("/:categoryId", async (req, res, next) => {
     console.log("카테고리 삭제");
+    // request/response 확인을 위해 주석처리
+    /*
     const { curRole } = req;
     if(curRole !== "admin") {
         throw new Error("관리자 권한이 없습니다.");
-    }
+    }*/
     try {
         const { categoryId } = req.params;
         const deleteCategory = await CategoryModel.deleteOne({ _id: categoryId });
