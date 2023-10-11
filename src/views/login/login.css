@@ -20,8 +20,8 @@ main {
 }
 
 #loginBtn {
-  width: 30%;
-  color: black;
+  width: 100%;
+  color: white;
   border-radius: 5px;
   border: 0.3px solid lightgray;
   padding: 10px;
@@ -29,10 +29,11 @@ main {
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-weight: bold;
-  background-color: white;
+  background-color: black;
   box-shadow: 1px 1px 1px lightgrey;
 }
 #loginBtn:hover {
+  color: white;
   background-color: #fdcf1a;
 }
 
@@ -44,10 +45,15 @@ main {
 #findId,
 #findPassword,
 #doJoin {
-  margin: 10px;
   border: none;
   background-color: white;
   cursor: pointer;
+}
+#findId {
+  margin-right: 70px;
+}
+#findPassword {
+  margin-right: 70px;
 }
 
 .control {
