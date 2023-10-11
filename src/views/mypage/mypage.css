@@ -51,8 +51,8 @@ main {
   background-color: #e5e7eb;
 }
 
-/* 모달 */
-.modal {
+/* 정보수정 모달 */
+.userInfoModal {
   margin: 0 auto;
   display: none;
   position: fixed;
@@ -66,27 +66,29 @@ main {
   z-index: 999;
   border-radius: 5px;
 }
-
-.modal .modal-content h1 {
+.userInfoModal > .modal-content {
+  width: 100%;
+  height: 100%;
+}
+.userInfoModal > .modal-content h1 {
   text-align: center;
   padding-bottom: 20px;
 }
 
-.modal-content {
-  padding: 20px;
+.userInfoModal > .modal-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.modal-content form {
+.userInfoModal > .modal-content form {
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: 320px;
 }
-form input {
+.userInfoModal > .modal-content form input {
   width: 320px;
   height: 42px;
   border: 1px solid #e5e7eb;
@@ -97,13 +99,21 @@ form input {
   transition: background-color 0.3s;
 }
 
-form input:last-child {
+.userInfoModal > .modal-content > button {
+  width: 320px;
+  height: 42px;
   cursor: pointer;
   margin-top: 30px;
   background-color: black;
   color: white;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
-form input:last-child:hover {
+.userInfoModal > .modal-content > button:hover {
   background-color: #fdcf1a;
   color: white;
   font-weight: bold;
@@ -115,52 +125,68 @@ form label {
 }
 
 /* 회원탈퇴 모달 */
-#confirmDeleteModal {
-  height: 170px;
+.userDelModal {
+  margin: 0 auto;
   display: none;
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 999;
-  border-radius: 5px;
+  width: 370px;
+  height: 250px; 
   background-color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  border-radius: 5px;
+  padding: 20px; 
+  box-sizing: border-box; 
 }
 
-#confirmDeleteModal .modal-content {
-  padding: 20px;
+.userDelModal .modal-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  height: 100%;
+  justify-content: space-between; 
 }
 
-.message {
-  margin-bottom: 20px;
+.userDelModal h1 {
+  font-size: 24px;
+  padding-bottom: 20px;
 }
 
-.buttonWrap {
-  width: 225px;
-  justify-content: space-between;
-  display: flex;
-  align-items: center;
+.userDelModal p {
+  font-size: 18px;
+  text-align: center;
 }
 
-button {
+.userDelModal button {
   background-color: black;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
   border: none;
-  width: 100px;
-  height: 30px;
-  border-radius: 10px;
+  width: 140px;
+  height: 40px;
+  border-radius: 5px;
   font-weight: bold;
+  margin: 10px; 
 }
 
-button:hover {
+.userDelModal button:hover {
   background-color: #fdcf1a;
   color: white;
   font-weight: bold;
+}
+
+/* 모달 오버레이 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  z-index: 998;
 }
