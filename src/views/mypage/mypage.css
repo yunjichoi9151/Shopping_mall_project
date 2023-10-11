@@ -155,10 +155,32 @@ form label {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.message {
+  margin-bottom: 20px;
+}
+
+.buttonWrap {
+  width: 225px;
+  justify-content: space-between;
+  display: flex;
   align-items: center;
 }
 
 button {
-  margin: 10px;
+  background-color: lightgray;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: #fdcf1a;
 }

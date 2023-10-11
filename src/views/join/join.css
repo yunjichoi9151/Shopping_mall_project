@@ -48,6 +48,7 @@ main {
 
 #submitButton {
   width: 100%;
+  height: 40px;
   color: black;
   border-radius: 5px;
   border: 0.3px solid lightgray;
@@ -109,4 +110,12 @@ button {
 
 button {
   cursor: pointer;
+}
+
+.control p {
+  margin-bottom: 10px;
+}
+
+#detailAddress {
+  margin-bottom: 30px !important;
 }
