@@ -22,7 +22,7 @@ body {
 }
 
 .header .headerBackground .headerContainer {
-  width: 1080px;
+  width: 1264px;
   height: 90px;
   display: flex;
   justify-content: space-between;
@@ -30,7 +30,7 @@ body {
   margin: 0 auto;
 }
 .header .headerBackground .headerContainer .inputBox {
-  width: 200px;
+  width: 250px;
   height: 34px;
   position: relative;
 }
@@ -50,7 +50,7 @@ body {
 .header .headerBackground .headerContainer .inputBox i {
   position: absolute;
   top: 15%;
-  left: 85%;
+  left: 90%;
   cursor: pointer;
 }
 
@@ -64,6 +64,9 @@ body {
 }
 .header .headerBackground .headerContainer .logo a img {
   width: 100%;
+}
+.userLogCart {
+  font-size: 22px;
 }
 
 /* nav */
