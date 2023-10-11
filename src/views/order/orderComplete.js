@@ -24,16 +24,7 @@ homeButton.addEventListener("click", () => {
   window.location.href = "../home/home.html";
 });
 
-// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-
-// localStorage를 통해 받아온 orderInfo에는
-// address, detailAddress, contact, email, orderTime, recipient, totalPrice, orderProducts
-// 들이 들어있음
-// 주문완료와 함께 email이 일치하는 회원의 db에 orderProducts를 이용하여 결제내역 넣어줘야함
-
-// 주문한 상품 객체
-const orderProducts = orderInfo.products;
-// 주문자의 email
+// 주문정보를 통해 사용자 email 찾음
 const userEmail = orderInfo.email;
 // orderInfo로 부터 들어온 이메일과 같은 이메일을 가진 회원의 구매내역에 구매정보 넣어줘야함
 function findUser(userEmail) {

@@ -1,6 +1,6 @@
 const { model } = require("mongoose");
-const { joinInfoSchema } = require("../schemas/user-schema");
+const userSchema = require("../schemas/user-schema");
 
-const JoinInfo = model("JoinInfo", joinInfoSchema);
+const User = model("User", userSchema);
 
-export { JoinInfo };
+module.exports = User;
