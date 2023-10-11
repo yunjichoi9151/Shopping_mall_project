@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const userRouter = require('./routers/user-router');
+const categoryRouter = require('./routers/category-router');
+const itemRouter = require('./routers/item-router');
 const viewsRouter = require('./routers/views-router');
 // passport.js 를 쓰기 위한 require
 const session = require('express-session');
@@ -36,9 +38,9 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/user', userRouter);
-// app.use("/order", orderRouter);
+app.use('/api/category', categoryRouter);
+app.use('/api/item', itemRouter);
 app.use('/api/order', orderRouter);
-
 app.use('/api/admin', orderAdminRouter);
 
 app.listen(process.env.PORT, () => {
