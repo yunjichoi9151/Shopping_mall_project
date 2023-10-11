@@ -14,7 +14,7 @@
 }
 .footer .logo {
   margin: 0 auto;
-  width: 1000px;
+  width: 1264px;
 }
 .footer .logo a {
 }
@@ -23,7 +23,7 @@
 }
 .footer .footerBox {
   margin: 0 auto;
-  width: 1000px;
+  width: 1264px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,7 +35,9 @@
 }
 .footer .footerCs {
   width: 250px;
+  padding-left: 70px;
 }
 .footer .footerTime {
   width: 250px;
+  text-align: end;
 }
