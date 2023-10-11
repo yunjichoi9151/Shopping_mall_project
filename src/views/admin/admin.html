@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping Mall Project</title>
-    <script src="admin.js" type="module" defer></script>
     <script src="adminOrder.js" type="module" defer></script>
     <script src="adminCategory.js" type="module" defer></script>
     <script src="adminProduct.js" type="module" defer></script>
@@ -18,30 +17,37 @@
     <main class="main">
       <div class="menuWrap">
         <div class="leftBar">
-          <ul>
-            <li>
-              <a href="">
-                <div class="orderMenu">주문관리</div>
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <div class="productMenu">상품관리</div>
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <div class="categoryMenu">카테고리 관리</div>
-              </a>
-            </li>
-          </ul>
+          <div id="side-bar">
+            <div id="order-btn">주문 관리</div>
+            <div id="items-btn">
+              <div id="items-btn__management">상품 관리</div>
+              <div id="items-btn__add"></div>
+            </div>
+            <div id="category-btn">
+              <div id="category-btn__management">카테고리 관리</div>
+              <div id="category-btn__add"></div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="contentWrap"></div>
+      <div class="contentWrap">
+        <div id="list-container">
+          <!--리스트 들어감-->
+          <div id="list-container_startMsg">
+            <div>관리자 페이지에 오신 것을 환영합니다!</div>
+            <div>왼쪽의 메뉴를 눌러 홈페이지를 관리해보세요</div>
+          </div>
+        </div>
+
+        <div id="modal-container">
+          <!--상품추가,카테고리추가 모달-->
+        </div>
+
+        <div class="hidden" id="page_list"></div>
+      </div>
     </main>
     <footer id="footerHtml"></footer>
     <script src="../public/common/common.js"></script>
-    <script src="../category/category.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </body>
 </html>
