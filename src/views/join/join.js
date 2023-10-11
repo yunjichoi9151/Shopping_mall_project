@@ -1,4 +1,4 @@
-import * as Api from "../api";
+// import * as Api from "../api.js";
 
 const nameInput = document.querySelector("#nameInput");
 const emailInput = document.querySelector("#emailInput");
@@ -55,6 +55,7 @@ async function handleJoin(e) {
 
   // 유저 주소 한번에 저장
   const userAddress = `(${postalCode}) ${address} ${detailAddress}`;
+  console.log(userAddress);
 
   // 이메일 양식 검사
   let regex = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
@@ -106,18 +107,20 @@ async function handleJoin(e) {
       phoneNumber: phoneNumber,
       address: userAddress,
     };
-    // 서버, db 와의 통신으로 회원가입 진행해야함
-    const res = await Api.post("/api/user/join", joinUserData);
 
-    localStorage.setItem("token", res.data.token);
-    localStorage.setItem("token", res.data.refreshToken);
-    localStorage.setItem("loggedIn", "true");
+    // 서버, db 와의 통신으로 회원가입 진행해야함
+    const res = await axios.post("/api/user/join", joinUserData);
+
+    // localStorage.setItem("token", res.data.token);
+    // localStorage.setItem("token", res.data.refreshToken);
+    // localStorage.setItem("loggedIn", "true");
+    console.log(userAddress);
+    console.log(res.status);
 
     alert(`${name} 님, 회원가입 되었습니다.`);
-
-    // 홈으로 보내줌
     window.location.href = "../home/home.html";
   } catch (err) {
     console.error(err);
+    alert("회원가입에 실패했습니다. 다시 시도해주세요.");
   }
 }
