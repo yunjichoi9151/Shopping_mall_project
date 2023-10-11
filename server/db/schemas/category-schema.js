@@ -1,14 +1,58 @@
-const Schema = require("mongoose");
-
+const { Schema } = require("mongoose");
+const { Types: { ObjectId } } = Schema;
 const categorySchema = new Schema({
 
 	name: {
 		type: String,
 		required: true,
 	},
-	items: [{
+	// items: [{
+	// 	type: Schema.Types.ObjectId, ref: 'Item'
+	// }],
+	items: {
+		type: ObjectId,
+		ref: 'User',
+	}
+});
+
+module.exports = categorySchema;
+
+/*
+const categorySchema = new Schema({
+	name: {
+		type: String,
+		required: true,
+	},
+	detailCategory: [
+		type: String,
+	],
+});
+
+const detailSchema = new Schema({
+	name: {
+		type: String,
+	},
+	itmes: [{
+		type: Schema.Types.ObjectId, ref: 'Item'
+	}],
+})
+// 애초에 등록을 할때, 큰 카테고리를 선택하는게 아니고, 세부 카테고리를 선택해서 만들어지면? 그 세부 카테고리를 자연스럽게 큰 카테고리에 포함시켜준다.
+const proteinSchema = new Schema({
+	itmes: [{
 		type: Schema.Types.ObjectId, ref: 'Item'
 	}]
 });
 
-module.exports = categorySchema;
+const carboSchema = new Schema({
+	itmes: [{
+		type: Schema.Types.ObjectId, ref: 'Item'
+	}],
+});
+
+const aminoSchema = new Schema({
+	itmes: [{
+		type: Schema.Types.ObjectId, ref: 'Item'
+	}],
+});
+
+*/
