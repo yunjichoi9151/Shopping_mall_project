@@ -5,7 +5,7 @@ const sliderContent = document.querySelector(".sliderContent");
 
 function moveToSlide(index) {
   currentIndex = index;
-  sliderContent.style.transform = `translateX(-${currentIndex * 1264}px)`;
+  sliderContent.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
