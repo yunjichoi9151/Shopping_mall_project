@@ -2,23 +2,23 @@
 // CRUD 구현하기
 const { Router } = require("express");
 
-// const { Data } = require("../db/models/user-model"); 를 가져올때는 오류 발생
-const { Data } = require("../db/schemas/user-schema");
-
+const UserModel = require("../db/models/user-model");
 
 const router = Router();
 
 // READ 구현하기 -> GET
-router.get("/user", async (req, res) => {
-    const data = await Data.find({});
+router.get("/", async (req, res) => {
+    console.log(Data);
+    const data = await UserModel.find({});
 
     res.json(data);
+    
     // console.log("data OK");
 });
 
-router.get("/user/:data_id", async (req, res) => {
+router.get("/:data_id", async (req, res) => {
     const search_id = req.params.data_id;
-    const data = await Data.find({ _id: search_id });
+    const data = await UserModel.find({ _id: search_id });
 
     res.json(data);
 });
@@ -28,7 +28,7 @@ router.get("/user/:data_id", async (req, res) => {
 router.post("/user", async (req, res) => {
     const { _id, name, email, password, joinTime } = req.body;
     
-    const data = await Data.create({
+    const data = await UserModel.create({
         _id,
         name,
         email,
@@ -43,7 +43,7 @@ router.put("/user/:data_id", async (req, res) => {
     const { _id } = req.params;
     const { name, email, password, joinTime } = req.body;
 
-    const data = await Data.updateOne(
+    const data = await UserModel.updateOne(
         {
             _id,
         },
@@ -61,7 +61,7 @@ router.put("/user/:data_id", async (req, res) => {
 router.delete("/user/:/data_id", async (req, res) => {
     const { _id } = req.params;
 
-    const data = await Data.deleteOne({ _id });
+    const data = await UserModel.deleteOne({ _id });
     res.send(data);
 });
 
