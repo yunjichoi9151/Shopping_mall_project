@@ -1,38 +1,38 @@
 // 슬라이드
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   loadHeader();
   loadFooter();
 });
 
 //상수 환경변수로 인식 = 대문자 개발자끼리 관습!
 // 나중에는 URL 이 n개가 되었을때 URL 파일을 만들어주는 것도 좋음!
-const HEADER_URL = '../public/header/header.html';
-const HEADER_CSS_URL = '../public/header/header.css';
-const HEADER_JS_URL = '../public/header/header.js';
+const HEADER_URL = "../public/header/header.html";
+const HEADER_CSS_URL = "../public/header/header.css";
+const HEADER_JS_URL = "../public/header/header.js";
 
-const FOOTER_URL = '../public/footer/footer.html';
-const FOOTER_CSS_URL = '../public/footer/footer.css';
+const FOOTER_URL = "../public/footer/footer.html";
+const FOOTER_CSS_URL = "../public/footer/footer.css";
 
 // header불러오기
 async function loadHeader() {
   try {
     // header.css 불러오기
-    const linkElement = document.createElement('link');
-    linkElement.rel = 'stylesheet';
+    const linkElement = document.createElement("link");
+    linkElement.rel = "stylesheet";
     linkElement.href = HEADER_CSS_URL;
     document.head.appendChild(linkElement);
 
     // header.html 불러오기
     const response = await fetch(HEADER_URL);
     const data = await response.text();
-    document.getElementById('headerHtml').innerHTML = data;
+    document.getElementById("headerHtml").innerHTML = data;
 
     // header.js 불러오기
-    const scriptElement = document.createElement('script');
+    const scriptElement = document.createElement("script");
     scriptElement.src = HEADER_JS_URL;
     document.body.appendChild(scriptElement);
   } catch (error) {
-    console.error('Error loading header:', error.message);
+    console.error("Error loading header:", error.message);
   }
 }
 
@@ -40,17 +40,17 @@ async function loadHeader() {
 async function loadFooter() {
   try {
     // footer.css 불러오기
-    const linkElement = document.createElement('link');
-    linkElement.rel = 'stylesheet';
+    const linkElement = document.createElement("link");
+    linkElement.rel = "stylesheet";
     linkElement.href = FOOTER_CSS_URL;
     document.head.appendChild(linkElement);
 
     // footer.html 불러오기
     const response = await fetch(FOOTER_URL);
     const data = await response.text();
-    document.getElementById('footerHtml').innerHTML = data;
+    document.getElementById("footerHtml").innerHTML = data;
   } catch (error) {
-    console.error('Error loading header:', error.message);
+    console.error("Error loading header:", error.message);
   }
 }
 
@@ -61,30 +61,30 @@ async function loadFooter() {
 // 베스트 아이템 불러오기
 async function loadProducts() {
   try {
-    const response = await fetch('../data/bestItem.json');
+    const response = await fetch("../data/bestItem.json");
     const products = await response.json();
 
-    const container = document.querySelector('.productContainer');
+    const container = document.querySelector(".productContainer");
 
     products.forEach((product) => {
-      const productLink = document.createElement('a');
+      const productLink = document.createElement("a");
       productLink.href = `../detail/detail.html?id=${product.id}`;
 
-      const productDiv = document.createElement('div');
-      productDiv.className = 'productItem';
+      const productDiv = document.createElement("div");
+      productDiv.className = "productItem";
 
-      const img = document.createElement('img');
-      img.className = 'productImg';
+      const img = document.createElement("img");
+      img.className = "productImg";
       img.src = product.imgSrc;
       productDiv.appendChild(img);
 
-      const productName = document.createElement('p');
-      productName.className = 'productName';
+      const productName = document.createElement("p");
+      productName.className = "productName";
       productName.textContent = product.name;
       productDiv.appendChild(productName);
 
-      const productPrice = document.createElement('b');
-      productPrice.className = 'productPrice';
+      const productPrice = document.createElement("b");
+      productPrice.className = "productPrice";
       productPrice.textContent = product.price;
       productDiv.appendChild(productPrice);
 
@@ -92,8 +92,43 @@ async function loadProducts() {
       container.appendChild(productLink);
     });
   } catch (error) {
-    console.error('Error loading products:', error.message);
+    console.error("Error loading products:", error.message);
   }
 }
 
 loadProducts();
+
+// subNav 엑티브
+document.addEventListener("DOMContentLoaded", function () {
+  const subItem = document.querySelectorAll(".subNav li");
+  // subNav active
+  subItem.forEach(function (item) {
+    item.addEventListener("click", function (event) {
+      event.stopPropagation(); // 이벤트 전파 방지
+      console.log("Clicked:", event.target); // 클릭된 요소를 콘솔에 표시
+      // 모든 .sub-nav 내의 "active" 클래스를 제거
+      subItem.forEach((item) => item.classList.remove("active"));
+
+      // 클릭된 항목에 "active" 클래스 추가
+      this.classList.add("active");
+    });
+  });
+
+  // category URL 변경
+  const currentURL = window.location.pathname;
+
+  // 해당 URL에 따라 메뉴 항목에 클래스 추가
+  if (currentURL.includes("carbohydrate")) {
+    document
+      .querySelector(".subMenu ul li:nth-child(1)")
+      .classList.add("active");
+  } else if (currentURL.includes("protein")) {
+    document
+      .querySelector(".subMenu ul li:nth-child(2)")
+      .classList.add("active");
+  } else if (currentURL.includes("amino")) {
+    document
+      .querySelector(".subMenu ul li:nth-child(3)")
+      .classList.add("active");
+  }
+});
