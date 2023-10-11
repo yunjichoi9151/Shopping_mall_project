@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "name": "김다빈",
+    "email": "dabin@gmail.com",
+    "phone": "010 - 0000 - 0000",
+    "address": "서울시 서초구 방배동",
+    "cumulativeTotal": "10,000원",
+    "point": "10원"
+  },
+  {
+    "id": "2",
+    "name": "최윤지",
+    "email": "yoonji@gmail.com",
+    "phone": "010 - 0000 - 0000",
+    "address": "서울시 강남구 신사동",
+    "cumulativeTotal": "50,000원",
+    "point": "50원"
+  },
+  {
+    "id": "3",
+    "name": "이지형",
+    "email": "jihyung@gmail.com",
+    "phone": "010 - 0000 - 0000",
+    "address": "서울시 성동구 용두동",
+    "cumulativeTotal": "100,000원",
+    "point": "100원"
+  }
+]

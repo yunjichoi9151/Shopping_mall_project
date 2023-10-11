@@ -11,6 +11,9 @@ orderTotalPrice.textContent = `${totalPrice} 원`;
 const shipPriceElement = document.getElementById("ship-price");
 const shipPrice = calculateShipPrice(totalPrice);
 shipPriceElement.textContent = `${shipPrice} 원`;
+// 우편번호
+const postCodeInput = document.querySelector("#postcode");
+const postCode = postCodeInput.value;
 
 // 주문 상품 그려줌
 renderOrderItems(products, orderItems);
@@ -33,6 +36,11 @@ function calculateShipPrice(totalPrice) {
   return shipPrice;
 }
 
+// 주문요약 화면 출력
+const orderSumText = document.getElementById("order-sum-text");
+const orderSumNum = document.getElementById("order-sum-num");
+orderSumText.textContent = `주문금액 [ ${totalPrice}원 ] + 배송비 [ ${shipPrice}원 ]`;
+orderSumNum.textContent = `총 결제금액 [ ${totalPrice + shipPrice} 원]`;
 // 주소찾기 버튼 클릭시 실행
 const findAddressBtn = document.getElementById("find-address");
 findAddressBtn.addEventListener("click", daumAddress);
@@ -67,9 +75,9 @@ function renderOrderItems(products, element) {
   products.forEach((product) => {
     const row = document.createElement("tr");
     row.innerHTML = `
-                    <td><img src="product-image.jpg" alt="${
-                      product.id
-                    }사진" width="50"></td>
+                    <td><img src="${product.img}" alt="${
+      product.id
+    }사진" width="50"></td>
                     <td>${product.name}</td>
                     <td>
                         ${product.quantity}
@@ -99,6 +107,9 @@ sameAsAccountCheckbox.addEventListener("change", () => {
     postcodeInput.value = accountInfo.postcode;
     addressInput.value = accountInfo.address;
     detailAddressInput.value = accountInfo.detailAddress;
+    nameInput.value = accountInfo.recipient;
+    phoneInput.value = accountInfo.contact;
+    emailInput.value = accountInfo.email;
   } else {
     // 체크를 해제하면 필드를 비워줌
     recipientInput.value = "";
@@ -106,6 +117,9 @@ sameAsAccountCheckbox.addEventListener("change", () => {
     postcodeInput.value = "";
     addressInput.value = "";
     detailAddressInput.value = "";
+    nameInput.value = "";
+    phoneInput.value = "";
+    emailInput.value = "";
   }
 });
 
@@ -115,11 +129,13 @@ function getAccountInfo() {
   const userData = {};
   return {
     // 예시 - 목업 data !!!!!
-    recipient: userData.recipient,
+    // recipient: userData.recipient,
+    recipient: "홍길동",
     contact: "010-5118-1571",
     postcode: "12345",
     address: "서울시 양천구 목동동로 50",
     detailAddress: "목동아파트 12단지 ",
+    email: "abc@abc.com",
   };
 }
 // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
@@ -169,6 +185,7 @@ orderSubmitButton.addEventListener("click", () => {
   const orderFormatDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
   // 주문완료로 넘겨줄 주문 관련 정보
   const orderInfo = {
+    postCode: postcodeInput.value,
     totalPrice: totalPrice,
     orderTime: orderFormatDate,
     recipient: recipientInput.value,
@@ -176,6 +193,7 @@ orderSubmitButton.addEventListener("click", () => {
     address: addressInput.value,
     detailAddress: detailAddressInput.value,
     email: emailInput.value,
+    orderProducts: products,
   };
   // 빈 칸 있을 때
   if (

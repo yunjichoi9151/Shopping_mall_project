@@ -1,0 +1,33 @@
+a {
+  text-decoration: none;
+}
+hr {
+  width: 100%;
+}
+button {
+  border: none;
+}
+main {
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menuWrap {
+  width: 370px;
+  margin-left: 160px;
+  padding: 100px 0;
+  display: flex;
+}
+.leftBar {
+  width: 190px;
+}
+.leftBar ul li {
+  padding-bottom: 20px;
+}
+.contentWrap {
+  width: 100%;
+  margin-right: 160px;
+}

@@ -40,7 +40,7 @@ const detailSchema = new Schema({
 const proteinSchema = new Schema({
 	itmes: [{
 		type: Schema.Types.ObjectId, ref: 'Item'
-	}],
+	}]
 });
 
 const carboSchema = new Schema({

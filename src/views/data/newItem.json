@@ -3,24 +3,28 @@
     "id": 1,
     "name": "지웨이 위드 쉐이커 2종",
     "price": "5,500원",
-    "imgSrc": "../public/img/newItem1.jpg"
+    "imgSrc": "../public/img/newItem1.jpg",
+    "detailImgUrl": "../detail/detail.html"
   },
   {
     "id": 2,
     "name": "지웨이 크레아틴 모노 하이드레이트",
     "price": "21,300원",
-    "imgSrc": "../public/img/newItem2.jpg"
+    "imgSrc": "../public/img/newItem2.jpg",
+    "detailImgUrl": "../detail/detail.html"
   },
   {
     "id": 3,
     "name": "트러스트 웨이 단백질",
     "price": "28,800원",
-    "imgSrc": "../public/img/newItem3.jpg"
+    "imgSrc": "../public/img/newItem3.jpg",
+    "detailImgUrl": "../detail/detail.html"
   },
   {
     "id": 4,
     "name": "지웨이 크레아틴 모노 하이드레이트",
     "price": "21,300원",
-    "imgSrc": "../public/img/newItem4.jpg"
+    "imgSrc": "../public/img/newItem4.jpg",
+    "detailImgUrl": "../detail/detail.html"
   }
 ]
