@@ -1,3 +1,5 @@
+import * as Api from "../api";
+
 const nameInput = document.querySelector("#nameInput");
 const emailInput = document.querySelector("#emailInput");
 const passwordInput = document.querySelector("#passwordInput");
@@ -97,9 +99,15 @@ async function handleJoin(e) {
   // 존재하지 않으면 회원가입 진행
   try {
     // 회원가입 요청한 회원의 정보들
-    const joinUserData = { name, email, password, phoneNumber, userAddress };
+    const joinUserData = {
+      name: name,
+      email: email,
+      password: password,
+      phoneNumber: phoneNumber,
+      address: userAddress,
+    };
     // 서버, db 와의 통신으로 회원가입 진행해야함
-    const res = await axios.post("api/users/join", joinUserData);
+    const res = await Api.post("/api/user/join", joinUserData);
 
     localStorage.setItem("token", res.data.token);
     localStorage.setItem("token", res.data.refreshToken);
