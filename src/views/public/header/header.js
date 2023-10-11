@@ -34,10 +34,10 @@ function homeMove(event) {
   event.preventDefault();
   window.location.href = "../home/home.html";
 }
-// 사람 클릭 시 - mypage 으로 이동
+// 사람 클릭 시 - login 으로 이동
 function mypageMove(event) {
   event.preventDefault();
-  window.location.href = "../mypage/mypage.html";
+  window.location.href = "../login/login.html";
 }
 // 장바구니 클릭 시 - cart 으로 이동
 function cartMove(event) {

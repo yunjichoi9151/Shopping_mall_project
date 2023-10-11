@@ -43,6 +43,7 @@ body {
   padding-left: 10px;
   font-size: 14px;
 }
+
 .header .headerBackground .headerContainer .inputBox input::placeholder {
   color: #686868;
   font-size: 14px;
