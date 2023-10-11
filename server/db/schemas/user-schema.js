@@ -15,6 +15,19 @@ const userSchema = new Schema({
 		type: String,
 		required: true
 	},
+	phoneNumber: {
+		type: String,
+		required: true
+	},
+	address: {
+		type: String,
+		required: true
+	},
+	admin: {
+		type: boolean,
+		default: false,
+		required: true
+	},
 	joinTime: {
 		// Date.now();
 		type: Date,
@@ -24,8 +37,7 @@ const userSchema = new Schema({
 	deletedAt: {
 		type: Date,
 		default: null,
-	}
-	
+	}	
 });
 
 module.exports = userSchema;

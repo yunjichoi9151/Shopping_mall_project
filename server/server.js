@@ -7,7 +7,14 @@ const userRouter = require("./routers/user-router");
 const orderRouter = require("./routers/order-router");
 //orderAdmin추가
 const orderAdminRouter = require("./routers/orderAdmin-router");
+
+// passport.js 를 쓰기 위한 require
+const session = require('express-session');
+const passport = require("passport");
 const { MONGO_URI } = process.env;
+
+// 로그인이 필수로 필요한 페이지에 middleware 작성할 예정
+const loginRequired = require('./middlewares/login-required');
 
 // mongoose settings (4)
 mongoose
@@ -20,6 +27,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //루트에 api붙임
+// passport
+// app.use(passport.initialize());
+// app.use(passport.session());
+
 app.get("/", (req, res) => {
     res.send("main page");
 })

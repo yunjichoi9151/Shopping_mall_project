@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+main {
+  width: 1150px;
+  margin: 0 auto;
+}
+.search {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+}
+.search .inputBox {
+  position: relative;
+}
+.search .inputBox input {
+  margin: 0 auto;
+  display: block;
+  width: 400px;
+  height: 44px;
+  border: 1px solid #dddddd;
+  outline: none;
+  padding-left: 15px;
+}
+.search .inputBox i {
+  position: absolute;
+  top: 25%;
+  right: 35%;
+  cursor: pointer;
+}

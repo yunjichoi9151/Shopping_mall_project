@@ -1,37 +1,52 @@
-<header class="header">
-  <!-- logo -->
-  <div class="headerBackground">
-    <div class="headerContainer">
-      <div class="inputBox">
-        <input type="text" placeholder="검색어를 입력하세요" />
-        <i>🔍</i>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7team header</title>
+  <link rel="stylesheet" href="./header.css">
+  <link rel="stylesheet" href="../public/common/common.css" />
+</head>
+<body>
+  <header class="header">
+    <!-- logo -->
+    <div class="headerBackground">
+      <div class="headerContainer">
+        <div class="inputBox">
+          <input type="text" id="searchInput" placeholder="검색어를 입력하세요" />
+          <i onclick="executeSearch()">🔍</i>
+        </div>
+        <div class="logo" >
+          <a href="" onclick="homeMove(event)">
+            <img src="https://cdn.imweb.me/thumbnail/20230331/67b9c13ff1ec2.png" alt="" >
+          </a>
+        </div>
+        <div class="userLogCart">
+          <a href="" onclick="mypageMove(event)">🧑</a>
+          <a href="" onclick="cartMove(event)">🛒</a>
+        </div>
       </div>
-      <div class="logo">
-        <a href="">
-          <img src="https://cdn.imweb.me/thumbnail/20230331/67b9c13ff1ec2.png" alt="">
-        </a>
-      </div>
-      <div class="userLogCart">
-        <a href="">🧑</a>
-        <a href="">🛒</a>
-      </div>
-    </div>
-    <nav class="navContainer">
-      <ul class="nav">
-        <li>
-            <a href="">헬스보충제</a>
-            <ul class="sub-nav">
-                <li><a href="">탄수화물 보충제</a></li>
-                <li><a href="">단백질 보충제</a></li>
-                <li><a href="">아미노산</a></li>
-            </ul>
-        </li>
-        <li><a href="">영양제</a></li>
-        <li><a href="">헬스용품</a></li>
-        <li><a href="">다이어트/보조식품</a></li>
-    </ul>
-    
+      <nav class="navContainer">
+        <ul class="nav">
+          <li>
+              <a href="" onclick="categoryCarbohydrateMove(event)">헬스보충제</a>
+              <ul class="sub-nav" >
+                  <li ><a href="" onclick="categoryCarbohydrateMove(event)">탄수화물 보충제</a></li>
+                  <li ><a href="" onclick="categoryProteinMove(event)">단백질 보충제</a></li>
+                  <li ><a href="" onclick="categoryAminoMove(event)">아미노산</a></li>
+              </ul>
+          </li>
+          <li><a href="" onclick="categoryNutrientsMove(event)">영양제</a></li>
+          <li><a href="" onclick="categoryFitnessMove(event)">헬스용품</a></li>
+          <li><a href="" onclick="categoryDietMove(event)">다이어트/보조식품</a></li>
       </ul>
-    </nav>
-  </div>
-</header>
+      
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <script src="../common/common.js"></script>
+  <script src="./header.js"></script>
+</body>
+</html>
+

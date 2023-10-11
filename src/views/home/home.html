@@ -6,9 +6,6 @@
     <title>7team mainHome</title>
     <link rel="stylesheet" href="./home.css" />
     <link rel="stylesheet" href="../public/common/common.css" />
-    <link rel="stylesheet" href="../public/header/header.css" />
-    <link rel="stylesheet" href="../public/footer/footer.css" />
-    <link rel="stylesheet" href="../detail/category.css" />
   </head>
   <body>
     <header id="headerHtml"></header>
@@ -24,22 +21,22 @@
         <button class="btn btn3" onclick="moveToSlide(2)"></button>
       </div>
       <div class="categoriWrapper">
-        <a href="../detail/category.html">
-          <div class="imgBox">
+        <a>
+          <div class="imgBox" onclick="categoryCarbohydrateMove(event)">
             <p>헬스보충제</p>
           </div>
         </a>
-        <a href="">
+        <a href="" onclick="categoryNutrientsMove(event)">
           <div class="imgBox">
             <p>영양제</p>
           </div>
         </a>
-        <a href="">
+        <a href="" onclick="categoryFitnessMove(event)">
           <div class="imgBox">
             <p>헬스용품</p>
           </div>
         </a>
-        <a href="">
+        <a href="" onclick="categoryDietMove(event)">
           <div class="imgBox">
             <p>다이어트/보조식품</p>
           </div>

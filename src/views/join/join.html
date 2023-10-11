@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./join.css" />
+    <link rel="stylesheet" href="../public/common/common.css" />
+    <link rel="stylesheet" href="../public/header/header.css" />
+    <link rel="stylesheet" href="../public/footer/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+    <script src="../../../node_modules/axios/dist/axios.min.js"></script>
+
+    <title>join 페이지</title>
+  </head>
+  <body>
+    <header id="headerHtml"></header>
+    <main class="main">
+      <h1 class="title">회원가입</h1>
+      <div class="join-user-form-container">
+        <div class="join-user-form-box" id="joinUserForm">
+          <!-- <p class="title is-5 has-text-primary">회원가입</p> -->
+          <div class="columns">
+            <div class="column">
+              <div class="container">
+                <label class="label" for="nameInput">이름</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    id="nameInput"
+                    type="text"
+                    placeholder="이름을 입력하세요"
+                    autocomplete="on"
+                  />
+                </div>
+              </div>
+
+              <div class="container">
+                <label class="label" for="emailInput" id="emailContainer"
+                  >이메일</label
+                >
+                <div class="control">
+                  <input
+                    class="input"
+                    id="emailInput"
+                    type="email"
+                    placeholder="******@example.com"
+                    autocomplete="on"
+                  />
+                </div>
+              </div>
+
+              <div class="container">
+                <label class="label" for="passwordInput">비밀번호</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    id="passwordInput"
+                    type="password"
+                    placeholder="8자리 이상 입력해주세요"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+
+              <div class="container mb-5">
+                <label class="label" for="passwordConfirmInput"
+                  >비밀번호 확인</label
+                >
+                <div class="control">
+                  <input
+                    class="input"
+                    id="passwordConfirmInput"
+                    type="password"
+                    placeholder=""
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+              <!-- <div class="container">
+                <div class="container-label"></div>
+                <div class="container-body">
+                  <div class="container is-expanded">
+                    <label class="label" for="phoneNumberInput">전화번호</label>
+                    <div class="container has-addons">
+                      <p class="control is-expanded">
+                        <input
+                          class="input"
+                          id="phoneNumberInput"
+                          type="tel"
+                          placeholder="010-1234-5678"
+                        />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+            <div class="column">
+              <div class="container">
+                <div class="container-label"></div>
+                <div class="container-body">
+                  <div class="container is-expanded">
+                    <label class="label" for="phoneNumberInput">전화번호</label>
+                    <div class="container has-addons">
+                      <p class="control is-expanded">
+                        <input
+                          class="input"
+                          id="phoneNumberInput"
+                          type="tel"
+                          placeholder="010-1234-5678"
+                        />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="container" id="addressContainer">
+                <label class="label">주소</label>
+                <button id="findAddressBtn" class="button">주소 찾기</button>
+              </div> -->
+              <div class="container">
+                <p>주소</p>
+                <div class="control is-flex">
+                  <input
+                    class="input"
+                    id="postCodeInput"
+                    type="number"
+                    readonly
+                  />
+                  <button id="findAddressBtn" class="button ml-2">
+                    주소 찾기
+                  </button>
+                </div>
+              </div>
+              <div class="container">
+                <div class="control">
+                  <!-- <p>주소</p> -->
+                  <input class="input" id="addressInput" type="text" readonly />
+                </div>
+              </div>
+              <div class="container" id="detailAddress">
+                <div class="control">
+                  <!-- <p>상세주소</p> -->
+                  <input class="input" id="detailAddressInput" type="text" />
+                </div>
+              </div>
+              <div class="submitButtonContainer">
+                <button class="button is-fullwidth" id="submitButton">
+                  회원가입하기
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="footerHtml"></footer>
+    <script src="join.js"></script>
+    <script src="../public/common/common.js"></script>
+  </body>
+</html>
