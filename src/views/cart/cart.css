@@ -2,17 +2,16 @@ main {
   /* font-family: Arial, sans-serif; */
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  /* align-items: center; */
   margin: 0;
 }
 
 .cart-container {
+  margin-top: 100px;
   max-width: 800px;
   width: 100%;
   padding: 20px;
   position: relative;
-  font-family: "Nanum Gothic", sans-serif;
 }
 .cart-h1 {
   font-weight: bold;
@@ -32,9 +31,9 @@ main {
 }
 .cart-summary {
   text-align: right;
-  border-top: 1px solid #ccc;
-  padding-top: 20px;
-  margin-top: 20px;
+  border-top: 1px solid #000;
+  padding-top: 50px;
+  margin-top: 10px;
 }
 .cart-items th {
   background-color: #f2f2f2;
@@ -65,7 +64,9 @@ main {
 }
 .total-price {
   font-size: large;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 0.5px solid lightgray;
 }
 
 .cart-items img {
@@ -74,7 +75,7 @@ main {
 }
 
 .quantity-input {
-  width: 100px;
+  width: 50px;
   text-align: center;
 }
 
@@ -83,7 +84,7 @@ main {
   height: 40px;
 }
 .input.is-hovered {
-  width: 60px;
+  width: 50px;
 }
 
 #order-button {
@@ -105,4 +106,35 @@ main {
 
 .is-vcentered {
   vertical-align: middle;
+}
+#cartBtn {
+  padding-left: 15px;
+}
+
+th .deleteBtn {
+  text-align: center !important;
+}
+
+.button.is-outlined.up,
+.button.is-outlined.down {
+  width: 40px !important;
+}
+
+.price-num {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 0.5px solid lightgray;
+}
+.order-display {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 0.5px solid lightgray;
+}
+.buttons {
+  display: flex !important;
+  justify-content: center !important;
 }

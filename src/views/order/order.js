@@ -36,6 +36,11 @@ function calculateShipPrice(totalPrice) {
   return shipPrice;
 }
 
+// 주문요약 화면 출력
+const orderSumText = document.getElementById("order-sum-text");
+const orderSumNum = document.getElementById("order-sum-num");
+orderSumText.textContent = `주문금액 [ ${totalPrice}원 ] + 배송비 [ ${shipPrice}원 ]`;
+orderSumNum.textContent = `총 결제금액 [ ${totalPrice + shipPrice} 원]`;
 // 주소찾기 버튼 클릭시 실행
 const findAddressBtn = document.getElementById("find-address");
 findAddressBtn.addEventListener("click", daumAddress);
@@ -102,6 +107,9 @@ sameAsAccountCheckbox.addEventListener("change", () => {
     postcodeInput.value = accountInfo.postcode;
     addressInput.value = accountInfo.address;
     detailAddressInput.value = accountInfo.detailAddress;
+    nameInput.value = accountInfo.recipient;
+    phoneInput.value = accountInfo.contact;
+    emailInput.value = accountInfo.email;
   } else {
     // 체크를 해제하면 필드를 비워줌
     recipientInput.value = "";
@@ -109,6 +117,9 @@ sameAsAccountCheckbox.addEventListener("change", () => {
     postcodeInput.value = "";
     addressInput.value = "";
     detailAddressInput.value = "";
+    nameInput.value = "";
+    phoneInput.value = "";
+    emailInput.value = "";
   }
 });
 
@@ -118,17 +129,13 @@ function getAccountInfo() {
   const userData = {};
   return {
     // 예시 - 목업 data !!!!!
-    recipient: userData.recipient,
-    contact: "010-5118-1571",
-    postcode: "12345",
-    address: "서울시 양천구 목동동로 50",
-    detailAddress: "목동아파트 12단지 ",
     // recipient: userData.recipient,
     recipient: "홍길동",
     contact: "010-5118-1571",
     postcode: "12345",
     address: "서울시 양천구 목동동로 50",
     detailAddress: "목동아파트 12단지 ",
+    email: "abc@abc.com",
   };
 }
 // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ

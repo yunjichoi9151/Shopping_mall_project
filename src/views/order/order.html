@@ -49,49 +49,6 @@
 
         <div class="columns">
           <div class="column">
-            <div class="order-info">
-              <h2 class="is-size-5">주문자 정보</h2>
-              <label for="name">이름</label>
-              <input type="text" id="name" required />
-              <label for="phone">연락처</label>
-              <input type="tel" id="phone" required />
-              <label for="email">이메일</label>
-              <input type="email" id="email" required />
-            </div>
-
-            <div class="pay-and-agree">
-              <div class="payment-method">
-                <h2 class="is-size-5">결제수단</h2>
-                <input
-                  type="radio"
-                  id="credit-card"
-                  name="payment-method"
-                  value="credit-card"
-                  required
-                />
-                <label for="credit-card">신용카드</label>
-                <input
-                  type="radio"
-                  id="bank-transfer"
-                  name="payment-method"
-                  value="bank-transfer"
-                  required
-                />
-                <label for="bank-transfer">무통장입금</label>
-              </div>
-              <div class="terms">
-                <h2 class="is-size-5">결제 동의</h2>
-                <input type="checkbox" id="order-agree" required />
-                <label for="terms-details"
-                  >구매조건 확인 및 결제진행에 동의</label
-                >
-              </div>
-              <button class="button is-outlined" id="submit-order">
-                결제하기
-              </button>
-            </div>
-          </div>
-          <div class="column">
             <div class="shipping-info">
               <h2 class="is-size-5">배송 정보</h2>
               <label for="recipient">수령인</label>
@@ -127,6 +84,56 @@
                 <option value="messege">배송 출발 시 연락주세요.</option>
                 <option value="door">문 앞에 놓아주세요.</option>
               </select>
+            </div>
+          </div>
+          <div class="column">
+            <div class="order-info">
+              <h2 class="is-size-5">주문자 정보</h2>
+              <label for="name">이름</label>
+              <input type="text" id="name" required />
+              <label for="phone">연락처</label>
+              <input type="tel" id="phone" required />
+              <label for="email">이메일</label>
+              <input type="email" id="email" required />
+            </div>
+            <div class="order-sum">
+              <h2 class="is-size-5 summery">주문요약</h2>
+              <div class="order-sum-all">
+                <p id="order-sum-text"></p>
+                <p id="order-sum-num"></p>
+              </div>
+            </div>
+
+            <div class="pay-and-agree">
+              <div class="payment-method">
+                <h2 class="is-size-5">결제수단</h2>
+                <input
+                  type="radio"
+                  id="credit-card"
+                  name="payment-method"
+                  value="credit-card"
+                  required
+                />
+                <label for="credit-card">신용카드</label>
+                <input
+                  type="radio"
+                  id="bank-transfer"
+                  name="payment-method"
+                  value="bank-transfer"
+                  required
+                />
+                <label for="bank-transfer">무통장입금</label>
+              </div>
+              <div class="terms">
+                <h2 class="is-size-5">결제 동의</h2>
+                <input type="checkbox" id="order-agree" required />
+                <label for="terms-details"
+                  >구매조건 확인 및 결제진행에 동의</label
+                >
+              </div>
+              <button class="button is-outlined" id="submit-order">
+                결제하기
+              </button>
             </div>
           </div>
         </div>
