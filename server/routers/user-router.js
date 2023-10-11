@@ -4,10 +4,14 @@
 // U : 사용자 정보 수정
 // D : 사용자 정보 삭제
 
+<<<<<<< HEAD
 const { Router } = require("express");
 const UserModel = require("../db/models/user-model");
 const asyncHandler = require('../middlewares/async-handler');
 const hashPassword = require('../middlewares/hash-password');
+=======
+const UserModel = require("../db/models/user-model");
+>>>>>>> feature/order
 
 const router = Router();
 
