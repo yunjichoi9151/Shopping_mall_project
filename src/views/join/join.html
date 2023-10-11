@@ -80,6 +80,26 @@
                   />
                 </div>
               </div>
+              <!-- <div class="container">
+                <div class="container-label"></div>
+                <div class="container-body">
+                  <div class="container is-expanded">
+                    <label class="label" for="phoneNumberInput">전화번호</label>
+                    <div class="container has-addons">
+                      <p class="control is-expanded">
+                        <input
+                          class="input"
+                          id="phoneNumberInput"
+                          type="tel"
+                          placeholder="010-1234-5678"
+                        />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+            <div class="column">
               <div class="container">
                 <div class="container-label"></div>
                 <div class="container-body">
@@ -98,41 +118,33 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="column">
-              <div class="container" id="addressContainer">
+              <!-- <div class="container" id="addressContainer">
                 <label class="label">주소</label>
-                <!-- <div class="control">
-                  <input
-                    class="input"
-                    id="postalCodeInput"
-                    type="text"
-                    placeholder="주소 찾기를 눌러주세요"
-                    readonly
-                  />
-                </div> -->
                 <button id="findAddressBtn" class="button">주소 찾기</button>
-              </div>
+              </div> -->
               <div class="container">
-                <div class="control">
-                  <p>우편번호</p>
+                <p>주소</p>
+                <div class="control is-flex">
                   <input
                     class="input"
                     id="postCodeInput"
                     type="number"
                     readonly
                   />
+                  <button id="findAddressBtn" class="button ml-2">
+                    주소 찾기
+                  </button>
                 </div>
               </div>
               <div class="container">
                 <div class="control">
-                  <p>주소</p>
+                  <!-- <p>주소</p> -->
                   <input class="input" id="addressInput" type="text" readonly />
                 </div>
               </div>
               <div class="container" id="detailAddress">
                 <div class="control">
-                  <p>상세주소</p>
+                  <!-- <p>상세주소</p> -->
                   <input class="input" id="detailAddressInput" type="text" />
                 </div>
               </div>

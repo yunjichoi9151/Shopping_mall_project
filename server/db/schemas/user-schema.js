@@ -1,7 +1,7 @@
 // Schema 작성
 const { Schema } = require("mongoose");
 
-const joinInfoSchema = new Schema({
+const userSchema = new Schema({
 	// _id: ObjectId(),
 	name: {
 		type: String,
@@ -24,8 +24,7 @@ const joinInfoSchema = new Schema({
 	deletedAt: {
 		type: Date,
 		default: null,
-	}
-	
+	}	
 });
 
-module.exports = joinInfoSchema;
+module.exports = userSchema;

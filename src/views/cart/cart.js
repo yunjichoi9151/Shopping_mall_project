@@ -49,11 +49,11 @@ function renderCartItems() {
     }사진" width="50"></td>
       <td class="is-vcentered" id="cartText">${product.name}</td>
       <td class="is-vcentered">
-        <button class="button is-outlined" onclick="decreaseQuantity(${index})">-</button>
-        <input type="number" class="input is-hovered quantity-input" value="${
+        <button class="button is-outlined down" onclick="decreaseQuantity(${index})">-</button>
+        <input type="text" class="input is-hovered quantity-input" value="${
           product.quantity
         }" min="1">
-        <button class="button is-outlined" onclick="increaseQuantity(${index})">+</button>
+        <button class="button is-outlined up" onclick="increaseQuantity(${index})">+</button>
       </td>
       <td class="is-vcentered" id="cartText">${
         product.price * product.quantity
@@ -85,6 +85,10 @@ function renderCartItems() {
     shipPrice = 0;
   }
   shipPriceElement.textContent = shipPrice;
+
+  // // 총 결제금액 계산
+  const totalPayPrice = document.querySelector("#total-pay-price");
+  totalPayPrice.innerText = totalPrice + shipPrice;
 }
 
 function updateTotalPrice() {
