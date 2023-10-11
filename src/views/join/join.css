@@ -12,6 +12,7 @@ main button {
   text-align: center;
   white-space: nowrap;
   box-shadow: 1px 1px 1px;
+  font-weight: bold;
 }
 
 button:hover {
@@ -28,7 +29,7 @@ main {
   border: 0.5px solid lightgray;
   width: 700px;
   margin: 20px auto;
-  margin-top: 300px;
+  margin-top: 150px;
   padding: 20px;
   border-radius: 10px;
   font-weight: bold;
@@ -43,7 +44,16 @@ main {
 }
 
 #findAddressBtn {
-  margin-bottom: 40px;
+  width: 50%; /* 주소 찾기 버튼을 반 크기로 설정 */
+  margin-top: 9px; /* 주소 찾기 버튼 위 여백 추가 */
+  display: inline-block; /* 주소 입력창을 인라인 블록 요소로 표시 */
+}
+#postCodeInput {
+  margin-top: 9px;
+  width: 50%; /* 우편번호 입력창을 반 크기로 설정 */
+  display: inline-block; /* 우편번호 입력창을 인라인 블록 요소로 표시 */
+  margin-right: 10px; /* 우편번호 입력창 오른쪽 여백 추가 */
+  margin-bottom: 5px !important;
 }
 
 #submitButton {
@@ -57,6 +67,7 @@ main {
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-weight: bold;
+  margin-top: 48px !important ;
 }
 
 .modal {
@@ -118,4 +129,8 @@ button {
 
 #detailAddress {
   margin-bottom: 30px !important;
+}
+#detailAddressInput,
+#addressInput {
+  margin-bottom: 5px !important;
 }
