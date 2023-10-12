@@ -3,10 +3,12 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const userRouter = require("./routers/user-router");
+// const authRouter = require("./routers/auth-router");
 
 // passport.js 를 쓰기 위한 require
 const session = require('express-session');
 const passport = require("passport");
+const strategy = require("passport-local").Strategy;
 const { MONGO_URI } = process.env;
 
 // 로그인이 필수로 필요한 페이지에 middleware 작성할 예정
@@ -31,6 +33,7 @@ app.get("/", (req, res) => {
 })
 
 app.use("/api/user", userRouter);
+// app.use("/api/auth", authRouter);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
