@@ -1,12 +1,11 @@
-const { Router } = require('express');
-const passport = require('passport');
+const router = require("express").Router();
 
-const router = Router();
+const signin = require("../controller/userController");
+// const { authorization } = require("../config/JWTConfig");
 
-// authenticate
-// /person 경로를 작성한 이유 -> 사람 모양의 버튼을 눌렀을때 이동하기 위해서
-router.post('/', passport.authenticate('local'), (req, res, next) => {
-  res.redirect('/');
-});
+router.post("/login", signin);
+// router.get("/auth/logout", authorization, logout);
+// router.post("/auth/register", signup);
+// router.get("/auth/profile", authorization, profile);
 
 module.exports = router;
