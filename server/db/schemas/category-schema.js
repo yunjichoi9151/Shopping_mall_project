@@ -1,4 +1,8 @@
 const { Schema } = require("mongoose");
+<<<<<<< HEAD
+=======
+
+>>>>>>> feature/user
 const categorySchema = new Schema({
 
 	name: {

@@ -6,8 +6,9 @@
 
 
 const { Router } = require("express");
-const asyncHandler = require('../middlewares/async-handler');
-const hashPassword = require('../middlewares/hash-password');
+const UserModel = require("../db/models/user-model");
+// const asyncHandler = require('../middlewares/async-handler');
+// const hashPassword = require('../middlewares/hash-password');
 
 const router = Router();
 
@@ -84,38 +85,23 @@ router.put("/delete/:userId", async (req, res) => {
     console.log("Delete OK");
 });
 
-// 로그인 구현
-
-// 로그인 페이지에서 로그인 되었을 경우, 되지 않았을 경우 어느 경로로 갈지 결정
-router.get('/', (req, res) => {
-  if (req.user) {
-    res.redirect('/user');
-    return;
-  }
-  res.redirect('/login');
-});
-
-// 회원가입 (hashedPassword 사용)
+/*
+// 회원가입 구현 (hashedPassword 사용)
+// 로그인과 로그아웃 기능은 auth-router.js에 분리합니다.
 router.post(
   '/join',
-    asyncHandler(async (req, res) => {
-        const { email, name, password, phoneNumber, address, admin } = req.body;
-        const hashedPassword = hashPassword(password);
-        const user = await UserModel.create({
-            email,
-            name,
-            password: hashedPassword,
-            phoneNumber,
-            address,
-            admin
-        });
-
+  asyncHandler(async (req, res) => {
+    const { email, name, password, phoneNumber, address, admin } = req.body;
+    const hashedPassword = hashPassword(password);
+    const user = await UserModel.create({
+        email,
+        name,
+        password: hashedPassword,
+        phoneNumber,
+        address,
+        admin
+    });
 }));
-
-router.get('/logout', (req, res, next) => {
-     res.json(user);
-      // res.redirect('/');
-      console.log("Join OK");
-});
+*/
 
 module.exports = router;
