@@ -6,7 +6,6 @@
 
 const UserModel = require("../db/models/user-model");
 const { Router } = require("express");
-const UserModel = require("../db/models/user-model");
 const asyncHandler = require('../middlewares/async-handler');
 const hashPassword = require('../middlewares/hash-password');
 

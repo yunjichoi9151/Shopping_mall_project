@@ -24,7 +24,7 @@ const userSchema = new Schema({
 		required: true
 	},
 	admin: {
-		type: boolean,
+		type: Boolean,
 		default: false,
 		required: true
 	},

@@ -25,7 +25,7 @@ orderRouter.post('/', async (req, res) => {
 
 //주문 조회
 orderRouter.get('/', async (req, res) => {
-	const orders = await Order.find({});
+	const orders = await Order.find({}).sort();
 	res.json(orders)
 })
 
