@@ -1,12 +1,7 @@
 const express = require("express");
 const { Router } = require('express');
-<<<<<<< HEAD
-// const { categoryService } = require("../services");
-const CategoryModel = require("../db/models/category-model");
-=======
 const { categoryService } = require("../services");
 const { Category }  = require("../db/models/category-model");
->>>>>>> 4942ac3 (🔔 Merge Request: Resolving conflict)
 
 const categoryRouter = Router();
 // 카테고리 생성
