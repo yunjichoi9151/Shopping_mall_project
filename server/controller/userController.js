@@ -50,8 +50,8 @@ exports.login = async (req, res) => {
 
   const { email, password } = req.body;
 
-  const user = await UserModel.findOne({ email: email });
-
+    const user = await UserModel.findOne({ email: email });
+    
   if (!user) return res.status(400).send("존재하지 않는 이메일 계정입니다.");
 
   const ValidPassword = await bcrypt.compare(password, user.password);
