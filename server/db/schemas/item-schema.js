@@ -17,13 +17,19 @@ const itemSchema = new Schema([{
 		type: Number,
 		required: true,
 	},
-	imgUrl: {
+	mainImgUrl: {
 		type: String,
 		required: true,
-	},/*
+	},
+	subImgUrl: {
+		type: [String],
+		required: true,
+	},
+	/*
 	comments: [{
 		type: Schema.Types.ObjectId, ref: 'Comment'
-	}],*/
+	}],
+	*/
 	createdAt: {
 		type: Date,
 		default: Date.now()

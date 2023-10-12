@@ -21,13 +21,16 @@ itemRouter.post("/", async (req, res, next) => {
         })
     }*/
     try {
-        const { name, category, price } = req.body;
+        const { name, category, price, mainImgUrl, subImgUrl, createdAt, updatedAt, deletedAt } = req.body;
         const newItem = await ItemModel.create({
             name, 
             category, 
-            price, /*
-            itemDetail, // 상품 url schema를 따로 생성하여 url 주소값을 배열로 저장할 예정
-            imgUrl,*/
+            price, 
+            mainImgUrl,
+            subImgUrl,
+            createdAt,
+            updatedAt,
+            deletedAt
         });
         res.json(newItem);
     } catch(err) {
@@ -53,15 +56,15 @@ itemRouter.get("/", async (req, res, next) => {
 
 // 카테고리 별 상품 조회
 // 카테고리 페이지
-itemRouter.get("/:itemId", async (req, res, next) => {
+itemRouter.get("/:categoryId/:itemId", async (req, res, next) => {
     console.log("카테고리 별 상품 조회");
     try {
-        const { itemId } = req.params;
-        const { category } = req.body;
-        const item = await ItemModel.findOnd(
-            { _id: itemId },
-            { category: category },
+        // const { cateogoryId } = req.params;
+        const { categoryId } = req.params;
+        const item = await ItemModel.findOne(
+            { category: categoryId },
         )
+        res.json(item);
     } catch(err) {
         next(err);
     }
@@ -82,7 +85,7 @@ itemRouter.get("/:itemId", async (req, res, next) => {
 })
 
 // 상품 수정
-itemRouter.put("/:itemId", async (req, res, next) => {
+itemRouter.put("/update/:itemId", async (req, res, next) => {
     console.log("상품 수정");
     // request/response 확인을 위해 주석처리
     // const { curRole } = req;
@@ -91,7 +94,7 @@ itemRouter.put("/:itemId", async (req, res, next) => {
     // }
     try {
         const { itemId } = req.params;
-        const { name, category, price } = req.body;
+        const { name, category, price, mainImgUrl, subImgUrl } = req.body;
         const currentTime = Date.now();
         const item = await ItemModel.updateOne(
             {
@@ -101,8 +104,8 @@ itemRouter.put("/:itemId", async (req, res, next) => {
                 name, 
                 category, 
                 price, 
-                // itemDetail, 
-                // imgUrl,
+                mainImgUrl, 
+                subImgUrl,
                 updatedAt: currentTime,
             }
         );
@@ -131,7 +134,7 @@ itemRouter.delete("/:itemId", async (req, res, next) => {
 })
 */
 
-itemRouter.put("/:itemId", async (req, res, next) => {
+itemRouter.put("/delete/:itemId", async (req, res, next) => {
     console.log("상품 삭제");
     try {
         const { itemId } = req.params;

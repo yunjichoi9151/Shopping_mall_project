@@ -23,10 +23,12 @@ categoryRouter.post("/", async (req, res, next) => {
     }
     */
     try {
-        const { name, items } = req.body;
+        const { name, createdAt, updatedAt, deletedAt } = req.body;
         const newCategory = await CategoryModel.create({
             name,
-            items,
+            createdAt,
+            updatedAt,
+            deletedAt,
         });
         res.json(newCategory);
     } catch(err) {
@@ -64,7 +66,7 @@ categoryRouter.get("/:categoryId", async (req, res, next) => {
 })
 
 // 카테고리 수정
-categoryRouter.put("/u/:categoryId", async (req, res, next) => {
+categoryRouter.put("/update/:categoryId", async (req, res, next) => {
     console.log("카테고리 수정");
     // request/response 확인을 위해 주석처리
     /*const { curRole } = req;
@@ -112,7 +114,7 @@ categoryRouter.delete("/:categoryId", async (req, res, next) => {
 */
 // soft delete
 
-categoryRouter.put("/d/:categoryId", async (req, res, next) => {
+categoryRouter.put("/delete/:categoryId", async (req, res, next) => {
     console.log("카테고리 삭제");
 
     try {
