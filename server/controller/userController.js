@@ -69,3 +69,9 @@ exports.login = async (req, res) => {
 
   res.cookie("auth_token", token).json({ token: token });
 }
+
+exports.logout = async (req, res) => {
+
+    res.cookie("x_auth", "").json({ logoutSuccess: true });
+    
+};
