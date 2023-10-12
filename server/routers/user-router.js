@@ -7,6 +7,7 @@
 const { Router } = require("express");
 const asyncHandler = require("../middlewares/async-handler");
 const hashPassword = require("../middlewares/hash-password");
+const UserModel = require("../db/models/user-model");
 
 const router = Router();
 
@@ -101,6 +102,14 @@ router.post(
   "/join",
   asyncHandler(async (req, res) => {
     const { email, name, password, phoneNumber, address, admin } = req.body;
+
+    // 이미 존재하는 이메일일 경우 400 에러 보내줌 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+    const existingUser = await UserModel.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ error: "이미 존재하는 이메일입니다." });
+    }
+    // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
     const hashedPassword = hashPassword(password);
     const user = await UserModel.create({
       email,
@@ -110,6 +119,7 @@ router.post(
       address,
       admin,
     });
+    res.json(user);
   })
 );
 
