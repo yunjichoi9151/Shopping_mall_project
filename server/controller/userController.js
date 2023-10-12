@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const { UserModel } = require("../db/models/user-model");
+const UserModel = require("../db/models/user-model");
 const jwt = require("jsonwebtoken");
 const {
   joinValidator,
@@ -50,12 +50,13 @@ exports.login = async (req, res) => {
 
   const { email, password } = req.body;
 
-  const user = await UserModel.findOne({ where: { email: email } });
-  if (!user) return res.status(400).send("존재하지 않는 계정입니다.");
+  const user = await UserModel.findOne({ email: email });
+    
+  if (!user) return res.status(400).send("존재하지 않는 이메일 계정입니다.");
 
   const ValidPassword = await bcrypt.compare(password, user.password);
   if (!ValidPassword) {
-    return res.status(400).send("패스워드를 제대로 입력하세요");
+    return res.status(400).send("비밀번호가 틀렸습니다.");
   }
 
   const token = jwt.sign(
@@ -66,5 +67,5 @@ exports.login = async (req, res) => {
     process.env.JWT_KEY
   );
 
-  res.cookie("auth_token", token).json({ tokne: token });
+  res.cookie("auth_token", token).json({ token: token });
 }

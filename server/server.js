@@ -27,18 +27,17 @@ mongoose
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//루트에 api붙임
 app.use(viewsRouter);
 // passport
 // app.use(passport.initialize());
 // app.use(passport.session());
 
-app.get("/", (req, res) => {
-  res.send("main page");
+app.get('/', (req, res) => {
+  res.send('main page');
 });
 
 app.use('/api/user', userRouter);
-app.use('/api/auth', authRouter);
+app.use("/api/auth", authRouter);
 app.use('/api/category', categoryRouter);
 app.use('/api/item', itemRouter);
 app.use('/api/order', orderRouter);

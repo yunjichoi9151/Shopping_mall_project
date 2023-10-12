@@ -12,9 +12,8 @@ const joinValidator = (data) => {
   data.username = !isEmpty(data.name) ? data.name : "";
   data.email = !isEmpty(data.email) ? data.email : "";
   data.password = !isEmpty(data.password) ? data.password : "";
-    
 
-  if (Validator.isEmpty(data.username)) {
+  if (Validator.isEmpty(data.name)) {
     errors.username = "유저네임을 입력해주세요.";
   }
 

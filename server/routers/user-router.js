@@ -88,6 +88,7 @@ router.put("/delete/:userId", async (req, res) => {
 // 회원가입 구현 (hashedPassword 사용)
 // 로그인과 로그아웃 기능은 auth-router.js에 분리합니다.
 router.post(
+<<<<<<< HEAD
   "/join",
   asyncHandler(async (req, res) => {
     const { email, name, password, phoneNumber, address, admin } = req.body;
@@ -107,6 +108,19 @@ router.post(
       phoneNumber,
       address,
       admin,
+=======
+  '/join',
+  asyncHandler(async (req, res) => {
+    const { email, name, password, phoneNumber, address, admin } = req.body;
+    const hashedPassword = hashPassword(password);
+    const user = await UserModel.create({
+        email,
+        name,
+        password: hashedPassword,
+        phoneNumber,
+        address,
+        admin
+>>>>>>> feature/user
     });
 }));
 */
