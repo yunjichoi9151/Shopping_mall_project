@@ -11,14 +11,30 @@ const orderSchema = new Schema({
 
 // }],
 //itemName이랑 intem이미지 url도 가져와야하네
-itemInfo: [{ 
-	itemName: {
-		type: Schema.Types.ObjectId,
-		ref: 'Item',
-		required: true
-	}
-	//여기다가 itemAmount를 넣을까 아님 지금 처럼 밖에다가 뺄까? 팀원분들이랑 상의 해보기 
+
+	// itemName: {
+	// 	type: Schema.Types.ObjectId,
+	// 	ref: 'Item',
+	// 	required: true
+	// },
+	// itemPrice:{
+	// 	type: Schema.Types.Number,
+	// 	ref: 'Item',
+	// 	required: true
+	// },
+	// imgUrl:{
+	// 	type: Schema.Types.ObjectId,
+	// 	ref: 'Item',
+	// 	// required: true
+	// }
+
+	//여러개의 상품을 주문하기위해 배열로 담음
+itemInfo:[{
+	type: Schema.Types.ObjectId,
+	ref: 'Item',
 }],
+	//여기다가 itemAmount를 넣을까 아님 지금 처럼 밖에다가 뺄까? 팀원분들이랑 상의 해보기 
+
 	itemAmount:{
 		type: Number,
 		required: true,
@@ -58,7 +74,7 @@ itemInfo: [{
 		ref: "User"
 	},
 	totalPrice: {
-		type: String
+		type: Number
 	}
 
 

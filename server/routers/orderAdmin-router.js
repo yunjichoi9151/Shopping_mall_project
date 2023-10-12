@@ -5,9 +5,9 @@ const Order = require('../db/models/order-model');
 const orderAdminRouter = Router();
 
 function isAdmin(req, res, next) {
-    const isAdminUser = true;  //우선 응답 데이터를 받아오기 위해 true로 설정해둠
+    const admin = true;  //우선 응답 데이터를 받아오기 위해 true로 설정해둠
 
-    if(isAdminUser){
+    if(admin){
         next();
     }else{
         res.status(403).json({message:'관리자 권한이 필요합니다.'})
