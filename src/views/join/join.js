@@ -1,5 +1,3 @@
-// import * as Api from "../api.js";
-
 const nameInput = document.querySelector("#nameInput");
 const emailInput = document.querySelector("#emailInput");
 const passwordInput = document.querySelector("#passwordInput");
@@ -55,7 +53,6 @@ async function handleJoin(e) {
 
   // 유저 주소 한번에 저장
   const userAddress = `(${postalCode}) ${address} ${detailAddress}`;
-  console.log(userAddress);
 
   // 이메일 양식 검사
   let regex = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
@@ -115,6 +112,7 @@ async function handleJoin(e) {
     // localStorage.setItem("token", res.data.refreshToken);
     // localStorage.setItem("loggedIn", "true");
     console.log(userAddress);
+    console.log(joinUserData);
     console.log(res.status);
 
     alert(`${name} 님, 회원가입 되었습니다.`);
