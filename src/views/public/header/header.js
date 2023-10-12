@@ -34,10 +34,10 @@ function homeMove(event) {
   event.preventDefault();
   window.location.href = "../home/home.html";
 }
-// 사람 클릭 시 - mypage 으로 이동
+// 사람 클릭 시 - login 으로 이동
 function mypageMove(event) {
   event.preventDefault();
-  window.location.href = "../mypage/mypage.html";
+  window.location.href = "../login/login.html";
 }
 // 장바구니 클릭 시 - cart 으로 이동
 function cartMove(event) {
@@ -45,26 +45,7 @@ function cartMove(event) {
   window.location.href = "../cart/cart.html";
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const currentURL = window.location.pathname;
-
-  // 해당 URL에 따라 메뉴 항목에 클래스 추가
-  if (currentURL.includes("carbohydrate")) {
-    document
-      .querySelector(".subMenu ul li:nth-child(1)")
-      .classList.add("active");
-  } else if (currentURL.includes("protein")) {
-    document
-      .querySelector(".subMenu ul li:nth-child(2)")
-      .classList.add("active");
-  } else if (currentURL.includes("amino")) {
-    document
-      .querySelector(".subMenu ul li:nth-child(3)")
-      .classList.add("active");
-  }
-});
-
-// 검색
+검색;
 function executeSearch() {
   const input = document.getElementById("searchInput");
   const searchTerm = input.value.trim(); // 공백 제거

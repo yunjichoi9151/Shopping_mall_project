@@ -39,15 +39,33 @@ orderRouter.get('/:orderId', async (req, res) => {
 })
 
 //주문 수정 
-orderRouter.put('/:orderId', async(req, res)=>{
-	const { orderId } = req.params;
-	const { itemInfo, itemAmount, buyer } = req.body; //orderEditTime빼버림
+orderRouter.put('/put/:orderId', async (req, res) => {
+	const {
+		orderId
+	} = req.params;
+	const {
+		itemInfo,
+		itemAmount,
+		buyer
+	} = req.body; // updatedAt빼버림
 
-	const order = await Order.updateOne(
-		{ _id:orderId }, {itemInfo, itemAmount, buyer }, { new: true}) //orderEditTime빼버림
-	
-	if(!order){
-		return res.status(404).json({ message: '주문 못찾겠다'});
+	const currentTime = Date.now();
+
+	const order = await Order.updateOne({
+		_id: orderId
+	}, {
+		itemInfo,
+		itemAmount,
+		buyer,
+		updatedAt: currentTime
+	}, {
+		new: true
+	})
+
+	if (!order) {
+		return res.status(404).json({
+			message: '주문 못찾겠다'
+		});
 	}
 	res.json(order)
 
@@ -88,14 +106,37 @@ orderRouter.put('/:orderId', async(req, res)=>{
 
 
 //주문 삭제 
-orderRouter.delete('/:orderId', async (req, res) => {
-	const {
-		orderId
-	} = req.params
-	const order = await Order.deleteOne({
-		_id: orderId
-	})
-	res.json(order)
+// orderRouter.put('/:orderId', async (req, res) => {
+// 	const {
+// 		orderId
+// 	} = req.params
+// 	const order = await Order.deleteOne({
+// 		_id: orderId
+// 	})
+// 	res.json(order)
+// })
+orderRouter.put('/delete/:orderId', async (req, res) => {
+	try {
+		const {
+			orderId
+		} = req.params
+
+		const currentTime = Date.now()
+		const order = await Order.updateOne({
+				_id: orderId
+			}, {
+				deletedAt: currentTime
+			}
+
+		)
+
+		res.json(order)
+	} catch (err) {
+		res.json({
+			message: err.message
+		})
+	}
 })
+
 
 module.exports = orderRouter;

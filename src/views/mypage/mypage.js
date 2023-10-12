@@ -19,8 +19,6 @@ async function fetchUserData(userId) {
 // 웹 페이지의 내용을 업데이트하는 함수
 function updateUserInfo(user) {
   const memberSpan = document.querySelector(".username");
-  const cumulativeTotalSpan = document.querySelector(".userCumulativeTotal");
-  const pointSpan = document.querySelector(".userPoint");
 
   const emailInput = document.getElementById("email"); // 이메일 입력 요소 가져오기
   const nameInput = document.getElementById("name"); // 이름 입력 요소 가져오기
@@ -28,8 +26,6 @@ function updateUserInfo(user) {
   const addressInput = document.getElementById("address"); // 주소 입력 요소 가져오기
 
   memberSpan.textContent = `${user.name} 님 안녕하세요`;
-  cumulativeTotalSpan.textContent = `누적 구매금액 : ${user.cumulativeTotal}`;
-  pointSpan.textContent = user.point;
 
   // 각 입력 요소의 value 속성을 설정하여 사용자 정보를 업데이트
   emailInput.value = user.email;
@@ -41,37 +37,38 @@ function updateUserInfo(user) {
 // 예를 들어, id가 "1"인 사용자의 정보를 불러오려면:
 fetchUserData("1");
 
-// 정보수정 모달
-function openModal() {
+// 정보 수정 모달 열기
+function openEditModal() {
   document.getElementById("editInfoModal").style.display = "block";
+  document.getElementById("modalOverlay").style.display = "block";
 }
 
+// 회원탈퇴 모달 열기
+function openDelModal() {
+  document.getElementById("delInfoModal").style.display = "block";
+  document.getElementById("delModalOverlay").style.display = "block";
+}
+
+// 모든 모달 닫기
 function closeModal() {
   document.getElementById("editInfoModal").style.display = "none";
+  document.getElementById("modalOverlay").style.display = "none";
+  document.getElementById("delInfoModal").style.display = "none";
+  document.getElementById("delModalOverlay").style.display = "none";
 }
 
+// 정보수정 눌렀을 때 모달 띄우기
 document
   .querySelector(".leftBar li:nth-child(2) a")
   .addEventListener("click", function (event) {
     event.preventDefault();
-    openModal();
+    openEditModal();
   });
 
-// 회원탈퇴 모달
-function showDeleteModal() {
-  const modal = document.getElementById("confirmDeleteModal");
-  modal.style.display = "block";
-}
-
-function closeDeleteModal() {
-  const modal = document.getElementById("confirmDeleteModal");
-  modal.style.display = "none";
-}
-
-// "회원탈퇴" 클릭 이벤트 추가
+// 탈퇴 눌렀을 때 모달 띄우기
 document
-  .querySelector(".leftBar ul li:nth-child(3) a")
+  .querySelector(".leftBar li:nth-child(3) a")
   .addEventListener("click", function (event) {
-    event.preventDefault(); // 기본 클릭 이벤트 방지
-    showDeleteModal();
+    event.preventDefault();
+    openDelModal();
   });
