@@ -1,4 +1,8 @@
 const { Schema } = require("mongoose");
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4942ac3 (🔔 Merge Request: Resolving conflict)
 const categorySchema = new Schema({
 
 	name: {
