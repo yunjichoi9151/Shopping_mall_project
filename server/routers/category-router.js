@@ -1,6 +1,6 @@
 const express = require("express");
 const { Router } = require('express');
-const { categoryService } = require("../services");
+//const { categoryService } = require("../services");
 const { Category }  = require("../db/models/category-model");
 
 const categoryRouter = Router();
