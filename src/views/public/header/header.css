@@ -40,7 +40,7 @@ body {
   border-radius: 20px;
   border: none;
   outline: none;
-  padding-left: 10px;
+  padding-left: 15px;
   font-size: 14px;
 }
 
@@ -49,10 +49,14 @@ body {
   font-size: 14px;
 }
 .header .headerBackground .headerContainer .inputBox i {
+  width: 20px;
+  height: 20px;
   position: absolute;
-  top: 15%;
-  left: 90%;
+  top: 20%;
+  right: -1%;
   cursor: pointer;
+  background-image: url("../img/readingglasses.png");
+  background-size: cover;
 }
 
 /* 로고 */
@@ -96,7 +100,7 @@ body {
   font-weight: 400;
 }
 
-.sub-nav {
+.subNav {
   z-index: 1000;
   display: none;
   list-style: none;
@@ -107,7 +111,7 @@ body {
   border: none;
 }
 
-.sub-nav > li {
+.subNav > li {
   width: 160px;
   height: 40px;
   display: flex;
@@ -116,15 +120,20 @@ body {
   padding-left: 15px;
   font-size: 14px;
 }
-.sub-nav > li > a {
+.subNav > li.active {
+  background-color: #fdcf1a;
+  color: white;
+}
+
+.subNav > li > a {
   display: inline-block;
   color: black;
 }
 
-.nav > li:hover .sub-nav {
+.nav > li:hover .subNav {
   display: block;
 }
-.sub-nav li:hover {
+.subNav li:hover {
   background-color: black;
   display: flex;
   justify-content: start;
@@ -133,7 +142,7 @@ body {
   font-size: 14px;
 }
 
-.sub-nav li:hover a {
+.subNav li:hover a {
   display: inline-block;
   color: white;
 }

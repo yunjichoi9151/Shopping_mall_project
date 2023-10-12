@@ -15,6 +15,19 @@ const userSchema = new Schema({
 		type: String,
 		required: true
 	},
+	phoneNumber: {
+		type: String,
+		required: true
+	},
+	address: {
+		type: String,
+		required: true
+	},
+	admin: {
+		type: Boolean,
+		default: false,
+		required: true
+	},
 	joinTime: {
 		// Date.now();
 		type: Date,
