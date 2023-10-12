@@ -23,11 +23,11 @@ categoryRouter.post("/", async (req, res, next) => {
     }
     */
     try {
-        const { name, items, parent_category_id, createdAt, updatedAt, deletedAt } = req.body;
+        const { name, items, parentCategoryId, createdAt, updatedAt, deletedAt } = req.body;
         const newCategory = await CategoryModel.create({
             name,
             items,
-            parent_category_id,
+            parentCategoryId,
             createdAt,
             updatedAt,
             deletedAt,
