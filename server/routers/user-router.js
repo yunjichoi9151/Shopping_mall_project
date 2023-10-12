@@ -13,7 +13,8 @@ const router = Router();
 
 // READ 구현하기 -> GET
 router.get("/", async (req, res) => {
-    const user = await UserModel.find({});
+    // const deletedAt = req.params.deletedAt;
+    const user = await UserModel.find({ deletedAt: null });
 
     res.json(user);
     
@@ -30,31 +31,38 @@ router.get("/:userId", async (req, res) => {
 
 // CREATE 구현하기 -> POST
 router.post("/", async (req, res) => {
-    const { _id, name, email, password, joinTime } = req.body;
+    const { _id, name, email, password, phoneNumber, address, admin, joinTime } = req.body;
     
     const user = await UserModel.create({
         _id,
         name,
         email,
         password,
+        phoneNumber,
+        address,
+        admin,
         joinTime,
     });
     res.json(user);
 })
 
 // UPDATE 구현하기 -> PUT
-router.put("/:userId", async (req, res) => {
+router.put("/put/:userId", async (req, res) => {
     const { userId } = req.params;
-    const { name, email, password, joinTime } = req.body;
+    const { name, email, password, phoneNumber, address, joinTime } = req.body;
+    const currentTime = Date.now();
 
     const user = await UserModel.updateOne(
         {
             _id: userId,
+            updateAt: currentTime
         },
         {
             name,
             email,
             password,
+            phoneNumber,
+            address,
             joinTime
         }
     );
@@ -63,10 +71,17 @@ router.put("/:userId", async (req, res) => {
 });
 
 // DELETE 구현하기 -> DELETE
-router.delete("/:userId", async (req, res) => {
+router.put("/delete/:userId", async (req, res) => {
     const { userId } = req.params;
+    const currentTime = Date.now();
 
-    const user = await UserModel.deleteOne({ _id: userId });
+    const user = await UserModel.updateOne(
+        {
+            _id: userId
+        },
+        {
+            deletedAt: currentTime
+        });
     res.json(user);
     console.log("Delete OK");
 });
@@ -79,28 +94,32 @@ router.get('/', (req, res) => {
         res.redirect('/user');
         return;
     }
-  res.redirect("/login");
+  res.redirect("/person");
 });
 
 // 회원가입 (hashedPassword 사용)
 router.post(
   '/join',
   asyncHandler(async (req, res) => {
-    const { email, name, password } = req.body;
+    const { email, name, password, phoneNumber, address, admin } = req.body;
     const hashedPassword = hashPassword(password);
     const user = await UserModel.create({
-      email,
-      name,
-      password: hashedPassword,
+        email,
+        name,
+        password: hashedPassword,
+        phoneNumber,
+        address,
+        admin
     });
 
-    res.redirect('/');
+      res.json(user);
+      // res.redirect('/');
+      console.log("Join OK");
   }),
 );
 
 router.get('/logout', (req, res, next) => {
-  req.logout();
-  res.redirect('/');
+    
 });
 
 
