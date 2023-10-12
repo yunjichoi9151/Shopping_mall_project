@@ -4,23 +4,23 @@
 // U : 사용자 정보 수정
 // D : 사용자 정보 삭제
 
-
 const { Router } = require("express");
-const asyncHandler = require('../middlewares/async-handler');
-const hashPassword = require('../middlewares/hash-password');
+const asyncHandler = require("../middlewares/async-handler");
+const hashPassword = require("../middlewares/hash-password");
+const UserModel = require("../db/models/user-model");
 
 const router = Router();
 
 // READ 구현하기 -> GET
 router.get("/", async (req, res) => {
-    // const deletedAt = req.params.deletedAt;
-    const user = await UserModel.find({ deletedAt: null });
-    res.json(user);
+  // const deletedAt = req.params.deletedAt;
+  const user = await UserModel.find({ deletedAt: null });
+  res.json(user);
 
-    console.log('data OK');
+  console.log("data OK");
 });
 
-router.get('/:userId', async (req, res) => {
+router.get("/:userId", async (req, res) => {
   const search_id = req.params.userId;
   const user = await UserModel.find({ _id: search_id });
 
@@ -29,93 +29,104 @@ router.get('/:userId', async (req, res) => {
 
 // CREATE 구현하기 -> POST
 router.post("/", async (req, res) => {
-    const { _id, name, email, password, phoneNumber, address, admin, joinTime } = req.body;
-    
-    const user = await UserModel.create({
-        _id,
-        name,
-        email,
-        password,
-        phoneNumber,
-        address,
-        admin,
-        joinTime,
-    });
-    res.json(user);
-})
+  const { _id, name, email, password, phoneNumber, address, admin, joinTime } =
+    req.body;
+
+  const user = await UserModel.create({
+    _id,
+    name,
+    email,
+    password,
+    phoneNumber,
+    address,
+    admin,
+    joinTime,
+  });
+  res.json(user);
+});
 
 // UPDATE 구현하기 -> PUT
 router.put("/put/:userId", async (req, res) => {
-    const { userId } = req.params;
-    const { name, email, password, phoneNumber, address, joinTime } = req.body;
-    const currentTime = Date.now();
+  const { userId } = req.params;
+  const { name, email, password, phoneNumber, address, joinTime } = req.body;
+  const currentTime = Date.now();
 
-    const user = await UserModel.updateOne(
-        {
-            _id: userId,
-            updateAt: currentTime
-        },
-        {
-            name,
-            email,
-            password,
-            phoneNumber,
-            address,
-            joinTime
-        }
-    );
-    res.json(user);
-    console.log("Update OK");
+  const user = await UserModel.updateOne(
+    {
+      _id: userId,
+      updateAt: currentTime,
+    },
+    {
+      name,
+      email,
+      password,
+      phoneNumber,
+      address,
+      joinTime,
+    }
+  );
+  res.json(user);
+  console.log("Update OK");
 });
 
 // DELETE 구현하기 -> DELETE
 router.put("/delete/:userId", async (req, res) => {
-    const { userId } = req.params;
-    const currentTime = Date.now();
+  const { userId } = req.params;
+  const currentTime = Date.now();
 
-    const user = await UserModel.updateOne(
-        {
-            _id: userId
-        },
-        {
-            deletedAt: currentTime
-        });
-    res.json(user);
-    console.log("Delete OK");
+  const user = await UserModel.updateOne(
+    {
+      _id: userId,
+    },
+    {
+      deletedAt: currentTime,
+    }
+  );
+  res.json(user);
+  console.log("Delete OK");
 });
 
 // 로그인 구현
 
 // 로그인 페이지에서 로그인 되었을 경우, 되지 않았을 경우 어느 경로로 갈지 결정
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
   if (req.user) {
-    res.redirect('/user');
+    res.redirect("/user");
     return;
   }
-  res.redirect('/login');
+  res.redirect("/login");
 });
 
 // 회원가입 (hashedPassword 사용)
 router.post(
-  '/join',
-    asyncHandler(async (req, res) => {
-        const { email, name, password, phoneNumber, address, admin } = req.body;
-        const hashedPassword = hashPassword(password);
-        const user = await UserModel.create({
-            email,
-            name,
-            password: hashedPassword,
-            phoneNumber,
-            address,
-            admin
-        });
+  "/join",
+  asyncHandler(async (req, res) => {
+    const { email, name, password, phoneNumber, address, admin } = req.body;
 
-}));
+    // 이미 존재하는 이메일일 경우 400 에러 보내줌 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+    const existingUser = await UserModel.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ error: "이미 존재하는 이메일입니다." });
+    }
+    // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
-router.get('/logout', (req, res, next) => {
-     res.json(user);
-      // res.redirect('/');
-      console.log("Join OK");
+    const hashedPassword = hashPassword(password);
+    const user = await UserModel.create({
+      email,
+      name,
+      password: hashedPassword,
+      phoneNumber,
+      address,
+      admin,
+    });
+    res.json(user);
+  })
+);
+
+router.get("/logout", (req, res, next) => {
+  res.json(user);
+  // res.redirect('/');
+  console.log("Join OK");
 });
 
 module.exports = router;
