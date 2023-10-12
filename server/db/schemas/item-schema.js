@@ -25,6 +25,10 @@ const itemSchema = new Schema([{
 		type: [String],
 		required: true,
 	},
+	orderCount: {
+		type: Number,
+		default: 0,
+	},
 	/*
 	comments: [{
 		type: Schema.Types.ObjectId, ref: 'Comment'

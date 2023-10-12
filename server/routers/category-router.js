@@ -23,9 +23,11 @@ categoryRouter.post("/", async (req, res, next) => {
     }
     */
     try {
-        const { name, createdAt, updatedAt, deletedAt } = req.body;
+        const { name, items, parent_category_id, createdAt, updatedAt, deletedAt } = req.body;
         const newCategory = await CategoryModel.create({
             name,
+            items,
+            parent_category_id,
             createdAt,
             updatedAt,
             deletedAt,
@@ -41,7 +43,7 @@ categoryRouter.post("/", async (req, res, next) => {
 categoryRouter.get("/", async (req, res, next) => {
     console.log("모든 카테고리 조회");
     try {
-        const categories = await CategoryModel.find({});
+        const categories = await CategoryModel.find({ deletedAt: null });
         return res.status(200).json({
             status: 200,
             msg: "카테고리 조회",
@@ -62,7 +64,19 @@ categoryRouter.get("/:categoryId", async (req, res, next) => {
     } catch(err) {
         next(err);
     }
+})
 
+// 카테고리 페이지
+// 카테고리 별 상품 조회
+categoryRouter.get("/part/:categoryId", async (req, res, next) => {
+    console.log("카테고리 별 상품 조회");
+    try {
+        const { categoryId } = req.params;
+        const categoryItem = await CategoryModel.findOne({ _id: categoryId }).populate('items'); // .populate('items')
+        res.json(categoryItem);
+    } catch(err) {
+        next(err);
+    }
 })
 
 // 카테고리 수정
