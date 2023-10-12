@@ -4,8 +4,8 @@
 // U : 사용자 정보 수정
 // D : 사용자 정보 삭제
 
+
 const { Router } = require("express");
-const UserModel = require("../db/models/user-model");
 const asyncHandler = require('../middlewares/async-handler');
 const hashPassword = require('../middlewares/hash-password');
 
@@ -16,18 +16,15 @@ router.get("/", async (req, res) => {
     // const deletedAt = req.params.deletedAt;
     const user = await UserModel.find({ deletedAt: null });
 
-    res.json(user);
-    
-    console.log("data OK");
+  console.log('data OK');
 });
 
-router.get("/:userId", async (req, res) => {
-    const search_id = req.params.userId;
-    const user = await UserModel.find({ _id: search_id });
+router.get('/:userId', async (req, res) => {
+  const search_id = req.params.userId;
+  const user = await UserModel.find({ _id: search_id });
 
-    res.json(user);
+  res.json(user);
 });
-
 
 // CREATE 구현하기 -> POST
 router.post("/", async (req, res) => {
@@ -121,6 +118,5 @@ router.post(
 router.get('/logout', (req, res, next) => {
     
 });
-
 
 module.exports = router;

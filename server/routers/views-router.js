@@ -1,5 +1,5 @@
-import express from 'express';
-import path from 'path';
+const express = require('express');
+const path = require('path');
 
 const viewsRouter = express.Router();
 
@@ -7,8 +7,7 @@ viewsRouter.use('/', serveStatic('home'));
 viewsRouter.use('/cart', serveStatic('cart'));
 viewsRouter.use('/detail', serveStatic('detail'));
 viewsRouter.use('/order', serveStatic('order'));
-
-// viewsRouter.use('/', serveStatic(''));
+viewsRouter.use('/', serveStatic(''));
 
 function serveStatic(resource) {
   const resourcePath = path.join(__dirname, `../../src/views/${resource}`);
@@ -17,4 +16,4 @@ function serveStatic(resource) {
   return express.static(resourcePath, option);
 }
 
-export { viewsRouter };
+module.exports = viewsRouter ;
