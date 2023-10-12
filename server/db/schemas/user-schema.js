@@ -24,12 +24,14 @@ const userSchema = new Schema({
 		required: true
 	},
 	admin: {
-		type: boolean,
+		type: Boolean,
 		default: false,
-		required: true
 	},
-	joinTime: {
-		// Date.now();
+	createdAt: {
+		type: Date,
+		default: Date.now()
+	},
+	updateAt: {
 		type: Date,
 		default: Date.now()
 	},
@@ -37,7 +39,7 @@ const userSchema = new Schema({
 	deletedAt: {
 		type: Date,
 		default: null,
-	}	
+	}
 });
 
 module.exports = userSchema;
