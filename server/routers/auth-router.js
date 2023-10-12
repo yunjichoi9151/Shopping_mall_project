@@ -1,11 +1,8 @@
 const router = require("express").Router();
 
-const signin = require("../controller/userController");
-// const { authorization } = require("../config/JWTConfig");
+const userController = require("../controller/userController");
 
-router.post("/login", signin);
-// router.get("/auth/logout", authorization, logout);
-// router.post("/auth/register", signup);
-// router.get("/auth/profile", authorization, profile);
+router.post("/join", userController.join);
+router.post("/login", userController.login);
 
 module.exports = router;
