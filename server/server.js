@@ -12,9 +12,9 @@ const orderRouter = require('./routers/order-router');
 const orderAdminRouter = require("./routers/orderAdmin-router");
 
 // passport.js 를 쓰기 위한 require
-const session = require('express-session');
-const passport = require("passport");
-const strategy = require("passport-local").Strategy;
+// const session = require('express-session');
+// const passport = require("passport");
+// const strategy = require("passport-local").Strategy;
 const { MONGO_URI } = process.env;
 
 // 로그인이 필수로 필요한 페이지에 middleware 작성할 예정

@@ -4,19 +4,31 @@ const orderSchema = new Schema({
 	//itemInfo에 주문 내에서 다수의 상품정보를 나타낼수도 있기 때문에 배열로 정의함
 	//각 상품에 대한 세부 정보를 배열의 요소로 저장할 수 있다.
 	//각 배열 요소는 한개의 상품 정보를 나타냄
-	itemInfo: [{ 
-		type: String,
-		required: true,
+	//item스키마에서 상품 이름, 가격 가져오기로해서 빼버림
+// 	itemInfo: [{ 
+// 		type: String,
+// 		required: true,
 
+// }],
+//itemName이랑 intem이미지 url도 가져와야하네
+itemInfo: [{ 
+	itemName: {
+		type: Schema.Types.ObjectId,
+		ref: 'Item',
+		required: true
+	}
+	//여기다가 itemAmount를 넣을까 아님 지금 처럼 밖에다가 뺄까? 팀원분들이랑 상의 해보기 
 }],
 	itemAmount:{
 		type: Number,
 		required: true,
 },
-	buyer:{
-		type: String,
-		required: true,
-},
+
+// user스키마에서 가져오기로해서 빼버림
+// 	buyer:{
+// 		type: String,
+// 		required: true,
+// },
 // orderEditTime ==> updatedAt으로 수정 feat. 코치님 코드리뷰
 
 	//상품 주문 시간

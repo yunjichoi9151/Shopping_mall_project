@@ -18,7 +18,8 @@ function isAdmin(req, res, next) {
 //전체 주문 조회
 orderAdminRouter.get('/', isAdmin, async(req, res) => {
     try{
-        const orders = await Order.find({})
+        //상품주문 많은 순으로 정렬
+        const orders = await Order.find({}).sort({iteminfo: -1})
         res.json(orders)
     }catch(err){
         res.status(500).json({message:'Server Error'})

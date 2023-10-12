@@ -3,30 +3,54 @@ const {
 	Router
 } = require('express')
 const Order = require("../db/models/order-model")
+const User = require("../db/models/user-model")
+const Item = require("../db/models/item-model")
 
 const orderRouter = Router()
 
 //주문 생성
 orderRouter.post('/', async (req, res) => {
+
+try{
+
 	const {
 		itemInfo,
 		itemAmount,
-		buyer,
+		totalPrice,
 		createdAt
 	} = req.body;
+
+	//유저 정보를 포함하여 주문을 생성한다. 
+	const user = await User.findById(req.body.userId); //userId는 사용자의 id이다
+
 	const order = await Order.create({
 		itemInfo,
 		itemAmount,
-		buyer,
-		createdAt
+		totalPrice,
+		createdAt,
+		user: user._id //user._id는 User모델의 objectId이다 --> 주문의 user필드에 주문을 한 유저의 objectid가 저장됨
 	})
 	res.json(order);
+	}catch(err) {
+		res.status(500).json({message: err.message});
+	}
 })
 
 //주문 조회
 orderRouter.get('/', async (req, res) => {
-	const orders = await Order.find({}).sort();
-	res.json(orders)
+	// const orders = await Order.find({}).sort(); --> 관리자order로 가서 확인하기
+	try{
+		//poplute('user')는 order스키마에 있는 user필드가 참조하고 있는 User모델의 정보를 Find함 
+		//==쉽게 말하면 데이터 베이스 user필드에 저장된 유저id를 사용해 User모델을 불러와서 order에 있는 사용자 정보와 함께 결과를 줌
+		//이를 통해 order
+		const orders = await Order.find({}).populate('user').populate('itemInfo.itemName');
+		res.json(orders)
+		if(!orders){
+			res.status(404).json({message: 'Order not found'});
+		}
+	}catch(err){
+
+	}
 })
 
 //주문 상세 조회
@@ -46,7 +70,7 @@ orderRouter.put('/put/:orderId', async (req, res) => {
 	const {
 		itemInfo,
 		itemAmount,
-		buyer
+		totalPrice
 	} = req.body; // updatedAt빼버림
 
 	const currentTime = Date.now();
@@ -129,6 +153,9 @@ orderRouter.put('/delete/:orderId', async (req, res) => {
 			}
 
 		)
+		if(!order){
+			res.status(404).json({message: 'order not found'})
+		}
 
 		res.json(order)
 	} catch (err) {
