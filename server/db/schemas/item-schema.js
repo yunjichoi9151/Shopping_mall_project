@@ -1,5 +1,6 @@
 const { Schema } = require("mongoose");
-//const { ItemImage } = require("../models/itemImage-model");
+const { Types: { ObjectId } } = Schema;
+// const ItemImageModel = require("../models/itemImage-model");
 
 // item을 array에 저장하기 위해 변경
 const itemSchema = new Schema([{
@@ -8,21 +9,18 @@ const itemSchema = new Schema([{
 		required: true,
 	},
 	category: {
-		type: String,
-		//required: true,
+		type: ObjectId,
+		required: true,
+		ref: 'Category',
 	},
 	price: {
 		type: Number,
-		//required: true,
-	},/*
-	itemDetail: {
-		type: String,
 		required: true,
 	},
 	imgUrl: {
 		type: String,
 		required: true,
-	},
+	},/*
 	comments: [{
 		type: Schema.Types.ObjectId, ref: 'Comment'
 	}],*/
