@@ -161,9 +161,14 @@ sameAsAccountCheckbox.addEventListener("change", () => {
   }
 });
 
+const address = addressInput.value;
+const detailAddress = detailAddressInput.value;
+
 const nameInput = document.getElementById("name");
+const buyer = nameInput.value;
 const phoneInput = document.getElementById("phone");
 const emailInput = document.getElementById("email");
+const buyerEmail = emailInput.value;
 // 동의버튼
 const orderAgreeCheckbox = document.getElementById("order-agree");
 // 결제수단
@@ -172,7 +177,10 @@ const paymentCash = document.getElementById("bank-transfer");
 
 // 결제하기 눌렀을 때
 const orderSubmitButton = document.getElementById("submit-order");
-orderSubmitButton.addEventListener("click", () => {
+orderSubmitButton.addEventListener("click", handleOrder);
+
+async function handleOrder(e) {
+  e.preventDefault();
   const currentDate = new Date();
 
   // 2023-10-05 15:30:00 형식으로 시간과 날짜 만들어줌
@@ -195,6 +203,7 @@ orderSubmitButton.addEventListener("click", () => {
     email: emailInput.value,
     orderProducts: products,
   };
+  const userAddress = `(${orderInfo.postCode}) ${orderInfo.address} ${orderInfo.detailAddress}`;
   // 빈 칸 있을 때
   if (
     nameInput.value === "" ||
@@ -216,9 +225,26 @@ orderSubmitButton.addEventListener("click", () => {
   else if (!paymentCard.checked && !paymentCash.checked) {
     alert("결제수단을 확인해주세요.");
   } else {
-    // 모두 제대로 됐을 때
-    const orderInfoJSON = JSON.stringify(orderInfo);
-    localStorage.setItem("orderInfo", orderInfoJSON);
-    window.location.href = "../order/orderComplete.html";
+    try {
+      // 모두 제대로 됐을 때
+      const orderInfoJSON = JSON.stringify(orderInfo);
+      localStorage.setItem("orderInfo", orderInfoJSON);
+
+      const orderData = {
+        buyer: orderInfo.recipient,
+        buyerEmail: orderInfo.email,
+        address: userAddress,
+        orderInfo: products,
+        totalPrice: orderInfo.totalPrice,
+      };
+      console.log(orderData);
+
+      const res = await axios.post("/api/order", orderData);
+      alert(`${orderInfo.recipient} 님, 주문 완료 되었습니다.`);
+      window.location.href = "../order/orderComplete.html";
+    } catch (err) {
+      console.error(err);
+      alert("주문에 실패했습니다. 다시 시도해주세요.");
+    }
   }
-});
+}

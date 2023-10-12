@@ -97,19 +97,29 @@ async function handleJoin(e) {
   // 존재하지 않으면 회원가입 진행
   try {
     // 회원가입 요청한 회원의 정보들
-    const joinUserData = { name, email, password, phoneNumber, userAddress };
-    // 서버, db 와의 통신으로 회원가입 진행해야함
-    const res = await axios.post("api/users/join", joinUserData);
+    const joinUserData = {
+      name: name,
+      email: email,
+      password: password,
+      phoneNumber: phoneNumber,
+      address: userAddress,
+    };
 
-    localStorage.setItem("token", res.data.token);
-    localStorage.setItem("token", res.data.refreshToken);
-    localStorage.setItem("loggedIn", "true");
+    console.log("여기까지");
+    // 서버, db 와의 통신으로 회원가입 진행해야함
+    const res = await axios.post("/api/user/join", joinUserData);
+
+    // localStorage.setItem("token", res.data.token);
+    // localStorage.setItem("token", res.data.refreshToken);
+    // localStorage.setItem("loggedIn", "true");
+    console.log(userAddress);
+    console.log(joinUserData);
+    console.log(res.status);
 
     alert(`${name} 님, 회원가입 되었습니다.`);
-
-    // 홈으로 보내줌
     window.location.href = "../home/home.html";
   } catch (err) {
     console.error(err);
+    alert("이미 존재하는 회원 이메일 입니다.");
   }
 }

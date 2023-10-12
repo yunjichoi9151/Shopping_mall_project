@@ -1,18 +1,22 @@
 const { Schema } = require("mongoose");
-const { Types: { ObjectId } } = Schema;
 const categorySchema = new Schema({
 
 	name: {
 		type: String,
 		required: true,
 	},
-	// items: [{
-	// 	type: Schema.Types.ObjectId, ref: 'Item'
-	// }],
-	items: {
-		type: ObjectId,
-		ref: 'User',
-	}
+	createdAt: {
+		type: Date,
+		default: Date.now()
+	},
+	updatedAt: {
+		type: Date,
+		default: null
+	},
+	deletedAt: {
+		type: Date,
+		default: null
+	},
 });
 
 module.exports = categorySchema;

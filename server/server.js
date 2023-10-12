@@ -6,14 +6,17 @@ const userRouter = require('./routers/user-router');
 const categoryRouter = require('./routers/category-router');
 const itemRouter = require('./routers/item-router');
 const viewsRouter = require('./routers/views-router');
-// passport.js 를 쓰기 위한 require
-const session = require('express-session');
-const passport = require('passport');
 // orderRouter추가
 const orderRouter = require('./routers/order-router');
 //orderAdmin추가
-const orderAdminRouter = require('./routers/orderAdmin-router');
+const orderAdminRouter = require("./routers/orderAdmin-router");
+
+// passport.js 를 쓰기 위한 require
+const session = require('express-session');
+const passport = require("passport");
+const strategy = require("passport-local").Strategy;
 const { MONGO_URI } = process.env;
+
 // 로그인이 필수로 필요한 페이지에 middleware 작성할 예정
 const loginRequired = require('./middlewares/login-required');
 
@@ -27,6 +30,7 @@ mongoose
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+//루트에 api붙임
 app.use(viewsRouter);
 // passport
 // app.use(passport.initialize());
@@ -37,11 +41,13 @@ app.get('/', (req, res) => {
   res.send('main page');
 });
 
+
 app.use('/api/user', userRouter);
 app.use('/api/category', categoryRouter);
 app.use('/api/item', itemRouter);
 app.use('/api/order', orderRouter);
 app.use('/api/admin', orderAdminRouter);
+// app.use("/api/auth", authRouter);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
