@@ -5,9 +5,9 @@
 // D : 사용자 정보 삭제
 
 const { Router } = require("express");
-const UserModel = require("./db/models/user-model");
-const asyncHandler = require('../middlewares/async-handler');
-const hashPassword = require('../middlewares/hash-password');
+const UserModel = require("../db/models/user-model");
+// const asyncHandler = require('../middlewares/async-handler');
+// const hashPassword = require('../middlewares/hash-password');
 
 const router = Router();
 
@@ -86,6 +86,7 @@ router.put("/delete/:userId", async (req, res) => {
     console.log("Delete OK");
 });
 
+/*
 // 회원가입 구현 (hashedPassword 사용)
 // 로그인과 로그아웃 기능은 auth-router.js에 분리합니다.
 router.post(
@@ -102,6 +103,7 @@ router.post(
         admin
     });
 }));
+*/
 
 module.exports = router;
 
