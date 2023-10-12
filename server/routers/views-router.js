@@ -16,4 +16,4 @@ function serveStatic(resource) {
   return express.static(resourcePath, option);
 }
 
-module.exports = viewsRouter;
+module.exports = viewsRouter ;
