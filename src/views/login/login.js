@@ -95,7 +95,7 @@ async function handleLogin(e) {
 
   // 로그인 api 요청
   // 수정 필요 !!!!!
-  /*
+
   try {
     const loginUserData = { userEmail, userPassword };
 
@@ -116,5 +116,4 @@ async function handleLogin(e) {
   } catch (err) {
     console.error(err);
   }
-  */
 }
