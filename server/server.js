@@ -4,11 +4,6 @@ const app = express();
 const mongoose = require('mongoose');
 const userRouter = require('./routers/user-router');
 const authRouter = require('./routers/auth-router');
-const categoryRouter = require('./routers/category-router');
-const itemRouter = require('./routers/item-router');
-const viewsRouter = require('./routers/views-router');
-const orderRouter = require('./routers/order-router');
-const orderAdminRouter = require("./routers/orderAdmin-router");
 
 // passport.js 를 쓰기 위한 require
 const session = require('express-session');
@@ -36,10 +31,6 @@ app.get("/", (req, res) => {
 
 app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);
-app.use('/api/category', categoryRouter);
-app.use('/api/item', itemRouter);
-app.use('/api/order', orderRouter);
-app.use('/api/admin', orderAdminRouter);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
