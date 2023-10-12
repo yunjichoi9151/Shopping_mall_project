@@ -6,9 +6,15 @@
 
 
 const { Router } = require("express");
+<<<<<<< HEAD
 const UserModel = require("../db/models/user-model");
 // const asyncHandler = require('../middlewares/async-handler');
 // const hashPassword = require('../middlewares/hash-password');
+=======
+const UserModel = require("./db/models/user-model");
+const asyncHandler = require('../middlewares/async-handler');
+const hashPassword = require('../middlewares/hash-password');
+>>>>>>> 7ad8e97 (🔔 Merge Request: Resolving conflict)
 
 const router = Router();
 
@@ -84,7 +90,10 @@ router.put("/delete/:userId", async (req, res) => {
     console.log("Delete OK");
 });
 
+<<<<<<< HEAD
 /*
+=======
+>>>>>>> 7ad8e97 (🔔 Merge Request: Resolving conflict)
 // 회원가입 구현 (hashedPassword 사용)
 // 로그인과 로그아웃 기능은 auth-router.js에 분리합니다.
 router.post(
@@ -101,6 +110,12 @@ router.post(
         admin
     });
 }));
+<<<<<<< HEAD
 */
 
 module.exports = router;
+=======
+
+module.exports = router;
+
+>>>>>>> 7ad8e97 (🔔 Merge Request: Resolving conflict)

@@ -68,4 +68,3 @@ exports.login = async (req, res) => {
 
   res.cookie("auth_token", token).json({ tokne: token });
 }
-
