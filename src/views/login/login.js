@@ -99,21 +99,26 @@ async function handleLogin(e) {
   try {
     const loginUserData = { userEmail, userPassword };
 
-    const login = await Api.post("/api/users/login", loginUserData);
-    const token = login.token;
-    const refreshToken = login.refreshToken;
-    console.log(token);
-    console.log(refreshToken);
-    // 로그인 성공, 토큰을 세션 스토리지에 저장
-    localStorage.setItem("token", token);
-    localStorage.setItem("refreshToken", refreshToken);
-    localStorage.setItem("loggedIn", "true");
+    const res = await axios.get("/api/user/login", loginUserData);
+
+    // 로그인 성공 시 토큰을 세션 스토리지에 저장해주고 메인 페이지로 이동시킴
+
+    // const token = res.token;
+    // const refreshToken = res.refreshToken;
+    // console.log(token);
+    // console.log(refreshToken);
+    // // 로그인 성공, 토큰을 세션 스토리지에 저장
+    // localStorage.setItem("token", token);
+    // localStorage.setItem("refreshToken", refreshToken);
+    // localStorage.setItem("loggedIn", "true");
+
     // 기본 페이지로 이동
     window.location.href = "/";
     alert(`로그인되었습니다.`);
 
-    // 로그인 성공
+    // 로그인 실패시 alert 창 띄움
   } catch (err) {
     console.error(err);
+    alert("로그인이 실패하였습니다. 아이디와 비밀번호를 확인해주세요.");
   }
 }
