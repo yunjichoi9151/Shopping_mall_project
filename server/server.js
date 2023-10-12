@@ -7,6 +7,7 @@ const authRouter = require('./routers/auth-router');
 const categoryRouter = require('./routers/category-router');
 const itemRouter = require('./routers/item-router');
 const viewsRouter = require('./routers/views-router');
+// orderRouter추가
 const orderRouter = require('./routers/order-router');
 const orderAdminRouter = require("./routers/orderAdmin-router");
 
@@ -34,6 +35,7 @@ app.use(viewsRouter);
 app.get("/", (req, res) => {
   res.send("main page");
 });
+
 
 app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);

@@ -4,7 +4,6 @@
 // U : 사용자 정보 수정
 // D : 사용자 정보 삭제
 
-
 const { Router } = require("express");
 const UserModel = require("../db/models/user-model");
 // const asyncHandler = require('../middlewares/async-handler');
@@ -14,13 +13,14 @@ const router = Router();
 
 // READ 구현하기 -> GET
 router.get("/", async (req, res) => {
-    // const deletedAt = req.params.deletedAt;
-    const user = await UserModel.find({ deletedAt: null });
+  // const deletedAt = req.params.deletedAt;
+  const user = await UserModel.find({ deletedAt: null });
+  res.json(user);
 
-  console.log('data OK');
+  console.log("data OK");
 });
 
-router.get('/:userId', async (req, res) => {
+router.get("/:userId", async (req, res) => {
   const search_id = req.params.userId;
   const user = await UserModel.find({ _id: search_id });
 
@@ -88,17 +88,25 @@ router.put("/delete/:userId", async (req, res) => {
 // 회원가입 구현 (hashedPassword 사용)
 // 로그인과 로그아웃 기능은 auth-router.js에 분리합니다.
 router.post(
-  '/join',
+  "/join",
   asyncHandler(async (req, res) => {
     const { email, name, password, phoneNumber, address, admin } = req.body;
+
+    // 이미 존재하는 이메일일 경우 400 에러 보내줌 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+    const existingUser = await UserModel.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ error: "이미 존재하는 이메일입니다." });
+    }
+    // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
     const hashedPassword = hashPassword(password);
     const user = await UserModel.create({
-        email,
-        name,
-        password: hashedPassword,
-        phoneNumber,
-        address,
-        admin
+      email,
+      name,
+      password: hashedPassword,
+      phoneNumber,
+      address,
+      admin,
     });
 }));
 */
