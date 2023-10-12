@@ -4,24 +4,23 @@
 // U : 사용자 정보 수정
 // D : 사용자 정보 삭제
 
-
 const { Router } = require("express");
 const UserModel = require("../db/models/user-model");
-const asyncHandler = require('../middlewares/async-handler');
-const hashPassword = require('../middlewares/hash-password');
+const asyncHandler = require("../middlewares/async-handler");
+const hashPassword = require("../middlewares/hash-password");
 
 const router = Router();
 
 // READ 구현하기 -> GET
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   const user = await UserModel.find({});
 
   res.json(user);
 
-  console.log('data OK');
+  console.log("data OK");
 });
 
-router.get('/:userId', async (req, res) => {
+router.get("/:userId", async (req, res) => {
   const search_id = req.params.userId;
   const user = await UserModel.find({ _id: search_id });
 
@@ -29,7 +28,7 @@ router.get('/:userId', async (req, res) => {
 });
 
 // CREATE 구현하기 -> POST
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   const { _id, name, email, password, joinTime } = req.body;
 
   const user = await UserModel.create({
@@ -43,7 +42,7 @@ router.post('/', async (req, res) => {
 });
 
 // UPDATE 구현하기 -> PUT
-router.put('/:userId', async (req, res) => {
+router.put("/:userId", async (req, res) => {
   const { userId } = req.params;
   const { name, email, password, joinTime } = req.body;
 
@@ -59,48 +58,50 @@ router.put('/:userId', async (req, res) => {
     }
   );
   res.json(user);
-  console.log('Update OK');
+  console.log("Update OK");
 });
 
 // DELETE 구현하기 -> DELETE
-router.delete('/:userId', async (req, res) => {
+router.delete("/:userId", async (req, res) => {
   const { userId } = req.params;
 
   const user = await UserModel.deleteOne({ _id: userId });
   res.json(user);
-  console.log('Delete OK');
+  console.log("Delete OK");
 });
 
 // 로그인 구현
 
 // 로그인 페이지에서 로그인 되었을 경우, 되지 않았을 경우 어느 경로로 갈지 결정
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
   if (req.user) {
-    res.redirect('/user');
+    res.redirect("/user");
     return;
   }
-  res.redirect('/login');
+  res.redirect("/login");
 });
 
 // 회원가입 (hashedPassword 사용)
 router.post(
-  '/join',
+  "/join",
   asyncHandler(async (req, res) => {
-    const { email, name, password } = req.body;
+    const { email, name, password, phoneNumber, address } = req.body;
     const hashedPassword = hashPassword(password);
     const user = await UserModel.create({
       email,
       name,
+      phoneNumber,
+      address,
       password: hashedPassword,
     });
 
-    res.redirect('/');
+    res.redirect("/");
   })
 );
 
-router.get('/logout', (req, res, next) => {
+router.get("/logout", (req, res, next) => {
   req.logout();
-  res.redirect('/');
+  res.redirect("/");
 });
 
 module.exports = router;
