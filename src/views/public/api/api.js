@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 async function fetchApi(method, endpoint, params = '', data = null) {
   const apiUrl = params ? `${endpoint}/${params}` : endpoint;
   try {
