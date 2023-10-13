@@ -105,8 +105,9 @@ async function handleJoin(e) {
       address: userAddress,
     };
 
+    console.log("여기까지");
     // 서버, db 와의 통신으로 회원가입 진행해야함
-    const res = await axios.post("/api/user/join", joinUserData);
+    const res = await axios.post("/api/auth/join", joinUserData);
 
     // localStorage.setItem("token", res.data.token);
     // localStorage.setItem("token", res.data.refreshToken);
@@ -119,6 +120,6 @@ async function handleJoin(e) {
     window.location.href = "../home/home.html";
   } catch (err) {
     console.error(err);
-    alert("회원가입에 실패했습니다. 다시 시도해주세요.");
+    alert("이미 존재하는 회원 이메일 입니다.");
   }
 }

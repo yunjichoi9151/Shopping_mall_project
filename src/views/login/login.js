@@ -48,22 +48,31 @@ window.addEventListener("click", function (event) {
   });
 });
 
-// 아이디 찾기 폼 제출 시 동작 (임의의 동작, 실제 동작으로 대체)
+// 아이디 찾기 폼 제출 시 동작
 const findIdForm = document.querySelector("#findIdForm");
 const findIdResult = document.querySelector("#findIdResult");
-findIdForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  // 아이디 찾기 로직 추가 (가입된 이메일을 확인하고 결과를 findIdResult에 출력)
+findIdForm.addEventListener("submit", handleFind);
+async function handleFind(e) {
+  e.preventDefault();
+  // 아이디 찾기 기능
   const findNameInput = document.querySelector("#findName");
   const findName = findNameInput.value;
   const findPhoneNumberInput = document.querySelector("#findPhoneNumber");
   const findPhoneNumber = findPhoneNumberInput.value;
 
-  // !!!! 구현 필요 !!!!
-  // db의 회원정보 중 findPhoneNumber 와 일치하는 연락처를 가진 회원이 있으면
-  // 그 아이디를 반환해줘야함
-  findIdResult.innerText = "찾은 아이디 : example_id";
-});
+  const findData = { phoneNumber: findPhoneNumber };
+  try {
+    const res = await axios.post("/api/user/find", findData);
+    if (res.data && res.data.email) {
+      const userEmail = res.data.email;
+      findIdResult.innerText = `아이디 : ${userEmail}`;
+    } else {
+      findIdResult.innerText = "사용자를 찾을 수 없습니다.";
+    }
+  } catch (err) {
+    console.error(err);
+  }
+}
 
 // 비밀번호 찾기 폼 제출 시 동작 (임의의 동작, 실제 동작으로 대체)
 const findPasswordForm = document.querySelector("#findPasswordForm");
@@ -85,36 +94,37 @@ async function handleLogin(e) {
   e.preventDefault();
 
   // 로그인 요청한 회원의 이메일과 비밀번호
-  const userEmail = emailInput.value;
-  const userPassword = passwordInput.value;
+  const email = emailInput.value;
+  const password = passwordInput.value;
 
-  // 두 칸 모두 작성되어 있고
-  // 해당 아이디가 db에 있고
-  // 비밀번호가 해당 아이디와 일치하면 로그인 진행
-  // if문으로 그렇지 않을 때 alert 필요
-
-  // 로그인 api 요청
-  // 수정 필요 !!!!!
-  /*
   try {
-    const loginUserData = { userEmail, userPassword };
+    const loginUserData = { email, password };
 
-    const login = await Api.post("/api/users/login", loginUserData);
-    const token = login.token;
-    const refreshToken = login.refreshToken;
+    const res = await axios.post("/api/auth/login", loginUserData);
+
+    console.log(res);
+    console.log(res.data);
+
+    // 로그인 성공 시 토큰을 세션 스토리지에 저장해주고 메인 페이지로 이동시킴
+    const token = res.data.token;
+    const refreshToken = res.data.refreshToken;
+    const userName = res.data.name;
+
     console.log(token);
     console.log(refreshToken);
+
     // 로그인 성공, 토큰을 세션 스토리지에 저장
     localStorage.setItem("token", token);
-    localStorage.setItem("refreshToken", refreshToken);
     localStorage.setItem("loggedIn", "true");
+    localStorage.setItem("refeshToken", refreshToken);
+
     // 기본 페이지로 이동
     window.location.href = "/";
-    alert(`로그인되었습니다.`);
+    alert(`${userName} 님, 로그인되었습니다.`);
 
-    // 로그인 성공
+    // 로그인 실패시 alert 창 띄움
   } catch (err) {
     console.error(err);
+    alert("로그인이 실패하였습니다. 아이디와 비밀번호를 확인해주세요.");
   }
-  */
 }

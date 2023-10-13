@@ -45,7 +45,7 @@ function cartMove(event) {
   window.location.href = "../cart/cart.html";
 }
 
-검색;
+//검색
 function executeSearch() {
   const input = document.getElementById("searchInput");
   const searchTerm = input.value.trim(); // 공백 제거

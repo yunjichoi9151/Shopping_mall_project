@@ -1,9 +1,9 @@
-// 첫 services 파일
+const CustomUserService = require("../db/models/item-model");
 
-// 회원가입
+class UserService {
+  constructor() {}
+}
 
-// 로그인
+const userService = new UserService();
 
-// 로그아웃
-
-// 관리자 기능
+module.exports = userService;
