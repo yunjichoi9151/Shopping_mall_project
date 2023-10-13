@@ -68,12 +68,33 @@ categoryRouter.get("/:categoryId", async (req, res, next) => {
 
 // 카테고리 페이지
 // 카테고리 별 상품 조회
-categoryRouter.get("/part/:categoryId", async (req, res, next) => {
+categoryRouter.get("/mainPart/:categoryId", async (req, res, next) => {
     console.log("카테고리 별 상품 조회");
-    try {
+    if(req.body.parentCategoryId === null) {
         const { categoryId } = req.params;
-        const categoryItem = await CategoryModel.findOne({ _id: categoryId }).populate('items'); // .populate('items')
+        const categoryItem = await CategoryModel.findOne({ _id: categoryId }).populate('items');
         res.json(categoryItem);
+    } else {
+        const { parentCategoryId } = req.body
+    }
+    try {
+        
+    } catch(err) {
+        next(err);
+    }
+})
+// 카테고리 별 상품 조회
+categoryRouter.get("/subPart/:categoryId", async (req, res, next) => {
+    console.log("카테고리 별 상품 조회");
+    if(req.body.parentCategoryId === null) {
+        const { categoryId } = req.params;
+        const categoryItem = await CategoryModel.findOne({ _id: categoryId }).populate('items');
+        res.json(categoryItem);
+    } else {
+        const { parentCategoryId } = req.body;
+    }
+    try {
+        
     } catch(err) {
         next(err);
     }
