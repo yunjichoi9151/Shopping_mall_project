@@ -117,6 +117,25 @@ async function deleteUser(e) {
   }
 }
 
+
+// function cancelOrder(orderId) {
+//   // 사용자에게 취소 확인을 받습니다.
+//   const isConfirmed = confirm("주문을 취소하시겠습니까?");
+  
+//   if (isConfirmed) {
+//     // 확인 버튼을 클릭한 경우 주문 항목을 삭제합니다.
+//     const orderElement = document.getElementById(orderId);
+//     orderElement.remove();
+
+//     // [추가 작업] 서버에 취소 요청을 보내고, 응답에 따라 후속 조치를 취합니다.
+//     // 예: 취소 실패 메시지를 표시하거나, 취소된 주문을 별도로 표시합니다.
+//   }
+// }
+
+
+
+
+
 // // 주문조회 가져오기
 // async function fetchSpecificUsers() {
 //   try {
