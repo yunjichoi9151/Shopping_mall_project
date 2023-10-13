@@ -92,7 +92,7 @@ router.put("/put/:userId", async (req, res) => {
 
 // DELETE 구현하기 -> DELETE
 router.delete("/delete/:email", async (req, res) => {
-  const { email } = req.params.email;
+  const { email } = req.params;
   const decodedEmail = decodeURIComponent(email);
 
   try {

@@ -37,12 +37,38 @@ function homeMove(event) {
 // 사람 클릭 시 - login 으로 이동
 function mypageMove(event) {
   event.preventDefault();
-  window.location.href = '/login';
+
+  const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+
+  if (isLoggedIn) {
+    const userEmail = localStorage.getItem('userEmail');
+    if (userEmail === 'soon@gmail.com') {
+      window.location.href = '../admin/admin.html';
+    } else {
+      // 로그인되어 있는 경우
+      window.location.href = '../mypage/mypage.html'; // 마이페이지 경로로 이동
+    }
+  } else {
+    // 로그인되어 있지 않은 경우
+    window.location.href = '../login/login.html'; // 로그인 페이지로 이동
+  }
 }
 // 장바구니 클릭 시 - cart 으로 이동
 function cartMove(event) {
   event.preventDefault();
   window.location.href = '/cart';
+}
+
+// logout 기능 추가
+function logOut(event) {
+  event.preventDefault();
+  alert('로그아웃 되었습니다.');
+  // 로컬스토리지의 로그인 정보 false로 만들고
+  // 유저 관련 정보 없애줌
+  localStorage.setItem('loggedIn', false);
+  localStorage.removeItem('userEmail');
+  localStorage.removeItem('token');
+  localStorage.removeItem('refeshToken');
 }
 
 //검색
