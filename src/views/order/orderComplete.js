@@ -21,7 +21,7 @@ if (orderInfo) {
 // 홈으로 가기
 const homeButton = document.getElementById('homeBtn');
 homeButton.addEventListener('click', () => {
-  window.location.href = '/';
+  window.location.href = '../home/home.html';
 });
 
 // 주문정보를 통해 사용자 email 찾음

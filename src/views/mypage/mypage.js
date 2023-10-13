@@ -1,7 +1,7 @@
 // 임시로 만든 json입니다.
 async function fetchUserData(userId) {
   try {
-    const response = await fetch("../data/user.json");
+    const response = await fetch('../data/user.json');
     const users = await response.json();
 
     // userId에 해당하는 사용자 데이터 찾기.
@@ -9,22 +9,22 @@ async function fetchUserData(userId) {
     if (user) {
       updateUserInfo(user);
     } else {
-      console.error("User not found");
+      console.error('User not found');
     }
   } catch (error) {
-    console.error("Failed to fetch user data:", error);
+    console.error('Failed to fetch user data:', error);
   }
 }
 
 // 웹 페이지의 내용을 업데이트하는 함수
 function updateUserInfo(user) {
-  const memberSpan = document.querySelector(".username");
+  const memberSpan = document.querySelector('.username');
 
-  const emailInput = document.getElementById("email"); // 이메일 입력 요소 가져오기
-  const nameInput = document.getElementById("name"); // 이름 입력 요소 가져오기
-  const phoneInput = document.getElementById("phone"); // 전화번호 입력 요소 가져오기
-  const addressInput = document.getElementById("address"); // 주소 입력 요소 가져오기
-  const subAddressInput = document.getElementById("subAddress"); // 서브주소 입력 요소 가져오기
+  const emailInput = document.getElementById('email'); // 이메일 입력 요소 가져오기
+  const nameInput = document.getElementById('name'); // 이름 입력 요소 가져오기
+  const phoneInput = document.getElementById('phone'); // 전화번호 입력 요소 가져오기
+  const addressInput = document.getElementById('address'); // 주소 입력 요소 가져오기
+  const subAddressInput = document.getElementById('subAddress'); // 서브주소 입력 요소 가져오기
 
   memberSpan.textContent = `${user.name} 님 안녕하세요`;
 
@@ -37,32 +37,32 @@ function updateUserInfo(user) {
 }
 
 // 예를 들어, id가 "1"인 사용자의 정보를 불러오려면:
-fetchUserData("1");
+fetchUserData('1');
 
 // 정보 수정 모달 열기
 function openEditModal() {
-  document.getElementById("editInfoModal").style.display = "block";
-  document.getElementById("modalOverlay").style.display = "block";
+  document.getElementById('editInfoModal').style.display = 'block';
+  document.getElementById('modalOverlay').style.display = 'block';
 }
 
 // 회원탈퇴 모달 열기
 function openDelModal() {
-  document.getElementById("delInfoModal").style.display = "block";
-  document.getElementById("delModalOverlay").style.display = "block";
+  document.getElementById('delInfoModal').style.display = 'block';
+  document.getElementById('delModalOverlay').style.display = 'block';
 }
 
 // 모든 모달 닫기
 function closeModal() {
-  document.getElementById("editInfoModal").style.display = "none";
-  document.getElementById("modalOverlay").style.display = "none";
-  document.getElementById("delInfoModal").style.display = "none";
-  document.getElementById("delModalOverlay").style.display = "none";
+  document.getElementById('editInfoModal').style.display = 'none';
+  document.getElementById('modalOverlay').style.display = 'none';
+  document.getElementById('delInfoModal').style.display = 'none';
+  document.getElementById('delModalOverlay').style.display = 'none';
 }
 
 // 정보수정 눌렀을 때 모달 띄우기
 document
-  .querySelector(".leftBar li:nth-child(2) a")
-  .addEventListener("click", function (event) {
+  .querySelector('.leftBar li:nth-child(2) a')
+  .addEventListener('click', function (event) {
     event.preventDefault();
     openEditModal();
   });
@@ -76,52 +76,51 @@ function searchAddress() {
       var addr = data.address; // 최종 주소 변수
 
       // 주소 정보를 해당 필드에 넣는다.
-      document.getElementById("address").value = addr;
+      document.getElementById('address').value = addr;
     },
   }).open();
 }
 
-document.getElementById("address").addEventListener("click", searchAddress);
+document.getElementById('address').addEventListener('click', searchAddress);
 
 // 탈퇴 눌렀을 때 모달 띄우기
 document
-  .querySelector(".leftBar li:nth-child(3) a")
-  .addEventListener("click", function (event) {
+  .querySelector('.leftBar li:nth-child(3) a')
+  .addEventListener('click', function (event) {
     event.preventDefault();
     openDelModal();
   });
 
 // 탈퇴
-const deleteUserBtn = document.getElementById("deleteUser");
-deleteUserBtn.addEventListener("click", deleteUser);
+const deleteUserBtn = document.getElementById('deleteUser');
+deleteUserBtn.addEventListener('click', deleteUser);
 
 async function deleteUser(e) {
   e.preventDefault();
 
   try {
     // 현재 사용자의 이메일을 가져와서 PUT 요청을 보냄
-    const userOrder = localStorage.getItem("orderInfo");
+    const userOrder = localStorage.getItem('orderInfo');
     const userEmail = JSON.parse(userOrder).email;
     const encodedEmail = encodeURIComponent(userEmail);
 
-    console.log("여기");
+    console.log('여기');
 
     const res = await axios.delete(`/api/user/delete/${encodedEmail}`);
 
-    console.log("저기");
+    console.log('저기');
     alert(`${userEmail} 님, 회원 탈퇴 되었습니다.`);
-    window.location.href = "/";
+    window.location.href = '../home/home.html';
   } catch (err) {
     console.error(err);
-    alert("회원 탈퇴완료.");
+    alert('회원 탈퇴완료.');
   }
 }
-
 
 // function cancelOrder(orderId) {
 //   // 사용자에게 취소 확인을 받습니다.
 //   const isConfirmed = confirm("주문을 취소하시겠습니까?");
-  
+
 //   if (isConfirmed) {
 //     // 확인 버튼을 클릭한 경우 주문 항목을 삭제합니다.
 //     const orderElement = document.getElementById(orderId);
@@ -131,10 +130,6 @@ async function deleteUser(e) {
 //     // 예: 취소 실패 메시지를 표시하거나, 취소된 주문을 별도로 표시합니다.
 //   }
 // }
-
-
-
-
 
 // // 주문조회 가져오기
 // async function fetchSpecificUsers() {
