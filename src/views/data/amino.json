@@ -1,0 +1,26 @@
+[
+  {
+    "id": 3,
+    "name": "지플렉스 BCAA회복 아미노산 300g",
+    "category": "아미노산",
+    "price": "27,600원",
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230328/f17c6a1d0daa4.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/e2be7ed9847e0.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/b3002bcc8c02a.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/f3905509c0410.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "레드BCAA회복 아미노산 500g",
+    "category": "아미노산",
+    "price": "40,200원",
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230404/d256d1f02d4a3.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/c89f9fa15f024.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/6e8e6baddd54c.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/48264256d4e41.jpg"
+    ]
+  }
+]

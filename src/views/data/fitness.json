@@ -1,0 +1,92 @@
+[
+  {
+    "id": 12,
+    "name": "지웨이 머슬  쉐이커 스포츠 헬스 물통 보틀 700ml",
+    "price": "5,500원",
+    "category": "헬스용품",
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230908/9c3db7820d005.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/94bf299c5ee21.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/f3b9d1bbb0452.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/cc73de3e26d95.jpg"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "피터기어 헬스 손목 스트랩 리프팅 등운동용품",
+    "category": "헬스용품",
+    "price": "16,700원",
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230329/adffc399d01d4.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/bc1bc29b7fca5.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/018ea23f1d703.jpg"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "피터기어 트레이닝 글로브",
+    "category": "헬스용품",
+    "price": "16,900원",
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230614/bfd2738191202.png",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/97ea9f70928b2.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/dfcc96693d4d9.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/064fc3d81a398.jpg"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "피터기어 프로 스트랩",
+    "category": "헬스용품",
+    "price": "19,100원",
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230329/428b6a2d7a0b8.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/b55f06209580f.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/fb9b767e24b1e.jpg"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "스타텀블러 대용량 빨대 스텐 카페 텀블러 887ml",
+    "category": "헬스용품",
+    "price": "19,400원",
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230329/ca7ac5c23a524.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/5e0e62dc766b2.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/f3b0325e40596.jpg"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "피터기어 레드 리프팅 헬스 파워 벨트",
+    "category": "헬스용품",
+    "price": "19,500원",
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230329/6889fd6ff6598.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/b737dae7b9929.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/be4b69dffe970.jpg"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "피터기어 4구 헬스장갑",
+    "category": "헬스용품",
+    "price": "22,900원",
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230329/10a1701606058.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/932ecc3af6ace.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/605715605c5f0.jpg"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "피터기어 리스트랩 손목보호대",
+    "category": "헬스용품",
+    "price": "22,900원",
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230329/01fd3a84765db.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/eacaa62c81142.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/0c884d377dac7.jpg"
+    ]
+  }
+]
