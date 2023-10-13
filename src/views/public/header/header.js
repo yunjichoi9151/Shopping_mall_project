@@ -59,6 +59,18 @@ function cartMove(event) {
   window.location.href = "/cart";
 }
 
+// logout 기능 추가
+function logOut(event) {
+  event.preventDefault();
+  alert("로그아웃 되었습니다.");
+  // 로컬스토리지의 로그인 정보 false로 만들고
+  // 유저 관련 정보 없애줌
+  localStorage.setItem("loggedIn", false);
+  localStorage.removeItem("userEmail");
+  localStorage.removeItem("token");
+  localStorage.removeItem("refeshToken");
+}
+
 //검색
 function executeSearch() {
   const input = document.getElementById("searchInput");

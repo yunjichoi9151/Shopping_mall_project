@@ -41,7 +41,6 @@ function buyProduct() {
   // localStorage.removeItem('cartInfo');
   // localStorage.setItem('cartInfo', JSON.stringify([createProductData()]));
 
-  const existingCartInfo = JSON.parse(localStorage.getItem("cartInfo")) || [];
   const newProduct = createProductData();
 
   // 기존 cartInfo에 새로운 상품을 추가

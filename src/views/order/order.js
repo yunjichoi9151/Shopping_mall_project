@@ -241,6 +241,8 @@ async function handleOrder(e) {
 
       const res = await axios.post("/api/order/", orderData);
       alert(`${orderInfo.recipient} 님, 주문 완료 되었습니다.`);
+      // 구매하기 진행하면 localStorage 의 장바구니를 비워줌
+      localStorage.setItem("cartInfo", JSON.stringify([]));
       window.location.href = "../order/orderComplete.html";
     } catch (err) {
       console.error(err);
