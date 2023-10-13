@@ -1,3 +1,6 @@
+// import { get, post, put, del } from "../../api";
+// import axios from 'axios';
+
 // 슬라이드
 document.addEventListener("DOMContentLoaded", function () {
   loadHeader();
@@ -16,6 +19,7 @@ const FOOTER_CSS_URL = "../public/footer/footer.css";
 // header불러오기
 async function loadHeader() {
   try {
+    console.log("load header");
     // header.css 불러오기
     const linkElement = document.createElement("link");
     linkElement.rel = "stylesheet";
@@ -38,6 +42,7 @@ async function loadHeader() {
 
 // footer불러오기
 async function loadFooter() {
+  console.log("load footer");
   try {
     // footer.css 불러오기
     const linkElement = document.createElement("link");
@@ -57,46 +62,6 @@ async function loadFooter() {
 // innerHTML 와 Element DOM API의 장단점의 비교와 분석을 해야된다.
 // GPT 지양 >> 개념 예시만 물어보도록 하기
 // onload(이벤트리스너) 에도 적절한지에 대해 생각해보기
-
-// 베스트 아이템 불러오기
-async function loadProducts() {
-  try {
-    const response = await fetch("../data/bestItem.json");
-    const products = await response.json();
-
-    const container = document.querySelector(".productContainer");
-
-    products.forEach((product) => {
-      const productLink = document.createElement("a");
-      productLink.href = `../detail/detail.html?id=${product.id}`;
-
-      const productDiv = document.createElement("div");
-      productDiv.className = "productItem";
-
-      const img = document.createElement("img");
-      img.className = "productImg";
-      img.src = product.imgSrc;
-      productDiv.appendChild(img);
-
-      const productName = document.createElement("p");
-      productName.className = "productName";
-      productName.textContent = product.name;
-      productDiv.appendChild(productName);
-
-      const productPrice = document.createElement("b");
-      productPrice.className = "productPrice";
-      productPrice.textContent = product.price;
-      productDiv.appendChild(productPrice);
-
-      productLink.appendChild(productDiv);
-      container.appendChild(productLink);
-    });
-  } catch (error) {
-    console.error("Error loading products:", error.message);
-  }
-}
-
-loadProducts();
 
 // subNav 엑티브
 document.addEventListener("DOMContentLoaded", function () {
@@ -132,3 +97,50 @@ document.addEventListener("DOMContentLoaded", function () {
       .classList.add("active");
   }
 });
+
+// async function fetchCategoryData() {
+//   try {
+//     const res = await axios.get("/api/category");
+//     console.log(res.data);
+//     if (res.data && res.data.length > 0) {
+//       const ul = document.querySelector(".nav > ul"); // .nav 내부의 ul 선택
+//       res.data.forEach((category) => {
+//         const li = document.createElement("li");
+//         const a = document.createElement("a");
+//         a.href = "#";
+//         a.textContent = category.name;
+//         a.addEventListener("click", function (event) {
+//           event.preventDefault();
+//           navigateToCategory(category.name); // 카테고리 이름을 바탕으로 이동하는 함수 호출
+//         });
+//         li.appendChild(a);
+//         ul.appendChild(li);
+//       });
+//     }
+//     console.log(res.status);
+//   } catch (err) {
+//     console.error(err);
+//   }
+// }
+
+// function navigateToCategory(categoryName) {
+//   switch (categoryName) {
+//     case "헬스보충제":
+//       window.location.href = "../category/carbohydrate.html"; // 헬스보충제 페이지로 이동
+//       break;
+//     case "영양제":
+//       window.location.href = "../category/nutrients.html"; // 영양제 페이지로 이동
+//       break;
+//     case "헬스용품":
+//       window.location.href = "../category/fitness.html"; // 헬스용품 페이지로 이동
+//       break;
+//     case "다이어트/보조식품":
+//       window.location.href = "../category/diet.html"; // 다이어트 페이지로 이동
+//       break;
+//     // 필요한 다른 카테고리도 위와 같은 방식으로 추가
+//     default:
+//       console.log("Unknown category:", categoryName);
+//   }
+// }
+
+// fetchCategoryData();

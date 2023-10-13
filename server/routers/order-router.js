@@ -1,75 +1,64 @@
-const express = require("express")
-const {
-	Router
-} = require('express')
-const Order = require("../db/models/order-model")
+const express = require("express");
+const { Router } = require("express");
+const Order = require("../db/models/order-model");
 
-const orderRouter = Router()
+const orderRouter = Router();
 
 //주문 생성
-orderRouter.post('/', async (req, res) => {
-	const {
-		itemInfo,
-		itemAmount,
-		buyer,
-		createdAt
-	} = req.body;
-	const order = await Order.create({
-		itemInfo,
-		itemAmount,
-		buyer,
-		createdAt
-	})
-	res.json(order);
-})
+orderRouter.post("/", async (req, res) => {
+  const orderData = req.body; // 클라이언트에서 받은 주문 정보
+  try {
+    // 주문 정보를 MongoDB에 저장
+    const order = await Order.create(orderData);
+    res.json(order);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "주문 처리 중 오류가 발생했습니다." });
+  }
+});
 
 //주문 조회
-orderRouter.get('/', async (req, res) => {
-	const orders = await Order.find({}).sort();
-	res.json(orders)
-})
+orderRouter.get("/", async (req, res) => {
+  const orders = await Order.find({}).sort();
+  res.json(orders);
+});
 
 //주문 상세 조회
-orderRouter.get('/:orderId', async (req, res) => {
-	const {
-		orderId
-	} = req.params;
-	const order = await Order.findById(orderId);
-	res.json(order)
-})
+orderRouter.get("/:orderId", async (req, res) => {
+  const { orderId } = req.params;
+  const order = await Order.findById(orderId);
+  res.json(order);
+});
 
-//주문 수정 
-orderRouter.put('/put/:orderId', async (req, res) => {
-	const {
-		orderId
-	} = req.params;
-	const {
-		itemInfo,
-		itemAmount,
-		buyer
-	} = req.body; // updatedAt빼버림
+//주문 수정
+orderRouter.put("/put/:orderId", async (req, res) => {
+  const { orderId } = req.params;
+  const { itemInfo, itemAmount, buyer } = req.body; // updatedAt빼버림
 
-	const currentTime = Date.now();
+  const currentTime = Date.now();
 
-	const order = await Order.updateOne({
-		_id: orderId
-	}, {
-		itemInfo,
-		itemAmount,
-		buyer,
-		updatedAt: currentTime
-	}, {
-		new: true
-	})
+  const order = await Order.updateOne(
+    {
+      _id: orderId,
+    },
+    {
+      itemInfo,
+      itemAmount,
+      buyer,
+      updatedAt: currentTime,
+    },
+    {
+      new: true,
+    }
+  );
 
-	if (!order) {
-		return res.status(404).json({
-			message: '주문 못찾겠다'
-		});
-	}
-	res.json(order)
-
-})
+  if (!order) {
+    return res.status(404).json({
+      message: "주문 못찾겠다",
+    });
+  }
+  res.json(order);
+});
 
 //오류찾기위한 코드
 // orderRouter.put('/:orderId', async (req, res) => {
@@ -104,8 +93,7 @@ orderRouter.put('/put/:orderId', async (req, res) => {
 
 // });
 
-
-//주문 삭제 
+//주문 삭제
 // orderRouter.put('/:orderId', async (req, res) => {
 // 	const {
 // 		orderId
@@ -115,28 +103,26 @@ orderRouter.put('/put/:orderId', async (req, res) => {
 // 	})
 // 	res.json(order)
 // })
-orderRouter.put('/delete/:orderId', async (req, res) => {
-	try {
-		const {
-			orderId
-		} = req.params
+orderRouter.put("/delete/:orderId", async (req, res) => {
+  try {
+    const { orderId } = req.params;
 
-		const currentTime = Date.now()
-		const order = await Order.updateOne({
-				_id: orderId
-			}, {
-				deletedAt: currentTime
-			}
+    const currentTime = Date.now();
+    const order = await Order.updateOne(
+      {
+        _id: orderId,
+      },
+      {
+        deletedAt: currentTime,
+      }
+    );
 
-		)
-
-		res.json(order)
-	} catch (err) {
-		res.json({
-			message: err.message
-		})
-	}
-})
-
+    res.json(order);
+  } catch (err) {
+    res.json({
+      message: err.message,
+    });
+  }
+});
 
 module.exports = orderRouter;

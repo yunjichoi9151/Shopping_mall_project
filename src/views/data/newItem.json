@@ -1,30 +1,54 @@
 [
   {
-    "id": 1,
-    "name": "지웨이 위드 쉐이커 2종",
-    "price": "5,500원",
-    "imgSrc": "../public/img/newItem1.jpg",
-    "detailImgUrl": "../detail/detail.html"
+    "id": 20,
+    "name": "올스타웨이 단백질 보충제 프로틴 초코맛 2kg",
+    "category": "신상품",
+    "price": "61,400원",
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230407/3cda593a05a11.png",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/8c120dbcab059.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/48b35ba28b6f7.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/2c1ddee637a1d.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/512194641fd70.jpg"
+    ]
   },
   {
-    "id": 2,
-    "name": "지웨이 크레아틴 모노 하이드레이트",
-    "price": "21,300원",
-    "imgSrc": "../public/img/newItem2.jpg",
-    "detailImgUrl": "../detail/detail.html"
+    "id": 21,
+    "name": "올스타웨이 단백질 보충제 프로틴 쿠키맛 2kg",
+    "category": "신상품",
+    "price": "61,400원",
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230405/75dbca153867c.png",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/8c120dbcab059.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/48b35ba28b6f7.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/2c1ddee637a1d.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/512194641fd70.jpg"
+    ]
   },
   {
-    "id": 3,
-    "name": "트러스트 웨이 단백질",
+    "id": 22,
+    "name": "트러스트 웨이 단백질 초코맛 900g",
+    "category": "신상품",
     "price": "28,800원",
-    "imgSrc": "../public/img/newItem3.jpg",
-    "detailImgUrl": "../detail/detail.html"
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230328/1694d74692deb.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/799aec47a9f65.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/306e8365503be.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/724ad0729d590.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/f5c5c7c1dd298.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/932d51e84cde5.jpg"
+    ]
   },
   {
-    "id": 4,
-    "name": "지웨이 크레아틴 모노 하이드레이트",
-    "price": "21,300원",
-    "imgSrc": "../public/img/newItem4.jpg",
-    "detailImgUrl": "../detail/detail.html"
+    "id": 23,
+    "name": "크레아틴 모노 하이드레이트 부스터 400g",
+    "category": "신상품",
+    "price": "38,000원",
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230404/96b77e37efa2c.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/03dda7e4ea2f5.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/58187d2ab13a6.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/44bde12129393.jpg"
+    ]
   }
 ]

@@ -72,3 +72,29 @@ document
     event.preventDefault();
     openDelModal();
   });
+
+// 탈퇴
+const deleteUserBtn = document.getElementById("deleteUser");
+deleteUserBtn.addEventListener("click", deleteUser);
+
+async function deleteUser(e) {
+  e.preventDefault();
+
+  try {
+    // 현재 사용자의 이메일을 가져와서 PUT 요청을 보냄
+    const userOrder = localStorage.getItem("orderInfo");
+    const userEmail = JSON.parse(userOrder).email;
+    const encodedEmail = encodeURIComponent(userEmail);
+
+    console.log("여기");
+
+    const res = await axios.delete(`/api/user/delete/${encodedEmail}`);
+
+    console.log("저기");
+    alert(`${userEmail} 님, 회원 탈퇴 되었습니다.`);
+    window.location.href = "/";
+  } catch (err) {
+    console.error(err);
+    alert("회원 탈퇴에 실패했습니다. 다시 시도해주세요.");
+  }
+}

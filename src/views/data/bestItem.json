@@ -1,58 +1,108 @@
 [
   {
-    "id": 1,
-    "name": "지웨이 위드 쉐이커 2종",
-    "price": "5,500원",
-    "imgSrc": "../public/img/newItem1.jpg",
-    "url": "product1.html"
+    "id": 32,
+    "name": "엑스엑스웨이 단백질 보충제 쿠키앤크림맛",
+    "category": "베스트",
+    "price": "75,700원",
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230404/c3e9980249a7a.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/08b9604ea8a37.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/cfb099d673016.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/3cce26bc688e5.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/393fb92bb7237.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/bd92cd1ee6135.jpg"
+    ]
   },
   {
-    "id": 2,
-    "name": "지웨이 크레아틴 모노 하이드레이트",
+    "id": 33,
+    "name": "지웨이 크레아틴 모노 하이드레이트 수박맛",
+    "category": "베스트",
     "price": "21,300원",
-    "imgSrc": "../public/img/newItem2.jpg",
-    "url": "product1.html"
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230824/8d55f909163a4.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/2d1648a41078b.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/c73c65d89c4e0.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/4aea76f0d96bb.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/8d8e1286ebad4.jpg"
+    ]
   },
   {
-    "id": 3,
-    "name": "트러스트 웨이 단백질",
+    "id": 34,
+    "name": "트러스트 웨이 단백질 인절미맛 900g",
+    "category": "베스트",
     "price": "28,800원",
-    "imgSrc": "../public/img/newItem3.jpg",
-    "url": "product1.html"
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230328/710a556951bf4.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/c23f9d27840ac.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/e461313bf36de.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/fe0b1a91583a3.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/21fe8c27ef00c.jpg"
+    ]
   },
   {
-    "id": 4,
-    "name": "지웨이 크레아틴 모노 하이드레이트",
+    "id": 35,
+    "name": "지웨이 크레아틴 모노 하이드레이트 복숭아맛",
+    "category": "베스트",
     "price": "21,300원",
-    "imgSrc": "../public/img/newItem4.jpg",
-    "url": "product1.html"
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230824/4ce66c4ff1f7a.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/2d1648a41078b.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/c73c65d89c4e0.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/4aea76f0d96bb.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/8d8e1286ebad4.jpg"
+    ]
   },
   {
-    "id": 5,
-    "name": "지웨이 포켓 프로틴 단백질 보충제",
+    "id": 36,
+    "name": "지웨이 포켓 프로틴 단백질 보충제 초코맛",
+    "category": "베스트",
     "price": "30,000원",
-    "imgSrc": "../public/img/newItem5.jpg",
-    "url": "product1.html"
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230328/cba9679754a49.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/03e19d2124e8b.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/e738c61880ff5.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/40fbfdcf04551.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/a4e990b7b3b59.jpg"
+    ]
   },
   {
-    "id": 6,
-    "name": "매일 마시는 단백질 보충제",
+    "id": 37,
+    "name": "한미 매일 마시는 단백질 쉐이크 350g",
+    "category": "베스트",
     "price": "7,900원",
-    "imgSrc": "../public/img/newItem6.jpg",
-    "url": "product1.html"
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230328/706535fbb5294.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/48f603573a936.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/9f02cb7c0cff9.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/4bc9e1c16e58e.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/92509bfaa27b4.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/ad59db5f5f2ba.jpg"
+    ]
   },
   {
-    "id": 7,
-    "name": "지웨이 크레아틴 모노 하이드레이트",
+    "id": 38,
+    "name": "지웨이 크레아틴 모노 하이드레이트 레몬맛",
+    "category": "베스트",
     "price": "21,300원",
-    "imgSrc": "../public/img/newItem7.jpg",
-    "url": "product1.html"
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230824/ed18d9705f344.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/2d1648a41078b.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/c73c65d89c4e0.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/4aea76f0d96bb.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/8d8e1286ebad4.jpg"
+    ]
   },
   {
-    "id": 8,
-    "name": "지웨이 크레아틴 모노 하이드레이트",
+    "id": 39,
+    "name": "지웨이 크레아틴 모노 하이드레이트 포도맛",
+    "category": "베스트",
     "price": "21,300원",
-    "imgSrc": "../public/img/newItem8.jpg",
-    "url": "product1.html"
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230824/fa044f4d18473.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/2d1648a41078b.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/c73c65d89c4e0.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/4aea76f0d96bb.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/8d8e1286ebad4.jpg"
+    ]
   }
 ]

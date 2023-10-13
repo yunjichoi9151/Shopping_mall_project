@@ -107,7 +107,7 @@ async function handleJoin(e) {
 
     console.log("여기까지");
     // 서버, db 와의 통신으로 회원가입 진행해야함
-    const res = await axios.post("/api/user/join", joinUserData);
+    const res = await axios.post("/api/auth/join", joinUserData);
 
     // localStorage.setItem("token", res.data.token);
     // localStorage.setItem("token", res.data.refreshToken);

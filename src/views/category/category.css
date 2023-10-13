@@ -52,3 +52,175 @@ main {
   font-weight: bold;
   color: white;
 }
+
+/* 탄수화물 보충제 */
+
+.subText {
+  width: 1264px;
+
+  margin: 0 auto;
+}
+.subText .carbohydrateItem {
+  width: 269px;
+  height: 700px;
+  padding-top: 75px;
+  padding-bottom: 50px;
+}
+.subText .carbohydrateItem h2 {
+  padding: 20px 0;
+}
+.subText .carbohydrateItem > div {
+  display: flex;
+}
+
+/* 탄수화물 js */
+
+.carbohydrateContainer a {
+  color: black;
+  display: block;
+  padding-right: 50px;
+}
+.productItem {
+  width: 269px;
+  height: 269px;
+  padding-bottom: 10px;
+}
+.productImg {
+  width: 269px;
+  height: 269px;
+  border-radius: 15px;
+}
+.productName {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* 단백질 보충제 */
+
+.subText .proteinItem {
+  width: 269px;
+  height: 700px;
+  padding-top: 75px;
+  padding-bottom: 50px;
+}
+.subText .proteinItem h2 {
+  padding: 20px 0;
+}
+.subText .proteinItem > div {
+  display: flex;
+}
+
+/* 단백질 js */
+
+.proteinContainer a {
+  color: black;
+  display: block;
+  padding-right: 50px;
+}
+.productItem {
+  width: 269px;
+  height: 269px;
+  padding-bottom: 10px;
+}
+.productImg {
+  width: 269px;
+  height: 269px;
+  border-radius: 15px;
+}
+.productName {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* 아미노 보충제 */
+
+.subText .aminoItem {
+  width: 269px;
+  height: 700px;
+  padding-top: 75px;
+  padding-bottom: 50px;
+}
+.subText .aminoItem h2 {
+  padding: 20px 0;
+}
+.subText .aminoItem > div {
+  display: flex;
+}
+
+/* 아미노 js */
+
+.aminoContainer a {
+  color: black;
+  display: block;
+  padding-right: 50px;
+}
+.productItem {
+  width: 269px;
+  height: 269px;
+  padding-bottom: 10px;
+}
+.productImg {
+  width: 269px;
+  height: 269px;
+  border-radius: 15px;
+}
+.productName {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* 다이어트 */
+.diteItem {
+  padding-bottom: 100px;
+}
+.diteItem .diteContainer {
+  width: 100%;
+  padding-top: 75px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.diteItem .diteContainer a {
+  color: black;
+  display: block;
+  padding-bottom: 150px;
+}
+
+/* 피트니스 */
+.fitnessItem {
+  padding-bottom: 100px;
+}
+.fitnessItem .fitnessContainer {
+  width: 100%;
+  padding-top: 75px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.fitnessItem .fitnessContainer a {
+  color: black;
+  display: block;
+  padding-bottom: 150px;
+}
+
+/* 영양제 */
+.nutrientsItem {
+  padding-bottom: 100px;
+  width: 1264px;
+  margin: 0 auto;
+}
+.nutrientsItem .nutrientsContainer {
+  width: 100%;
+  padding-top: 75px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.nutrientsItem .nutrientsContainer a {
+  color: black;
+  display: block;
+  padding-bottom: 150px;
+}
