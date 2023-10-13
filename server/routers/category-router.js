@@ -41,19 +41,19 @@ categoryRouter.post("/", async (req, res, next) => {
 
 // 모든 카테고리 조회
 // 메인 페이지에서 보여지도록
-categoryRouter.get("/", async (req, res, next) => {
-  console.log("모든 카테고리 조회");
-  try {
-    const categories = await CategoryModel.find({ deletedAt: null });
-    return res.status(200).json({
-      status: 200,
-      msg: "카테고리 조회",
-      data: categories,
-    });
-  } catch (err) {
-    next(err);
-  }
-});
+// categoryRouter.get("/", async (req, res, next) => {
+//   console.log("모든 카테고리 조회");
+//   try {
+//     const categories = await CategoryModel.find({ deletedAt: null });
+//     return res.status(200).json({
+//       status: 200,
+//       msg: "카테고리 조회",
+//       data: categories,
+//     });
+//   } catch (err) {
+//     next(err);
+//   }
+// });
 
 // 하나의 카테고리만 조회
 categoryRouter.get("/:categoryId", async (req, res, next) => {
