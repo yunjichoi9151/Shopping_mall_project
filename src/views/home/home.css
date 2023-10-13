@@ -162,9 +162,10 @@
 /* 베스트 html */
 .bestItem {
   width: 1264px;
-  height: 660px;
+  height: 700px;
   margin: 0 auto;
-  padding-top: 50px;
+  padding-top: 75px;
+  padding-bottom: 250px;
 }
 .bestItem > h1 {
   padding: 20px 0;
@@ -190,7 +191,7 @@
   width: 269px;
   height: 269px;
   padding-bottom: 10px;
-  position: relative;
+  /* position: relative; */
 }
 .productImg {
   width: 269px;
@@ -198,15 +199,17 @@
   border-radius: 15px;
 }
 .productName {
-  position: absolute;
-  bottom: -12%;
-  left: 10px;
-  font-size: 17px;
+  /* position: absolute; */
+  /* bottom: -15%;
+  left: 10px; */
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 .productPrice {
-  position: absolute;
-  bottom: -25%;
-  left: 10px;
+  /* position: absolute; */
+  /* bottom: -21%;
+  left: 10px; */
 }
 
 /* 신상품 */

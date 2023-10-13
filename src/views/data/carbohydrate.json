@@ -1,0 +1,23 @@
+[
+  {
+    "id": 5,
+    "name": "레드 게이너 4kg 살찌는 게이너 탄수화물 체중증가 보충제",
+    "category": "탄수화물 보충제",
+    "price": "60,100원",
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230328/8280e5a6f51ae.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/25e531b9869a9.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/3b5e01e9c8510.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "지플렉스게이너 3kg 살찌는 게이너 탄수화물 체중증가 보충제",
+    "category": "탄수화물 보충제",
+    "price": "79,500원",
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230328/d10a8883cbf32.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/7e44e634e9730.jpg"
+    ]
+  }
+]

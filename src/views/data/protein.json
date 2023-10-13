@@ -1,0 +1,33 @@
+[
+  {
+    "id": 29,
+    "name": "지플렉스웨이 WPI 단백질 보충제 웨이 프로틴 2kg 쿠키앤크림맛 ",
+    "category": "단백질 보충제",
+    "price": "89,200",
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230328/025628aef1b38.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/38dc7d2b429fe.jpg"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "지플렉스웨이 WPI 단백질 보충제 웨이 프로틴 2kg 밀크초코맛",
+    "category": "단백질 보충제",
+    "price": "89,200원",
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230328/911fd9dca6b63.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/9b73a267269eb.jpg"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "지플렉스웨이 WPI 단백질 보충제 분리유청 프로틴 1.8kg 초코맛",
+    "category": "단백질 보충제",
+    "price": "84,600원",
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230328/4cc128356ea2d.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/5cb5de4a810c2.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/7d0267362d5ff.jpg"
+    ]
+  }
+]

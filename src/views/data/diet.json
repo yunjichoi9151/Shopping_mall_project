@@ -1,0 +1,79 @@
+[
+  {
+    "id": 7,
+
+    "name": "지웨이 슬림밀 단백질 다이어트 식사대용 쉐이크 쿠키맛 800g",
+    "category": "다이어트",
+
+    "price": "26,100원",
+
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230609/0f090afe06bee.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/393b13bbba220.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/3d9a227338430.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/7601f90144e8e.jpg"
+    ]
+  },
+
+  {
+    "id": 8,
+
+    "name": "지웨이 슬림밀 단백질 다이어트 식사대용 쉐이크 고구마맛 800g",
+    "category": "다이어트",
+    "price": "26,100원",
+
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230609/7a6f439ae3fa4.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/393b13bbba220.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/3d9a227338430.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/7601f90144e8e.jpg"
+    ]
+  },
+
+  {
+    "id": 9,
+
+    "name": "지웨이 슬림밀 단백질 다이어트 식사대용 쉐이크 곡물맛 800g",
+    "category": "다이어트",
+    "price": "26,100원",
+
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230609/8e29746299863.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/393b13bbba220.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/3d9a227338430.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/7601f90144e8e.jpg"
+    ]
+  },
+
+  {
+    "id": 10,
+
+    "name": "지웨이 다이어트 식사대용 단백질 쉐이크 단호박맛 700g",
+    "category": "다이어트",
+    "price": "27,000원",
+
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230404/341ad65b4c377.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/32ec63e6c954c.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/3c8f069698687.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/ac7f7b7015af9.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/5d5711ea21e56.jpg"
+    ]
+  },
+
+  {
+    "id": 11,
+
+    "name": "지웨이 다이어트 식사대용 단백질 쉐이크 초코맛 700g",
+    "category": "다이어트",
+    "price": "27,000원",
+
+    "imgSrc": "https://cdn.imweb.me/thumbnail/20230404/3b40ee2354fd9.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/32ec63e6c954c.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/3c8f069698687.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/ac7f7b7015af9.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/5d5711ea21e56.jpg"
+    ]
+  }
+]
