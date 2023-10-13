@@ -25,6 +25,10 @@ main {
   border-spacing: 0 10px; /* 수직 간격은 10px로 지정 (원하는 크기로 조절 가능) */
 }
 
+#cartText {
+  max-width: 250px;
+}
+
 .cart-items th,
 .cart-items td {
   padding: 10px;

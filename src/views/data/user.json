@@ -1,11 +1,12 @@
 [
   {
     "id": "1",
-    "name": "김다빈",
-    "email": "dabin@gmail.com",
-    "phone": "010 - 0000 - 0000",
-    "address": "서울시 서초구 방배동",
-    "cumulativeTotal": "10,000원",
+    "name": "방준하",
+    "email": "bang@gmail.com",
+    "phone": " 010 - 1212 - 7777",
+    "address": "서울시 강남구 가로수길 5 가로수아파트 ",
+    "subAddress": "101동 101호",
+    "cumulativeTotal": "101,200원",
     "point": "10원"
   },
   {

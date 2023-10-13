@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./mypage.css" />
     <link rel="stylesheet" href="../public/common/common.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   </head>
   <body>
     <header id="headerHtml"></header>
@@ -26,7 +27,9 @@
             <input type="tel" id="phone" name="phone" />
 
             <label for="address">주소:</label>
-            <input type="text" id="address" name="address" />
+            <input type="text" id="address" name="address" readonly />
+            <label for="subAddress">상세주소:</label>
+            <input type="text" id="subAddress" name="subAddress" />
           </form>
           <button onclick="closeModal()">확인하기</button>
         </div>
@@ -73,7 +76,68 @@
           </div>
           <div class="orderList">
             <h2>주문조회</h2>
-            <div>주문 내역이 없습니다.</div>
+            <div class="orderListBox">
+              <div class="orderListWapper">
+                <img
+                  src="https://cdn.imweb.me/thumbnail/20230328/8280e5a6f51ae.jpg"
+                  alt=""
+                />
+                <div class="orderText">
+                  <span class="orderProductName"
+                    >레드 게이너 4kg 살찌는 게이너 탄수화물 체중증가
+                    보충제</span
+                  >
+                  <div class="orderPrice">
+                    <span>60,100원</span>
+                    <span>1개</span>
+                  </div>
+                </div>
+                <div class="orderFinish">입금완료</div>
+                <button>취소</button>
+              </div>
+            </div>
+            <i></i>
+            <div class="orderListBox">
+              <div class="orderListWapper">
+                <img
+                  src="https://cdn.imweb.me/thumbnail/20230330/af238627224b4.jpg"
+                  alt=""
+                />
+                <div class="orderText">
+                  <span class="orderProductName"
+                    >지웨이 프로바이오틱스 생 유산균 240억투입 20억보장 30캡슐
+                    (1박스)</span
+                  >
+                  <div class="orderPrice">
+                    <span>16,300원</span>
+                    <span>2개</span>
+                  </div>
+                </div>
+                <div class="orderFinish">입금완료</div>
+                <button>취소</button>
+              </div>
+            </div>
+            <i></i>
+            <div class="orderListBox">
+              <div class="orderListWapper">
+                <img
+                  src="https://cdn.imweb.me/thumbnail/20230609/0f090afe06bee.jpg"
+                  alt=""
+                />
+                <div class="orderText">
+                  <span class="orderProductName"
+                    >지웨이 슬림밀 단백질 다이어트 식사대용 쉐이크 쿠키맛
+                    800g</span
+                  >
+                  <div class="orderPrice">
+                    <span>26,100원</span>
+                    <span>3개</span>
+                  </div>
+                </div>
+                <div class="orderFinish">입금완료</div>
+                <button>취소</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
