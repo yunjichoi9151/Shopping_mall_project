@@ -67,7 +67,7 @@ categoryRouter.get("/:categoryId", async (req, res, next) => {
 })
 
 // 카테고리 페이지
-// 카테고리 별 상품 조회
+// 서브 카테고리 별 상품 조회
 categoryRouter.get("/mainPart/:categoryId", async (req, res, next) => {
     console.log("카테고리 별 상품 조회");
     if(req.body.parentCategoryId === null) {
@@ -83,7 +83,7 @@ categoryRouter.get("/mainPart/:categoryId", async (req, res, next) => {
         next(err);
     }
 })
-// 카테고리 별 상품 조회
+// 서브 카테고리 별 상품 조회
 categoryRouter.get("/subPart/:categoryId", async (req, res, next) => {
     console.log("카테고리 별 상품 조회");
     if(req.body.parentCategoryId === null) {
