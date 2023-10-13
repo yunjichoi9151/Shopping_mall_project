@@ -142,3 +142,7 @@ th .deleteBtn {
   display: flex !important;
   justify-content: center !important;
 }
+
+#cartText {
+  max-width: 250px;
+}

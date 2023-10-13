@@ -1,10 +1,10 @@
 const { Schema } = require("mongoose");
+const mongoose = require("mongoose");
+const {
+  Types: { ObjectId },
+} = Schema;
 
 const orderProductSchema = new Schema({
-  id: {
-    type: String,
-    required: true,
-  },
   img: {
     type: String,
     required: true,

@@ -2,30 +2,30 @@
 // 관리자가 아니라면 튕겨내는 기능 구현 예정
 
 // 화면이 들어가는 공간
-const listContainer = document.querySelector('#list-container');
+const listContainer = document.querySelector("#list-container");
 // 카테고리 관리 버튼
-const orderBtn = document.querySelector('#order-btn');
-const itemBtn = document.querySelector('#items-btn');
-const categoryBtn = document.querySelector('#category-btn');
+const orderBtn = document.querySelector("#order-btn");
+const itemBtn = document.querySelector("#items-btn");
+const categoryBtn = document.querySelector("#category-btn");
 // 모달창
-const categoryAddBox = document.querySelector('#modal-container');
+const categoryAddBox = document.querySelector("#modal-container");
 
 // 버튼에 이벤트 넣기
 // categoryBtn.addEventListener('click', clickedCategory);
 
 // *******************************************************************
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   // 데이터 로드 후 로컬스토리지에 저장
   loadJsonAndSave();
-  categoryBtn.addEventListener('click', clickedCategory);
+  categoryBtn.addEventListener("click", clickedCategory);
 });
 async function loadJsonAndSave() {
   try {
-    const response = await fetch('../data/adminCategory.json');
+    const response = await fetch("../data/adminCategory.json");
     const data = await response.json();
-    localStorage.setItem('adminCategory', JSON.stringify(data));
+    localStorage.setItem("adminCategory", JSON.stringify(data));
   } catch (error) {
-    console.error('Failed to load JSON', error);
+    console.error("Failed to load JSON", error);
   }
 }
 
@@ -33,27 +33,27 @@ async function loadJsonAndSave() {
 // 카테고리 관리 버튼
 async function clickedCategory() {
   // 화면 초기화 (모달창 지우거)
-  listContainer.innerHTML = '';
-  categoryAddBox.innerHTML = '';
+  listContainer.innerHTML = "";
+  categoryAddBox.innerHTML = "";
 
   // 사이드바: 상품관리 하단에 버튼 있다면 지우기
-  const itemsBtn_add = document.querySelector('#items-btn__add');
+  const itemsBtn_add = document.querySelector("#items-btn__add");
 
-  if (itemsBtn_add.innerText !== '') {
-    itemsBtn_add.innerText = '';
+  if (itemsBtn_add.innerText !== "") {
+    itemsBtn_add.innerText = "";
   }
 
   // 주문관리의 페이지 있다면 지우기
-  const page_list = document.querySelector('#page_list');
-  if (page_list.innerHTML !== '') {
-    page_list.innerHTML = '';
+  const page_list = document.querySelector("#page_list");
+  if (page_list.innerHTML !== "") {
+    page_list.innerHTML = "";
   }
-  orderBtn.style.backgroundColor = 'white';
-  orderBtn.style.color = 'black';
-  itemBtn.style.backgroundColor = 'white';
-  itemBtn.style.color = 'black';
-  categoryBtn.style.backgroundColor = 'black';
-  categoryBtn.style.color = 'white';
+  orderBtn.style.backgroundColor = "white";
+  orderBtn.style.color = "black";
+  itemBtn.style.backgroundColor = "white";
+  itemBtn.style.color = "black";
+  categoryBtn.style.backgroundColor = "black";
+  categoryBtn.style.color = "white";
 
   // 카테고리 추가 버튼 (없다면)넣기
   // if (document.querySelector('#category-btn__add').innerText === '') {
@@ -83,15 +83,15 @@ async function clickedCategory() {
 // 카테고리 추가 버튼
 function addCategory() {
   // 버튼의 부모 불러오기
-  const categoryBtnParent = document.querySelector('#category-btn');
+  const categoryBtnParent = document.querySelector("#category-btn");
   //추가할 버튼 생성
-  const categoryBtn_add = document.querySelector('#category-btn__add');
-  categoryBtn_add.innerText = '카테고리 추가';
+  const categoryBtn_add = document.querySelector("#category-btn__add");
+  categoryBtn_add.innerText = "카테고리 추가";
   // 버튼을 부모에 추가
   categoryBtnParent.appendChild(categoryBtn_add);
 
   // 카테고리 추가 버튼 이벤트 -> 모달창 생성
-  categoryBtn_add.addEventListener('click', async () => {
+  categoryBtn_add.addEventListener("click", async () => {
     categoryAddBox.innerHTML = `
     <div id="modal-container__inner">
       <p id="modalTitle">카테고리 추가</p>
@@ -112,48 +112,48 @@ function addCategory() {
 
     // 추가완료 버튼
     const categoryAddBox_addBtn = document.querySelector(
-      '#categoryAddBox_addBtn'
+      "#categoryAddBox_addBtn"
     );
 
-    categoryAddBox_addBtn.addEventListener('click', async () => {
+    categoryAddBox_addBtn.addEventListener("click", async () => {
       // 입력받는 input 불러오기
       const categoryAddBox_nameInput = document.querySelector(
-        '#categoryAddBox_nameInput'
+        "#categoryAddBox_nameInput"
       );
       const categoryAddBox_indexInput = document.querySelector(
-        '#categoryAddBox_indexInput'
+        "#categoryAddBox_indexInput"
       );
       // 입력값 받아오기
       const addName = categoryAddBox_nameInput.value;
       const addIndex = categoryAddBox_indexInput.value;
 
       // 빈칸인지 검사
-      if (addName === '' || addIndex === '') {
-        return alert('값을 입력해주세요');
+      if (addName === "" || addIndex === "") {
+        return alert("값을 입력해주세요");
       }
       // 인덱스 형태 검사
       if (!/^[a-z|A-Z]/.test(addIndex)) {
         return alert(`인덱스는 알파벳으로 시작해야합니다. ex) a200, b300`);
       }
       // 검사를 통과했으면 요청 보냄
-      const res = await categoryPost('/api/categories', {
+      const res = await categoryPost("/api/categories", {
         name: addName,
         index: addIndex,
       });
 
       alert(res.msg);
       // 모달창 없애기
-      categoryAddBox.innerHTML = '';
+      categoryAddBox.innerHTML = "";
       clickedCategory();
     });
 
     // 취소 버튼
     const categoryAddBox_cancelBtn = document.querySelector(
-      '#categoryAddBox_cancelBtn'
+      "#categoryAddBox_cancelBtn"
     );
 
-    categoryAddBox_cancelBtn.addEventListener('click', () => {
-      categoryAddBox.innerHTML = '';
+    categoryAddBox_cancelBtn.addEventListener("click", () => {
+      categoryAddBox.innerHTML = "";
     });
   });
 }
@@ -161,28 +161,28 @@ function addCategory() {
 // *******************************************************************
 // 카테고리 리스트 출력
 async function makeCategoryList() {
-  const admin_category_title = document.createElement('div');
+  const admin_category_title = document.createElement("div");
   admin_category_title.innerHTML = `
     <div class="item_header_wrap">
       <div class="item_title">카테고리 관리</div>
     </div>`;
   listContainer.appendChild(admin_category_title);
-  const dataStr = localStorage.getItem('adminCategory');
+  const dataStr = localStorage.getItem("adminCategory");
   const categories = JSON.parse(dataStr).data;
-  console.log(categories, '########');
+  console.log(categories, "########");
   // 모든 카테고리 불러옴
   // const categories = (await Api.get('/api/categories/all')).data;
   // 리스트가 들어갈 공간
-  const admin_category_parent = document.createElement('div');
-  admin_category_parent.classList.add('admin_category_parent');
+  const admin_category_parent = document.createElement("div");
+  admin_category_parent.classList.add("admin_category_parent");
 
-  const admin_category_head = document.createElement('div');
-  admin_category_head.classList.add('admin_category_head');
-  admin_category_head.innerText = '대분류';
+  const admin_category_head = document.createElement("div");
+  admin_category_head.classList.add("admin_category_head");
+  admin_category_head.innerText = "대분류";
   admin_category_parent.appendChild(admin_category_head);
 
-  const admin_category_items = document.createElement('div');
-  admin_category_items.classList.add('admin_category_items');
+  const admin_category_items = document.createElement("div");
+  admin_category_items.classList.add("admin_category_items");
   admin_category_parent.appendChild(admin_category_items);
   // 대분류만 가져오기
   const mainCategories = categories.filter(
@@ -192,7 +192,7 @@ async function makeCategoryList() {
   // 소분류 목록을 보여주는 함수
   function showSubcategories(parentId) {
     // 이전에 표시된 소분류 목록을 제거합니다.
-    existingSubcategories = document.querySelector('.admin_subcategory_items');
+    existingSubcategories = document.querySelector(".admin_subcategory_items");
     if (existingSubcategories) {
       existingSubcategories.remove();
     }
@@ -202,13 +202,13 @@ async function makeCategoryList() {
       (category) => category.parentCategoryId === parentId
     );
 
-    const admin_subcategory_items = document.createElement('div');
-    admin_subcategory_items.classList.add('admin_subcategory_items');
+    const admin_subcategory_items = document.createElement("div");
+    admin_subcategory_items.classList.add("admin_subcategory_items");
 
     // 소분류를 목록에 추가합니다.
     subcategories.forEach((subcategory) => {
-      const subcategoryItem = document.createElement('div');
-      subcategoryItem.classList.add('admin_subcategory_item');
+      const subcategoryItem = document.createElement("div");
+      subcategoryItem.classList.add("admin_subcategory_item");
       subcategoryItem.textContent = subcategory.name;
       admin_subcategory_items.appendChild(subcategoryItem);
     });
@@ -219,25 +219,25 @@ async function makeCategoryList() {
 
   // 대분류를 admin_category_items에 추가하기
   mainCategories.forEach((category) => {
-    const categoryItem = document.createElement('div');
-    categoryItem.classList.add('admin_category_item'); // 스타일을 적용할 클래스
+    const categoryItem = document.createElement("div");
+    categoryItem.classList.add("admin_category_item"); // 스타일을 적용할 클래스
     categoryItem.textContent = category.name; // 카테고리 이름 텍스트로 삽입
     admin_category_items.appendChild(categoryItem);
 
     // 대분류 아이템 클릭 이벤트 추가
-    categoryItem.addEventListener('click', function () {
+    categoryItem.addEventListener("click", function () {
       // 모든 대분류 아이템의 배경색을 원래대로 되돌림
       const allCategoryItems = document.querySelectorAll(
-        '.admin_category_item'
+        ".admin_category_item"
       );
       allCategoryItems.forEach((item) => {
-        item.style.backgroundColor = '#fffced';
-        item.style.color = 'black'; // 원래의 배경색으로 설정
+        item.style.backgroundColor = "#fffced";
+        item.style.color = "black"; // 원래의 배경색으로 설정
       });
 
       // 클릭된 아이템의 배경색을 변경
-      this.style.backgroundColor = 'black'; // 원하는 색상으로 변경
-      this.style.color = 'white';
+      this.style.backgroundColor = "black"; // 원하는 색상으로 변경
+      this.style.color = "white";
 
       showSubcategories(category._id); // 소분류 목록을 표시하는 함수를 호출
     });

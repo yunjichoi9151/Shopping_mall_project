@@ -109,6 +109,7 @@ async function handleLogin(e) {
     const token = res.data.token;
     const refreshToken = res.data.refreshToken;
     const userName = res.data.name;
+    const userEmail = loginUserData.email;
 
     console.log(token);
     console.log(refreshToken);
@@ -117,6 +118,7 @@ async function handleLogin(e) {
     localStorage.setItem("token", token);
     localStorage.setItem("loggedIn", "true");
     localStorage.setItem("refeshToken", refreshToken);
+    localStorage.setItem("userEmail", userEmail);
 
     // 기본 페이지로 이동
     window.location.href = "/";
