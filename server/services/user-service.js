@@ -1,4 +1,4 @@
-const CustomUserService = require("../db/models/item-model");
+const CustomUserService = require('../db/models/item-model');
 
 class UserService {
   constructor() {}

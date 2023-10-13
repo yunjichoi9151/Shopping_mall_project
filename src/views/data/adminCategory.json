@@ -1,0 +1,76 @@
+{
+  "status": 200,
+  "msg": "카테고리 조회",
+  "data": [
+    {
+      "_id": "6527ebd442056bff5babe327",
+      "name": "헬스보충제",
+      "items": [{}],
+      "parentCategoryId": null,
+      "createdAt": "2023-10-12T12:51:01.157Z",
+      "updatedAt": null,
+      "deletedAt": null,
+      "__v": 0
+    },
+    {
+      "_id": "6527ebef42056bff5babe329",
+      "name": "영양제",
+      "items": [{}],
+      "parentCategoryId": null,
+      "createdAt": "2023-10-12T12:51:01.157Z",
+      "updatedAt": null,
+      "deletedAt": null,
+      "__v": 0
+    },
+    {
+      "_id": "6527ec0242056bff5babe32b",
+      "name": "헬스용품",
+      "items": [{}],
+      "parentCategoryId": null,
+      "createdAt": "2023-10-12T12:51:01.157Z",
+      "updatedAt": null,
+      "deletedAt": null,
+      "__v": 0
+    },
+    {
+      "_id": "6527ec1942056bff5babe32d",
+      "name": "다이어트/보조식품",
+      "items": [{}],
+      "parentCategoryId": null,
+      "createdAt": "2023-10-12T12:51:01.157Z",
+      "updatedAt": null,
+      "deletedAt": null,
+      "__v": 0
+    },
+    {
+      "_id": "6527ec99f1e03ab148586897",
+      "name": "단백질 보충제",
+      "items": [{}],
+      "parentCategoryId": "6527ebd442056bff5babe327",
+      "createdAt": "2023-10-12T12:54:44.271Z",
+      "updatedAt": null,
+      "deletedAt": null,
+      "__v": 0
+    },
+    {
+      "_id": "6527ecc4f1e03ab148586899",
+      "name": "탄수화물 보충제",
+      "items": [{}],
+      "parentCategoryId": "6527ebd442056bff5babe327",
+      "createdAt": "2023-10-12T12:54:44.271Z",
+      "updatedAt": null,
+      "deletedAt": null,
+      "__v": 0
+    },
+    {
+      "_id": "6527ece4f1e03ab14858689b",
+      "name": "아미노산",
+      "items": [{}],
+      "parentCategoryId": "6527ebd442056bff5babe327",
+      "createdAt": "2023-10-12T12:54:44.271Z",
+      "updatedAt": null,
+      "deletedAt": null,
+      "__v": 0
+    }
+  ]
+}
