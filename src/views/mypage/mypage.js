@@ -24,6 +24,7 @@ function updateUserInfo(user) {
   const nameInput = document.getElementById("name"); // 이름 입력 요소 가져오기
   const phoneInput = document.getElementById("phone"); // 전화번호 입력 요소 가져오기
   const addressInput = document.getElementById("address"); // 주소 입력 요소 가져오기
+  const subAddressInput = document.getElementById("subAddress"); // 서브주소 입력 요소 가져오기
 
   memberSpan.textContent = `${user.name} 님 안녕하세요`;
 
@@ -32,6 +33,7 @@ function updateUserInfo(user) {
   nameInput.value = user.name;
   phoneInput.value = user.phone;
   addressInput.value = user.address;
+  subAddressInput.value = user.subAddress;
 }
 
 // 예를 들어, id가 "1"인 사용자의 정보를 불러오려면:
