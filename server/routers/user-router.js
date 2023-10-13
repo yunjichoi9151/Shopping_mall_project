@@ -91,20 +91,24 @@ router.put("/put/:userId", async (req, res) => {
 });
 
 // DELETE 구현하기 -> DELETE
-router.put("/delete/:userId", async (req, res) => {
-  const { userId } = req.params;
-  const currentTime = Date.now();
+router.delete("/delete/:email", async (req, res) => {
+  const { email } = req.params.email;
+  const decodedEmail = decodeURIComponent(email);
 
-  const user = await UserModel.updateOne(
-    {
-      _id: userId,
-    },
-    {
-      deletedAt: currentTime,
+  try {
+    // 이메일을 기준으로 사용자를 삭제
+    const deletedUser = await UserModel.deleteOne({ email: decodedEmail });
+    if (deletedUser.deletedCount > 0) {
+      res.json({ message: "사용자가 성공적으로 삭제되었습니다." });
+    } else {
+      res.status(404).json({ message: "삭제할 사용자를 찾을 수 없습니다." });
     }
-  );
-  res.json(user);
-  console.log("Delete OK");
+  } catch (err) {
+    console.error(err);
+    res
+      .status(500)
+      .json({ message: "서버 오류로 사용자를 삭제할 수 없습니다." });
+  }
 });
 
 /*
