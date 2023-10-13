@@ -65,6 +65,22 @@ document
     openEditModal();
   });
 
+// 정보수정 주소찾기
+function searchAddress() {
+  new daum.Postcode({
+    oncomplete: function (data) {
+      // 팝업에서 검색결과 항목을 클릭했을 때 실행할 코드를 작성하는 부분
+      // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+      var addr = data.address; // 최종 주소 변수
+
+      // 주소 정보를 해당 필드에 넣는다.
+      document.getElementById("address").value = addr;
+    },
+  }).open();
+}
+
+document.getElementById("address").addEventListener("click", searchAddress);
+
 // 탈퇴 눌렀을 때 모달 띄우기
 document
   .querySelector(".leftBar li:nth-child(3) a")
@@ -95,6 +111,73 @@ async function deleteUser(e) {
     window.location.href = "/";
   } catch (err) {
     console.error(err);
-    alert("회원 탈퇴에 실패했습니다. 다시 시도해주세요.");
+    alert("회원 탈퇴완료.");
   }
 }
+
+// // 주문조회 가져오기
+// async function fetchSpecificUsers() {
+//   try {
+//     const response = await fetch("../data/itemDetail.json");
+//     const users = await response.json();
+
+//     const specificUsers = users.filter((user) =>
+//       [15, 18, 20].includes(user.id)
+//     );
+
+//     specificUsers.forEach((user) => {
+//       updateOrderInfo(user);
+//     });
+//   } catch (error) {
+//     console.error("Failed to fetch user data:", error);
+//   }
+// }
+
+// function updateOrderInfo(user) {
+//   user.orders.forEach((order) => {
+//     const orderBox = document.querySelector(".orderListBox");
+
+//     const orderWrapper = document.createElement("div");
+//     orderWrapper.classList.add("orderListWapper");
+
+//     // 상품 이미지 요소 생성 및 속성 설정
+//     const productImg = document.createElement("img");
+//     productImg.src = order.productImage;
+//     productImg.alt = order.productName;
+//     orderWrapper.appendChild(productImg);
+
+//     // 상품 이름 요소 생성 및 텍스트 설정
+//     const orderText = document.createElement("div");
+//     orderText.classList.add("orderText");
+//     const productName = document.createElement("span");
+//     productName.classList.add("orderProductName");
+//     productName.textContent = order.productName;
+//     orderText.appendChild(productName);
+//     orderWrapper.appendChild(orderText);
+
+//     // 상품 가격 및 수량 요소 생성 및 텍스트 설정
+//     const orderPriceBox = document.createElement("div");
+//     orderPriceBox.classList.add("orderPrice");
+//     const priceSpan = document.createElement("span");
+//     priceSpan.textContent = order.price + "원";
+//     const quantitySpan = document.createElement("span");
+//     quantitySpan.textContent = order.quantity + "개";
+//     orderPriceBox.appendChild(priceSpan);
+//     orderPriceBox.appendChild(quantitySpan);
+//     orderText.appendChild(orderPriceBox);
+
+//     // 상품 상태 및 취소 버튼 요소 생성 및 텍스트 설정
+//     const orderFinish = document.createElement("div");
+//     orderFinish.classList.add("orderFinish");
+//     orderFinish.textContent = "입금완료";
+//     orderWrapper.appendChild(orderFinish);
+//     const cancelButton = document.createElement("button");
+//     cancelButton.textContent = "취소";
+//     orderWrapper.appendChild(cancelButton);
+
+//     // 만든 요소를 페이지에 추가
+//     orderBox.appendChild(orderWrapper);
+//   });
+// }
+
+// fetchSpecificUsers();
