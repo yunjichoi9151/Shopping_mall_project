@@ -60,6 +60,42 @@ orderRouter.put("/put/:orderId", async (req, res) => {
   res.json(order);
 });
 
+orderRouter.get("/:orderId", async (req, res) => {
+  const { orderId } = req.params;
+  const order = await Order.findById(orderId);
+  res.json(order);
+});
+
+//주문 수정
+orderRouter.put("/put/:orderId", async (req, res) => {
+  const { orderId } = req.params;
+  const { itemInfo, itemAmount, buyer } = req.body; // updatedAt빼버림
+
+  const currentTime = Date.now();
+
+  const order = await Order.updateOne(
+    {
+      _id: orderId,
+    },
+    {
+      itemInfo,
+      itemAmount,
+      buyer,
+      updatedAt: currentTime,
+    },
+    {
+      new: true,
+    }
+  );
+
+  if (!order) {
+    return res.status(404).json({
+      message: "주문 못찾겠다",
+    });
+  }
+  res.json(order);
+});
+
 //오류찾기위한 코드
 // orderRouter.put('/:orderId', async (req, res) => {
 // 	const {

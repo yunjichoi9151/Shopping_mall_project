@@ -130,12 +130,12 @@ function getAccountInfo() {
   return {
     // 예시 - 목업 data !!!!!
     // recipient: userData.recipient,
-    recipient: "홍길동",
-    contact: "010-3313-1323",
-    postcode: "13485",
-    address: "경기 성남시 분당구 판교로 20",
-    detailAddress: "판교원마을 103동 103호",
-    email: "hong@gmail.com",
+    recipient: "방준하",
+    contact: " 010 - 1212 - 7777",
+    postcode: "06035",
+    address: "서울시 강남구 가로수길 5",
+    detailAddress: "가로수아파트 101동 101호 ",
+    email: "bang@gmail.com",
   };
 }
 // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
@@ -239,7 +239,7 @@ async function handleOrder(e) {
       };
       console.log(orderData);
 
-      const res = await axios.post("/api/order", orderData);
+      const res = await axios.post("/api/order/", orderData);
       alert(`${orderInfo.recipient} 님, 주문 완료 되었습니다.`);
       window.location.href = "../order/orderComplete.html";
     } catch (err) {
