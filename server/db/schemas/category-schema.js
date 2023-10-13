@@ -1,9 +1,20 @@
 const { Schema } = require("mongoose");
+const { Types: { ObjectId } } = Schema;
 const categorySchema = new Schema({
 
 	name: {
 		type: String,
 		required: true,
+	},
+	items: {
+		type: [ObjectId],
+		required: true,
+		ref: 'Item',
+	},
+	parentCategoryId: {
+		type: ObjectId,
+		ref: 'Category',
+		default: null,
 	},
 	createdAt: {
 		type: Date,
