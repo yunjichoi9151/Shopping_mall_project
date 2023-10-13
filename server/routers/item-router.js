@@ -21,13 +21,17 @@ itemRouter.post("/", async (req, res, next) => {
         })
     }*/
     try {
-        const { name, category, price } = req.body;
+        const { name, category, price, mainImgUrl, subImgUrl, createdAt, updatedAt, deletedAt, orderCount } = req.body;
         const newItem = await ItemModel.create({
             name, 
             category, 
-            price, /*
-            itemDetail, // 상품 url schema를 따로 생성하여 url 주소값을 배열로 저장할 예정
-            imgUrl,*/
+            price, 
+            mainImgUrl,
+            subImgUrl,
+            createdAt,
+            updatedAt,
+            deletedAt,
+            orderCount,
         });
         res.json(newItem);
     } catch(err) {
@@ -35,12 +39,12 @@ itemRouter.post("/", async (req, res, next) => {
     }
 })
 
-// 모든 상품 조희
 // 메인 페이지
-itemRouter.get("/", async (req, res, next) => {
+// 모든 상품 조희
+itemRouter.get("/getAll/", async (req, res, next) => {
     console.log("모든 상품 조회");
     try {
-        const items = await ItemModel.find({}).sort({price: 1}).limit(1);
+        const items = await ItemModel.find({ deletedAt: null }).populate('category');
         return res.status(200).json({
             status: 200,
             msg: "상품 조회",
@@ -51,17 +55,31 @@ itemRouter.get("/", async (req, res, next) => {
     }
 });
 
-// 카테고리 별 상품 조회
-// 카테고리 페이지
-itemRouter.get("/:itemId", async (req, res, next) => {
-    console.log("카테고리 별 상품 조회");
+// 신상품 조회
+itemRouter.get("/getNew/", async (req, res, next) => {
+    console.log("신상품 조회");
     try {
-        const { itemId } = req.params;
-        const { category } = req.body;
-        const item = await ItemModel.findOnd(
-            { _id: itemId },
-            { category: category },
-        )
+        const newItem = await ItemModel.find({ deletedAt: null }).populate('category').sort({createdAt: -1}).limit(4);
+        return res.status(200).json({
+            status: 200,
+            msg: "신상품 조회",
+            data: newItem,
+        });
+    } catch(err) {
+        next(err);
+    }
+})
+
+// 베스트 상품 조회
+itemRouter.get("/getBest/", async (req, res, next) => {
+    console.log("베스트 상품 조회");
+    try {
+        const bestItem = await ItemModel.find({ deletedAt: null }).sort({orderCount: -1}).limit(8);
+        return res.status(200).json({
+            status: 200,
+            msg: "베스트 상품 조회",
+            data: bestItem,
+        });
     } catch(err) {
         next(err);
     }
@@ -82,7 +100,7 @@ itemRouter.get("/:itemId", async (req, res, next) => {
 })
 
 // 상품 수정
-itemRouter.put("/:itemId", async (req, res, next) => {
+itemRouter.put("/update/:itemId", async (req, res, next) => {
     console.log("상품 수정");
     // request/response 확인을 위해 주석처리
     // const { curRole } = req;
@@ -91,7 +109,7 @@ itemRouter.put("/:itemId", async (req, res, next) => {
     // }
     try {
         const { itemId } = req.params;
-        const { name, category, price } = req.body;
+        const { name, category, price, mainImgUrl, subImgUrl } = req.body;
         const currentTime = Date.now();
         const item = await ItemModel.updateOne(
             {
@@ -101,8 +119,8 @@ itemRouter.put("/:itemId", async (req, res, next) => {
                 name, 
                 category, 
                 price, 
-                // itemDetail, 
-                // imgUrl,
+                mainImgUrl, 
+                subImgUrl,
                 updatedAt: currentTime,
             }
         );
@@ -131,7 +149,7 @@ itemRouter.delete("/:itemId", async (req, res, next) => {
 })
 */
 
-itemRouter.put("/:itemId", async (req, res, next) => {
+itemRouter.put("/delete/:itemId", async (req, res, next) => {
     console.log("상품 삭제");
     try {
         const { itemId } = req.params;
