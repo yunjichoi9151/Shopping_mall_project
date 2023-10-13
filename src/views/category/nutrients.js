@@ -8,7 +8,7 @@ async function newLoadProducts() {
 
     products.map((product) => {
       const productLink = document.createElement('a');
-      productLink.href = `/detail?id=${product.id}`;
+      productLink.href = `../detail/detail.html?id=${product.id}`;
 
       const productDiv = document.createElement('div');
       productDiv.className = 'productItem';

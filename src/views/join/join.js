@@ -117,7 +117,7 @@ async function handleJoin(e) {
     console.log(res.status);
 
     alert(`${name} 님, 회원가입 되었습니다.`);
-    window.location.href = '/';
+    window.location.href = '../home/home.html';
   } catch (err) {
     console.error(err);
     alert('이미 존재하는 회원 이메일 입니다.');

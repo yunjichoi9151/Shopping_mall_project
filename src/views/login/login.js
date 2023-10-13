@@ -8,7 +8,7 @@ doJoinBtn.addEventListener('click', goToJoin);
 // 회원가입 페이지로 이동
 function goToJoin() {
   // 경로 수정 필요 !!!!
-  window.location.href = '/join';
+  window.location.href = '../join/join.html';
 }
 
 // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
@@ -121,7 +121,7 @@ async function handleLogin(e) {
     localStorage.setItem('userEmail', userEmail);
 
     // 기본 페이지로 이동
-    window.location.href = '/';
+    window.location.href = '../home/home.html';
     alert(`${userName} 님, 로그인되었습니다.`);
 
     // 로그인 실패시 alert 창 띄움

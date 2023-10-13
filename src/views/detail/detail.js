@@ -33,7 +33,7 @@ function addProductToCart() {
     '상품이 장바구니에 담겼습니다.\n장바구니로 이동하시겠습니까?'
   );
   if (moveToCart) {
-    window.location.href = '/cart';
+    window.location.href = '../cart/cart.html';
   }
 }
 
@@ -48,7 +48,7 @@ function buyProduct() {
   // 수정된 cartInfo를 로컬스토리지에 저장
   localStorage.setItem('cartInfo', JSON.stringify(existingCartInfo));
 
-  window.location.href = '/order';
+  window.location.href = '../order/order.html';
 }
 
 // localStorage에 상품 정보 저장

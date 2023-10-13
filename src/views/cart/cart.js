@@ -163,12 +163,12 @@ function order() {
     // 장바구니 정보를 localStorage에 저장
     localStorage.setItem('cartInfo', cartInfo);
     // 주문하기 페이지로 이동
-    window.location.href = '/order';
+    window.location.href = '../order/order.html';
   }
 }
 
 // 계속 쇼핑하기 버튼 클릭 시 실행
 function continueShopping() {
   // 계속 쇼핑하기 - 홈 경로로 이동
-  window.location.href = '/';
+  window.location.href = '../home/home.html';
 }
