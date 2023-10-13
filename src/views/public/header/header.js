@@ -32,7 +32,7 @@ function categoryDietMove(event) {
 // 로고 클릭 시 - home 으로 이동
 function homeMove(event) {
   event.preventDefault();
-  window.location.href = "/home";
+  window.location.href = "/";
 }
 // 사람 클릭 시 - login 으로 이동
 function mypageMove(event) {
