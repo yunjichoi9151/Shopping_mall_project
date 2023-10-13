@@ -1,24 +1,24 @@
-const nameInput = document.querySelector("#nameInput");
-const emailInput = document.querySelector("#emailInput");
-const passwordInput = document.querySelector("#passwordInput");
-const passwordConfirmInput = document.querySelector("#passwordConfirmInput");
-const phoneNumberInput = document.querySelector("#phoneNumberInput");
-const postCodeInput = document.querySelector("#postCodeInput");
-const addressInput = document.querySelector("#addressInput");
-const detailAddressInput = document.querySelector("#detailAddressInput");
+const nameInput = document.querySelector('#nameInput');
+const emailInput = document.querySelector('#emailInput');
+const passwordInput = document.querySelector('#passwordInput');
+const passwordConfirmInput = document.querySelector('#passwordConfirmInput');
+const phoneNumberInput = document.querySelector('#phoneNumberInput');
+const postCodeInput = document.querySelector('#postCodeInput');
+const addressInput = document.querySelector('#addressInput');
+const detailAddressInput = document.querySelector('#detailAddressInput');
 
-const findAddressBtn = document.querySelector("#findAddressBtn");
-findAddressBtn.addEventListener("click", findDaumAddress);
+const findAddressBtn = document.querySelector('#findAddressBtn');
+findAddressBtn.addEventListener('click', findDaumAddress);
 
 // Daum 우편번호 서비스 활용
 // https://postcode.map.daum.net/guide 참조
 function findDaumAddress() {
   new daum.Postcode({
     oncomplete: function (data) {
-      var addr = ""; // 주소 변수
+      var addr = ''; // 주소 변수
 
       //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-      if (data.userSelectedType === "R") {
+      if (data.userSelectedType === 'R') {
         // 사용자가 도로명 주소를 선택했을 경우
         addr = data.roadAddress;
       } else {
@@ -36,8 +36,8 @@ function findDaumAddress() {
 }
 
 // 회원가입 진행
-const joinSubmitBtn = document.querySelector("#submitButton");
-joinSubmitBtn.addEventListener("click", handleJoin);
+const joinSubmitBtn = document.querySelector('#submitButton');
+joinSubmitBtn.addEventListener('click', handleJoin);
 
 async function handleJoin(e) {
   e.preventDefault();
@@ -55,7 +55,7 @@ async function handleJoin(e) {
   const userAddress = `(${postalCode}) ${address} ${detailAddress}`;
 
   // 이메일 양식 검사
-  let regex = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
+  let regex = new RegExp('[a-z0-9]+@[a-z]+.[a-z]{2,3}');
   // 이메일이 양식에 맞으면 true, 틀리면 false 반환
   const checkEmail = regex.test(email);
 
@@ -66,31 +66,31 @@ async function handleJoin(e) {
 
   if (name.length < 2) {
     nameInput.focus();
-    return alert("이름을 2글자 이상 입력해주세요.");
+    return alert('이름을 2글자 이상 입력해주세요.');
   } else if (!checkEmail) {
     emailInput.focus();
-    return alert("이메일을 제대로 입력해주세요.");
+    return alert('이메일을 제대로 입력해주세요.');
   } else if (password.length < 8) {
     passwordInput.focus();
-    return alert("비밀번호를 8자리 이상 입력해주세요.");
+    return alert('비밀번호를 8자리 이상 입력해주세요.');
   } else if (password !== passwordConfirm) {
     passwordConfirmInput.focus();
-    return alert("비밀번호 확인이 일치하지 않습니다.");
+    return alert('비밀번호 확인이 일치하지 않습니다.');
   } else if (!checkphoneNumber) {
     phoneNumberInput.focus();
-    return alert("연락처 입력을 확인해주세요.");
+    return alert('연락처 입력을 확인해주세요.');
   } else if (
-    nameInput.value === "" ||
-    emailInput.value === "" ||
-    passwordInput.value === "" ||
-    passwordConfirmInput.value === "" ||
-    phoneNumberInput.value === "" ||
-    postCodeInput.value === "" ||
-    addressInput.value === "" ||
-    addressInput.value === "" ||
-    detailAddressInput.value === ""
+    nameInput.value === '' ||
+    emailInput.value === '' ||
+    passwordInput.value === '' ||
+    passwordConfirmInput.value === '' ||
+    phoneNumberInput.value === '' ||
+    postCodeInput.value === '' ||
+    addressInput.value === '' ||
+    addressInput.value === '' ||
+    detailAddressInput.value === ''
   ) {
-    alert("빈 칸 없이 모두 입력해주세요.");
+    alert('빈 칸 없이 모두 입력해주세요.');
   }
   // 서버와의 통신으로 post 요청
   // 조건문으로 db의 회원정보를 받아와서 해당 이메일이 이미 존재하면 이미 있는 아이디라고 표시
@@ -105,9 +105,9 @@ async function handleJoin(e) {
       address: userAddress,
     };
 
-    console.log("여기까지");
+    console.log('여기까지');
     // 서버, db 와의 통신으로 회원가입 진행해야함
-    const res = await axios.post("/api/auth/join", joinUserData);
+    const res = await axios.post('/api/auth/join', joinUserData);
 
     // localStorage.setItem("token", res.data.token);
     // localStorage.setItem("token", res.data.refreshToken);
@@ -117,9 +117,9 @@ async function handleJoin(e) {
     console.log(res.status);
 
     alert(`${name} 님, 회원가입 되었습니다.`);
-    window.location.href = "../home/home.html";
+    window.location.href = '/';
   } catch (err) {
     console.error(err);
-    alert("이미 존재하는 회원 이메일 입니다.");
+    alert('이미 존재하는 회원 이메일 입니다.');
   }
 }

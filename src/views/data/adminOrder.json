@@ -1,58 +1,75 @@
 [
   {
-    "_id": "001",
-    "createdAt": "2023-10-08T14:12:45",
+    "_id": "6525101b0ce7812bb4e65c34",
+    "createdAt": "2023-10-14T13:14:01",
     "itemInfo": [
-      { "item": "상품A", "amount": 2 },
-      { "item": "상품B", "amount": 1 }
+      { "item": "레드 게이너 4kg", "amount": 1 },
+      { "item": "지웨이 프로바이오틱스 30캡슐", "amount": 2 },
+      { "item": "지웨이 머슬 쉐이커 보틀", "amount": 1 },
+      { "item": "지웨이 슬림밀 단백질 쿠키맛", "amount": 2 }
     ],
     "status": "배송준비중",
-    "buyerName": "홍길동",
-    "buyerEmail": "hong@example.com",
-    "buyerPhone": "010-1234-5678",
-    "buyerAddress": "서울시 예시동"
+    "buyerName": "방준하",
+    "buyerEmail": "bang@gmail.com",
+    "buyerPhone": "010-1212-7777",
+    "buyerAddress": "서울시 강남구"
   },
   {
-    "_id": "002",
-    "createdAt": "2023-10-07T10:22:33",
-    "itemInfo": [{ "item": "상품C", "amount": 1 }],
+    "_id": "6527b0f1cbcc382357c69ce1",
+    "createdAt": "2023-10-13T10:22:33",
+    "itemInfo": [
+      {
+        "item": "지플렉스웨이 WPI 단백질 보충제 웨이 프로틴 2kg 쿠키앤크림맛",
+        "amount": 3
+      }
+    ],
     "status": "배송중",
-    "buyerName": "이순신",
-    "buyerEmail": "lee@example.com",
-    "buyerPhone": "010-5555-7777",
-    "buyerAddress": "서울시 이순신동"
+    "buyerName": "박지민",
+    "buyerEmail": "back@naver.com",
+    "buyerPhone": "010-2324-3345",
+    "buyerAddress": "경기 성남시 분당구"
   },
   {
-    "_id": "003",
+    "_id": "6527b2c87db23a091619df84",
     "createdAt": "2023-10-06T15:43:21",
     "itemInfo": [
-      { "item": "상품D", "amount": 3 },
-      { "item": "상품E", "amount": 1 }
+      { "item": "지플렉스 BCAA회복 아미노산 300g", "amount": 1 },
+      {
+        "item": "지웨이 뼈건강엔 칼마디 칼슘 마그네슘 비타민D 4000IU (1박스)",
+        "amount": 2
+      }
     ],
-    "status": "배송완료",
-    "buyerName": "장영실",
-    "buyerEmail": "jang@example.com",
-    "buyerPhone": "010-2222-3333",
-    "buyerAddress": "서울시 장영실동"
+    "status": "배송중",
+    "buyerName": "김철수",
+    "buyerEmail": "kin@gmail.com",
+    "buyerPhone": "010-9300-3948",
+    "buyerAddress": "서울시 양천구 목동동로"
   },
   {
-    "_id": "004",
+    "_id": "65281eb3e0f3844bc42e3b9a",
     "createdAt": "2023-10-05T12:12:12",
-    "itemInfo": [{ "item": "상품F", "amount": 5 }],
+    "itemInfo": [
+      { "item": "스타텀블러 대용량 빨대 스텐 카페 텀블러 887ml", "amount": 1 }
+    ],
     "status": "배송완료",
-    "buyerName": "이승만",
-    "buyerEmail": "leeSM@example.com",
-    "buyerPhone": "010-4444-5555",
+    "buyerName": "배상민",
+    "buyerEmail": "Bae@hanmail.com",
+    "buyerPhone": "010-3029-5684",
     "buyerAddress": "서울시 이승만동"
   },
   {
-    "_id": "005",
+    "_id": "65282089e0f3844bc42e3ba0",
     "createdAt": "2023-10-03T17:18:19",
-    "itemInfo": [{ "item": "상품G", "amount": 2 }],
-    "status": "배송준비중",
-    "buyerName": "박정희",
-    "buyerEmail": "park@example.com",
-    "buyerPhone": "010-6666-8888",
+    "itemInfo": [
+      {
+        "item": "지웨이 다이어트 식사대용 단백질 쉐이크 단호박맛 700g",
+        "amount": 2
+      }
+    ],
+    "status": "배송완료",
+    "buyerName": "이지수",
+    "buyerEmail": "Lee@gmail.com",
+    "buyerPhone": "010-3488-2119",
     "buyerAddress": "서울시 박정희동"
   }
 ]
