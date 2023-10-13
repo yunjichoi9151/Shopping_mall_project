@@ -1,42 +1,412 @@
 [
   {
-    "_id": "1",
-    "name": "Premium Protein Powder",
-    "category": "단백질 보충제",
-    "price": 30000,
-    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230824/2e06293062a15.jpg",
-    "createdAt": "2023-10-10T08:36:58.698Z"
-  },
-  {
-    "_id": "2",
-    "name": "Omega-3 Fish Oil",
-    "category": "영양제",
-    "price": 20000,
-    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230404/2f058c37a1005.jpg",
-    "createdAt": "2023-10-05T10:16:38.123Z"
-  },
-  {
-    "_id": "3",
-    "name": "Dumbbell Set",
-    "category": "헬스용품",
-    "price": 100000,
-    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230328/4d447c41c4f7f.jpg",
-    "createdAt": "2023-09-20T12:56:18.920Z"
-  },
-  {
-    "_id": "4",
-    "name": "Healthy Diet Snack",
-    "category": "다이어트/보조식품",
-    "price": 15000,
-    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230330/af238627224b4.jpg",
-    "createdAt": "2023-09-25T09:46:58.888Z"
-  },
-  {
-    "_id": "5",
-    "name": "High-Quality Carb Powder",
+    "_id": 5142368719,
+    "name": "레드 게이너 4kg 살찌는 게이너 탄수화물 체중증가 보충제",
     "category": "탄수화물 보충제",
-    "price": 25000,
+    "price": "60,100원",
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230328/8280e5a6f51ae.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/25e531b9869a9.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/3b5e01e9c8510.jpg"
+    ],
+    "createdAt": "2023-10-14T12:30:00.001Z"
+  },
+  {
+    "_id": 1204892371,
+    "name": "지플렉스게이너 3kg 살찌는 게이너 탄수화물 체중증가 보충제",
+    "category": "탄수화물 보충제",
+    "price": "79,500원",
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230328/d10a8883cbf32.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/7e44e634e9730.jpg"
+    ],
+    "createdAt": "2023-10-13T11:29:42.002Z"
+  },
+  {
+    "_id": 8739405124,
+    "name": "지플렉스웨이 WPI 단백질 보충제 웨이 프로틴 2kg 쿠키앤크림맛 ",
+    "category": "단백질 보충제",
+    "price": "89,200",
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230328/025628aef1b38.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/38dc7d2b429fe.jpg"
+    ],
+    "createdAt": "2023-10-10T02:29:27.003Z"
+  },
+  {
+    "_id": 7024839516,
+    "name": "지플렉스웨이 WPI 단백질 보충제 웨이 프로틴 2kg 밀크초코맛",
+    "category": "단백질 보충제",
+    "price": "89,200원",
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230328/911fd9dca6b63.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/9b73a267269eb.jpg"
+    ],
+    "createdAt": "2023-10-09T12:29:10.004Z"
+  },
+  {
+    "_id": 6384921750,
+    "name": "지플렉스웨이 WPI 단백질 보충제 분리유청 프로틴 1.8kg 초코맛",
+    "category": "단백질 보충제",
+    "price": "84,600원",
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230328/4cc128356ea2d.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/5cb5de4a810c2.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/7d0267362d5ff.jpg"
+    ],
+    "createdAt": "2023-10-05T09:28:53.005Z"
+  },
+  {
+    "_id": 4819502736,
+    "name": "지플렉스 BCAA회복 아미노산 300g",
+    "category": "아미노산",
+    "price": "27,600원",
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230328/f17c6a1d0daa4.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/e2be7ed9847e0.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/b3002bcc8c02a.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/f3905509c0410.jpg"
+    ],
+    "createdAt": "2023-10-04T08:28:40.006Z"
+  },
+  {
+    "_id": 1294857032,
+    "name": "레드BCAA회복 아미노산 500g",
+    "category": "아미노산",
+    "price": "40,200원",
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230404/d256d1f02d4a3.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/c89f9fa15f024.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/6e8e6baddd54c.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/48264256d4e41.jpg"
+    ],
+    "createdAt": "2023-10-02T04:28:22.007Z"
+  },
+  {
+    "_id": 8735912048,
+
+    "name": "지웨이 슬림밀 단백질 다이어트 식사대용 쉐이크 쿠키맛 800g",
+    "category": "다이어트",
+
+    "price": "26,100원",
+
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230609/0f090afe06bee.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/393b13bbba220.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/3d9a227338430.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/7601f90144e8e.jpg"
+    ],
+    "createdAt": "2023-10-01T01:28:09.008Z"
+  },
+
+  {
+    "_id": 3924810579,
+
+    "name": "지웨이 슬림밀 단백질 다이어트 식사대용 쉐이크 고구마맛 800g",
+    "category": "다이어트",
+    "price": "26,100원",
+
     "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230609/7a6f439ae3fa4.jpg",
-    "createdAt": "2023-08-15T07:26:28.420Z"
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/393b13bbba220.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/3d9a227338430.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/7601f90144e8e.jpg"
+    ],
+    "createdAt": "2023-09-29T12:27:51.009Z"
+  },
+
+  {
+    "_id": 1057924830,
+
+    "name": "지웨이 슬림밀 단백질 다이어트 식사대용 쉐이크 곡물맛 800g",
+    "category": "다이어트",
+    "price": "26,100원",
+
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230609/8e29746299863.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/393b13bbba220.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/3d9a227338430.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/7601f90144e8e.jpg"
+    ],
+    "createdAt": "2023-09-27T08:27:36.010Z"
+  },
+
+  {
+    "_id": 8472391057,
+
+    "name": "지웨이 다이어트 식사대용 단백질 쉐이크 단호박맛 700g",
+    "category": "다이어트",
+    "price": "27,000원",
+
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230404/341ad65b4c377.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/32ec63e6c954c.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/3c8f069698687.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/ac7f7b7015af9.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/5d5711ea21e56.jpg"
+    ],
+    "createdAt": "2023-09-26T03:27:19.011Z"
+  },
+
+  {
+    "_id": 4921750832,
+
+    "name": "지웨이 다이어트 식사대용 단백질 쉐이크 초코맛 700g",
+    "category": "다이어트",
+    "price": "27,000원",
+
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230404/3b40ee2354fd9.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/32ec63e6c954c.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/3c8f069698687.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/ac7f7b7015af9.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/5d5711ea21e56.jpg"
+    ],
+    "createdAt": "2023-09-25T01:27:03.012Z"
+  },
+  {
+    "_id": 2348095721,
+    "name": "지웨이 프로바이오틱스 생 유산균 240억투입 20억보장 30캡슐 (1박스)",
+    "category": "영양제",
+    "price": "16,300원",
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230330/af238627224b4.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/a81ae2a000f86.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/68d8b4f236900.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/3cd915044b3d9.jpg"
+    ],
+    "createdAt": "2023-09-24T03:26:45.013Z"
+  },
+  {
+    "_id": 4820135947,
+    "name": "지웨이 프로바이오틱스 생 유산균 240억투입 20억보장 30캡슐 (2박스)",
+    "category": "영양제",
+    "price": "31,200원",
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230404/e2f1a790a13cb.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/a81ae2a000f86.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/68d8b4f236900.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/3cd915044b3d9.jpg"
+    ],
+    "createdAt": "2023-09-20T01:26:28.014Z"
+  },
+  {
+    "_id": 9128405732,
+    "name": "지웨이 알티지 rtg 오메가3 장용성 EPA DHA (1박스)",
+    "category": "영양제",
+    "price": "19,000원",
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230404/0c885bd406075.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/7ee2f175440be.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/34af2df217e47.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/8084a7cd649c3.jpg"
+    ],
+    "createdAt": "2023-09-18T08:26:10.015Z"
+  },
+  {
+    "_id": 5739148201,
+    "name": "지웨이 알티지 rtg 오메가3 장용성 EPA DHA (2박스)",
+    "category": "영양제",
+    "price": "37,000원",
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230404/0c885bd406075.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/7ee2f175440be.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/34af2df217e47.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/8084a7cd649c3.jpg"
+    ],
+    "createdAt": "2023-09-14T12:25:55.016Z"
+  },
+  {
+    "_id": 8502391472,
+    "name": "지웨이 뼈건강엔 칼마디 칼슘 마그네슘 비타민D 4000IU (1박스)",
+    "category": "영양제",
+    "price": "5,900원",
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230411/5f968fafcbc27.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/892ef8e93c117.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/ed3d043ee4eb6.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/0fd6cb5b6cfe8.jpg"
+    ],
+    "createdAt": "2023-09-13T02:25:38.017Z"
+  },
+  {
+    "_id": 9425801374,
+    "name": "지웨이 머슬  쉐이커 스포츠 헬스 물통 보틀 700ml",
+    "price": "5,500원",
+    "category": "헬스용품",
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230908/9c3db7820d005.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/94bf299c5ee21.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/f3b9d1bbb0452.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/cc73de3e26d95.jpg"
+    ],
+    "createdAt": "2023-09-11T01:25:22.018Z"
+  },
+  {
+    "_id": 5821394075,
+    "name": "피터기어 헬스 손목 스트랩 리프팅 등운동용품",
+    "category": "헬스용품",
+    "price": "16,700원",
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230329/adffc399d01d4.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/bc1bc29b7fca5.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/018ea23f1d703.jpg"
+    ],
+    "createdAt": "2023-09-10T03:25:07.019Z"
+  },
+  {
+    "_id": 3184059720,
+    "name": "피터기어 트레이닝 글로브",
+    "category": "헬스용품",
+    "price": "16,900원",
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230614/bfd2738191202.png",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/97ea9f70928b2.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/dfcc96693d4d9.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/064fc3d81a398.jpg"
+    ],
+    "createdAt": "2023-09-09T02:25:07.019Z"
+  },
+  {
+    "_id": 8942150378,
+    "name": "피터기어 프로 스트랩",
+    "category": "헬스용품",
+    "price": "19,100원",
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230329/428b6a2d7a0b8.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/b55f06209580f.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/fb9b767e24b1e.jpg"
+    ],
+    "createdAt": "2023-09-08T01:24:49.020Z"
+  },
+  {
+    "_id": 5931248072,
+    "name": "스타텀블러 대용량 빨대 스텐 카페 텀블러 887ml",
+    "category": "헬스용품",
+    "price": "19,400원",
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230329/ca7ac5c23a524.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/5e0e62dc766b2.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/f3b0325e40596.jpg"
+    ],
+    "createdAt": "2023-09-07T12:24:32.021Z"
+  },
+  {
+    "_id": 3845091723,
+    "name": "피터기어 레드 리프팅 헬스 파워 벨트",
+    "category": "헬스용품",
+    "price": "19,500원",
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230329/6889fd6ff6598.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/b737dae7b9929.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/be4b69dffe970.jpg"
+    ],
+    "createdAt": "2023-09-08T11:24:15.022Z"
+  },
+  {
+    "_id": 7942810356,
+    "name": "피터기어 4구 헬스장갑",
+    "category": "헬스용품",
+    "price": "22,900원",
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230329/10a1701606058.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/932ecc3af6ace.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/605715605c5f0.jpg"
+    ],
+    "createdAt": "2023-09-07T10:23:58.023Z"
+  },
+  {
+    "_id": 1408593274,
+    "name": "피터기어 리스트랩 손목보호대",
+    "category": "헬스용품",
+    "price": "22,900원",
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230329/01fd3a84765db.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/eacaa62c81142.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/0c884d377dac7.jpg"
+    ],
+    "createdAt": "2023-09-06T02:23:42.024Z"
+  },
+  {
+    "_id": 3194823095,
+
+    "name": "지웨이 슬림밀 단백질 다이어트 식사대용 쉐이크 쿠키맛 800g",
+    "category": "다이어트",
+
+    "price": "26,100원",
+
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230609/0f090afe06bee.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/393b13bbba220.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/3d9a227338430.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/7601f90144e8e.jpg"
+    ],
+    "createdAt": "2023-09-05T12:23:25.025Z"
+  },
+
+  {
+    "_id": 8723498239,
+
+    "name": "지웨이 슬림밀 단백질 다이어트 식사대용 쉐이크 고구마맛 800g",
+    "category": "다이어트",
+    "price": "26,100원",
+
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230609/7a6f439ae3fa4.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/393b13bbba220.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/3d9a227338430.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/7601f90144e8e.jpg"
+    ],
+    "createdAt": "2023-09-04T09:23:08.026Z"
+  },
+
+  {
+    "_id": 1239842304,
+
+    "name": "지웨이 슬림밀 단백질 다이어트 식사대용 쉐이크 곡물맛 800g",
+    "category": "다이어트",
+    "price": "26,100원",
+
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230609/8e29746299863.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/393b13bbba220.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/3d9a227338430.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/7601f90144e8e.jpg"
+    ],
+    "createdAt": "2023-09-03T03:22:51.027Z"
+  },
+
+  {
+    "_id": 4325093428,
+
+    "name": "지웨이 다이어트 식사대용 단백질 쉐이크 단호박맛 700g",
+    "category": "다이어트",
+    "price": "27,000원",
+
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230404/341ad65b4c377.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/32ec63e6c954c.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/3c8f069698687.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/ac7f7b7015af9.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/5d5711ea21e56.jpg"
+    ],
+    "createdAt": "2023-09-02T09:22:34.028Z"
+  },
+
+  {
+    "_id": 4958234095,
+
+    "name": "지웨이 다이어트 식사대용 단백질 쉐이크 초코맛 700g",
+    "category": "다이어트",
+    "price": "27,000원",
+
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230404/3b40ee2354fd9.jpg",
+    "detailImgUrl": [
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/32ec63e6c954c.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/3c8f069698687.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/ac7f7b7015af9.jpg",
+      "https://cdn.imweb.me/upload/S20221019d081aed7ecba5/5d5711ea21e56.jpg"
+    ],
+    "createdAt": "2023-09-01T12:22:18.029Z"
   }
 ]
