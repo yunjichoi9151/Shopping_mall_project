@@ -13,7 +13,7 @@
       "__v": 0
     },
     {
-      "_id": "6527ebef42056bff5babe329",
+      "_id": "2",
       "name": "영양제",
       "items": [{}],
       "parentCategoryId": null,
@@ -23,7 +23,7 @@
       "__v": 0
     },
     {
-      "_id": "6527ec0242056bff5babe32b",
+      "_id": "3",
       "name": "헬스용품",
       "items": [{}],
       "parentCategoryId": null,
@@ -33,7 +33,7 @@
       "__v": 0
     },
     {
-      "_id": "6527ec1942056bff5babe32d",
+      "_id": "4",
       "name": "다이어트/보조식품",
       "items": [{}],
       "parentCategoryId": null,
@@ -43,7 +43,7 @@
       "__v": 0
     },
     {
-      "_id": "6527ec99f1e03ab148586897",
+      "_id": "5",
       "name": "단백질 보충제",
       "items": [{}],
       "parentCategoryId": "6527ebd442056bff5babe327",
@@ -53,7 +53,7 @@
       "__v": 0
     },
     {
-      "_id": "6527ecc4f1e03ab148586899",
+      "_id": "6",
       "name": "탄수화물 보충제",
       "items": [{}],
       "parentCategoryId": "6527ebd442056bff5babe327",
@@ -63,7 +63,7 @@
       "__v": 0
     },
     {
-      "_id": "6527ece4f1e03ab14858689b",
+      "_id": "7",
       "name": "아미노산",
       "items": [{}],
       "parentCategoryId": "6527ebd442056bff5babe327",

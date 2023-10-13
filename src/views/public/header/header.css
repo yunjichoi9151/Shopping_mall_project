@@ -37,7 +37,7 @@ body {
 .header .headerBackground .headerContainer .logo {
   width: 365px;
   height: 70px;
-  background-image: url("../img/logo.png");
+  background-image: url('../img/logo.png');
   background-repeat: no-repeat;
 }
 .header .headerBackground .headerContainer .logo a {
@@ -76,6 +76,7 @@ body {
   display: inline-block;
   color: black;
   font-weight: 400;
+  font-size: 18px;
 }
 
 .subNav {
@@ -97,12 +98,13 @@ body {
   align-items: center;
   padding-left: 15px;
   font-size: 14px;
+  font-weight: 500;
 }
 
 .subNav > li.active {
   background-color: #fdcf1a;
   color: white;
-  font-weight: 400 !important;
+  font-weight: 500;
 }
 
 .subNav > li > a {
@@ -120,6 +122,7 @@ body {
   align-items: center;
   padding-left: 15px;
   font-size: 14px;
+  font-weight: 500;
 }
 
 .subNav li:hover a {
