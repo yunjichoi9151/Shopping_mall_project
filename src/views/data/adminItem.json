@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "1",
+    "name": "Premium Protein Powder",
+    "category": "단백질 보충제",
+    "price": 30000,
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230824/2e06293062a15.jpg",
+    "createdAt": "2023-10-10T08:36:58.698Z"
+  },
+  {
+    "_id": "2",
+    "name": "Omega-3 Fish Oil",
+    "category": "영양제",
+    "price": 20000,
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230404/2f058c37a1005.jpg",
+    "createdAt": "2023-10-05T10:16:38.123Z"
+  },
+  {
+    "_id": "3",
+    "name": "Dumbbell Set",
+    "category": "헬스용품",
+    "price": 100000,
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230328/4d447c41c4f7f.jpg",
+    "createdAt": "2023-09-20T12:56:18.920Z"
+  },
+  {
+    "_id": "4",
+    "name": "Healthy Diet Snack",
+    "category": "다이어트/보조식품",
+    "price": 15000,
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230330/af238627224b4.jpg",
+    "createdAt": "2023-09-25T09:46:58.888Z"
+  },
+  {
+    "_id": "5",
+    "name": "High-Quality Carb Powder",
+    "category": "탄수화물 보충제",
+    "price": 25000,
+    "mainImgUrl": "https://cdn.imweb.me/thumbnail/20230609/7a6f439ae3fa4.jpg",
+    "createdAt": "2023-08-15T07:26:28.420Z"
+  }
+]
