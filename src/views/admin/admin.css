@@ -12,31 +12,33 @@ main {
   min-height: 100%;
   width: 100%;
   display: flex;
+  margin-top: 10px;
   /* align-items: center; */
-  justify-content: center;
+  /* justify-content: center; */
 }
 .menuWrap {
-  width: 300px;
-  margin-left: 160px;
+  width: 210px;
+  margin-left: 310px;
   padding: 100px 0;
   display: flex;
 }
 .leftBar {
-  width: 190px;
+  width: 200px;
 }
 .leftBar ul li {
   padding-bottom: 20px;
 }
 .contentWrap {
-  width: 100%;
-  margin-right: 160px;
+  width: 1200px;
+  /* margin-left: 50px; */
+  margin-right: 50px;
 }
 #list-container_startMsg {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
-  padding-left: 100px;
+  /* padding-left: 100px; */
   font-size: 20px;
 }
 #list-container_startMsg > div:first-child {
@@ -52,7 +54,7 @@ main {
   display: flex;
   flex-direction: column;
   width: 200px;
-  margin-left: 20px;
+  /* margin-left: 20px; */
   min-width: 100px;
 }
 
@@ -73,6 +75,41 @@ main {
   margin: 0 30px 0 30px;
   width: 100%;
 }
+.admin_category_parent {
+  width: 300px;
+  background-color: #fdcf1a;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+.admin_category_head {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.admin_category_items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
+}
+.admin_category_item {
+  width: 80%;
+  padding: 15px;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  background-color: #fffced;
+  text-align: left;
+  cursor: pointer;
+}
 
 /* 주문 관리 */
 /* 큰 박스 */
@@ -82,26 +119,26 @@ main {
   margin-bottom: 10px;
   padding: 10px;
   border: solid 1px var(--brown);
-  max-width: 1075px;
+  max-width: 1000px;
   min-width: 600px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .order_title {
   font-size: 32px;
-  font-weight: 900;
+  font-weight: 600;
   margin-top: 20px;
   /* margin-bottom: 10px; */
 }
 .orderBox_title {
-  max-width: 1075px;
+  max-width: 1000px;
   min-width: 600px;
   display: flex;
   flex-direction: row;
-  margin-top: 30px;
+  margin-top: 35px;
   margin-bottom: 25px;
   padding: 10px;
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 600;
   color: white;
   background-color: rgb(100, 100, 100);
 }
@@ -126,7 +163,7 @@ main {
 .orderBox_btn {
   display: flex;
   flex-direction: column;
-  width: 150px;
+  width: 75px;
 }
 
 .orderBox_btn label {
@@ -144,18 +181,24 @@ main {
 
 .orderBox_btn_delBtn {
   margin-top: 10px;
-  color: var(--darkBrown);
+  color: white;
+  background-color: black;
   width: 110px;
   height: 25px;
   font-size: 12px;
   font-weight: 600;
+  cursor: pointer;
+}
+.orderBox_btn_delBtn:hover {
+  /* color: black; */
+  background-color: #ff1e00;
 }
 .orderBox_date {
   width: 120px;
   padding-left: 10px;
 }
 .orderBox_num {
-  width: 250px;
+  width: 200px;
   font-weight: 600;
   /* padding-left: 10px; */
 }
@@ -168,10 +211,156 @@ main {
   /* padding-left: 10px; */
 }
 .orderBox_info {
-  width: 150px;
+  width: 200px;
   /* padding-left: 10px; */
 }
 .orderBox_change {
+  width: 75px;
+  /* padding-left: 10px; */
+}
+/********************************************/
+.itemBox {
+  display: flex;
+  /* justify-content: space-between; */
+  margin-bottom: 10px;
+  padding: 10px;
+  border: solid 1px var(--brown);
+  max-width: 1000px;
+  min-width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.item_header_wrap {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.item_add_btn {
+  font-size: 20px;
+  padding: 4px 32px;
+  color: white;
+  background: linear-gradient(to right, #fdcf1a 50%, #363636 50%);
+  background-size: 200% 100%;
+  background-position: right;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  margin-right: 180px;
+  margin-top: 8px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.item_add_btn:hover {
+  background-position: left;
+  color: black;
+}
+.item_title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 35px;
+  /* margin-bottom: 10px; */
+}
+.itemBox_title {
+  max-width: 1000px;
+  min-width: 600px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 25px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  background-color: rgb(100, 100, 100);
+}
+/* 작은 박스들 */
+.itemBox_order {
+  /* width: 100%; */
+  display: flex;
+  flex-direction: row;
+}
+
+.itemBox_user {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.itemBox_order_date {
+  display: flex;
+  flex-direction: row;
+}
+
+.itemBox_btn {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+}
+/* 
+.itemBox_btn label {
+  color: var(--darkBrown);
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.itemBox_btn_select {
+  width: 110px;
+  height: 25px;
+  border-radius: 10px;
+  font-weight: 600;
+} */
+
+.itemBox_btn_modifyBtn {
+  cursor: pointer;
+  margin-top: 10px;
+  color: white;
+  background-color: rgb(77, 77, 77);
+  width: 110px;
+  height: 25px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.itemBox_btn_modifyBtn:hover {
+  color: black;
+  background-color: #fdcf1a;
+}
+.itemBox_btn_deleteBtn {
+  cursor: pointer;
+  margin-top: 10px;
+  color: white;
+  background-color: black;
+  width: 110px;
+  height: 25px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.itemBox_btn_deleteBtn:hover {
+  /* color: black; */
+  background-color: #ff1e00;
+}
+.itemBox_category {
+  width: 150px;
+  padding-left: 10px;
+}
+.itemBox_name {
+  width: 300px;
+  font-weight: 600;
+  /* padding-left: 10px; */
+}
+.itemBox_price {
+  width: 100px;
+  /* padding-left: 10px; */
+}
+.itemBox_img {
+  width: 100px;
+  border-radius: 10px;
+  margin-right: 30px;
+  margin-left: 10px;
+  /* padding-left: 10px; */
+}
+.itemBox_date {
+  width: 200px;
+  /* padding-left: 10px; */
+}
+.itemBox_change {
   width: 150px;
   /* padding-left: 10px; */
 }
@@ -270,6 +459,7 @@ main {
 
 /* ************************************************************* */
 /* 상품추가 모달창 */
+
 #modal-container__inner {
   position: absolute;
   top: 55%;
@@ -279,30 +469,49 @@ main {
   z-index: 3;
   display: flex;
   flex-direction: column;
-  width: 600px;
-  background-color: var(--back);
-  padding: 30px 100px;
+  width: 300px;
+  background-color: #fffced;
+  padding: 30px 50px;
   border-radius: 15px;
-  border: solid 2px var(--brown);
+  border: solid 2px #000000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#modalBox_nameInput,
+#modalBox_priceInput,
+#modalBox_imgInput {
+  width: 175px;
+  border: solid 1px black;
+  margin-top: 2px;
+  padding: 2px;
+  /* height: 24px; */
+}
+
+#modalBox_categorySelect {
+  width: 180px;
+  border: solid 1px black;
+  margin-top: 2px;
+  padding: 2px 0px;
 }
 
 #modalTitle {
-  font-size: 25px;
+  font-size: 24px;
   font-weight: bold;
   margin-bottom: 30px;
   text-align: center;
-  color: var(--darkBrown);
 }
 
 #modal-container__inner > div {
   display: flex;
-  margin-bottom: 15px;
+  padding: 10px;
+  align-items: center;
+  /* margin-bottom: 15px; */
 }
 
 #modal-container__inner > div > p,
 #modalBox-detail_title {
   width: 100px;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 #modalBox_detailInput {
@@ -312,15 +521,37 @@ main {
 }
 
 /* 제출, 취소 버튼 */
-#modalBox_doneBtn,
+#modalBox_doneBtn {
+  width: 100px;
+  margin-right: 5px;
+  padding: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+}
+#modalBox_doneBtn:hover {
+  color: black;
+  background-color: #fdcf1a;
+}
+
 #modalBox_cancelBtn {
   width: 100px;
   margin-right: 5px;
+  padding: 6px 4px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: rgb(238, 238, 238);
+}
+#modalBox_cancelBtn:hover {
+  color: black;
+  background-color: #fdcf1a;
 }
 
 #modalBox_btns {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
 /* 카테고리 추가 모달창 */
@@ -338,10 +569,7 @@ main {
 
 #categoryAddBox_addBtn,
 #categoryAddBox_doneBtn,
-#categoryAddBox_cancelBtn,
-#modalBox_doneBtn,
-#modalBox_cancelBtn {
+#categoryAddBox_cancelBtn {
   width: 100px;
   margin-right: 5px;
-  background-color: var(--brown);
 }

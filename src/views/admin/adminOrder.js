@@ -4,11 +4,27 @@
 const listContainer = document.querySelector('#list-container');
 // 주문 관리 버튼
 const orderBtn = document.querySelector('#order-btn');
+const itemBtn = document.querySelector('#items-btn');
+const categoryBtn = document.querySelector('#category-btn');
 // 모달창
 const modalBox = document.querySelector('#modal-container');
 const page_list = document.querySelector('#page_list');
 
-orderBtn.addEventListener('click', clickedOrder);
+// *******************************************************************
+document.addEventListener('DOMContentLoaded', () => {
+  // 데이터 로드 후 로컬스토리지에 저장
+  loadJsonAndSave();
+  orderBtn.addEventListener('click', clickedOrder);
+});
+async function loadJsonAndSave() {
+  try {
+    const response = await fetch('../data/adminOrder.json');
+    const data = await response.json();
+    localStorage.setItem('adminOrder', JSON.stringify(data));
+  } catch (error) {
+    console.error('Failed to load JSON', error);
+  }
+}
 
 // *******************************************************************
 // 주문 조회 클릭
@@ -32,6 +48,10 @@ async function clickedOrder() {
   }
   orderBtn.style.backgroundColor = 'black';
   orderBtn.style.color = 'white';
+  itemBtn.style.backgroundColor = 'white';
+  itemBtn.style.color = 'black';
+  categoryBtn.style.backgroundColor = 'white';
+  categoryBtn.style.color = 'black';
 
   makeOrderList();
   console.log('is in?');
@@ -43,13 +63,13 @@ async function makeOrderList() {
   let data;
   try {
     // data = (await Api.get(`/api/orders?page=${page}`)).data;
-    const res = await axios.get('/api/admin');
-    data = res.data;
-    console.log(data);
+    const dataStr = localStorage.getItem('adminOrder');
+    data = JSON.parse(dataStr);
+    console.log(data, '!');
   } catch (err) {
     window.location.reload();
   }
-  // console.log(data);
+  console.log(data);
   //한 사람의 주문정보 넣기
   const admin_order_title = document.createElement('div');
   admin_order_title.innerHTML = `<div class="order_title">주문 관리</div>`;
@@ -65,8 +85,8 @@ async function makeOrderList() {
     <p class="orderBox_change">주문변경</p>
   `;
   listContainer.appendChild(titleBox);
+  console.log('is in?', data.length);
   for (let i = 0; i < data.length; i++) {
-    // console.log(data[i].createdAt);
     const orderBox = document.createElement('div');
     orderBox.className = 'orderBox box';
 
@@ -98,7 +118,7 @@ async function makeOrderList() {
     for (let j = 0; j < data[i].itemInfo.length; j++) {
       console.log(data[i].itemInfo[j]);
       const item = document.createElement('p');
-      item.innerText = `${data[i].itemInfo[j]}`;
+      item.innerText = `${data[i].itemInfo[j].item}: ${data[i].itemInfo[j].amount}개`;
       orderBox_order_items.appendChild(item);
     }
 
@@ -126,9 +146,10 @@ async function makeOrderList() {
     orderBox_user.className = 'orderBox_info';
 
     orderBox_user.innerHTML = `
-      <div>${data[i].buyer.name}</div>
-      <div>${data[i].buyer.email}</div>
-      <div>${data[i].buyer.phoneNumber}</div>
+      <div>${data[i].buyerName}</div>
+      <div>${data[i].buyerEmail}</div>
+      <div>${data[i].buyerPhone}</div>
+      <div>${data[i].buyerAddress}</div>
     `;
 
     const orderBox_btn = document.createElement('div');
@@ -137,6 +158,7 @@ async function makeOrderList() {
     // <label>배송상태변경</label>
     orderBox_btn.innerHTML = `
       <select class="orderBox_btn_select">
+      <option>선택</option>
       <option>배송준비중</option>
       <option>배송중</option>
       <option>배송완료</option>
@@ -162,18 +184,19 @@ async function makeOrderList() {
 // *******************************************************************
 // 주문 삭제 구현 함수
 function delOrder() {
-  // 주문삭제 버튼
   const orderBox_btn_delBtns = document.querySelectorAll(
     '.orderBox_btn_delBtn'
   );
-
   orderBox_btn_delBtns.forEach((btn) => {
-    btn.addEventListener('click', async () => {
+    btn.addEventListener('click', () => {
       const id = btn.parentElement.id;
-      await axios.delete(`/api/admin`, '', {
-        id: id,
-        reson: 'orderCancel',
-      });
+
+      // localStorage의 데이터 수정
+      const dataStr = localStorage.getItem('adminOrder');
+      let data = JSON.parse(dataStr);
+      data = data.filter((order) => order._id !== id);
+      localStorage.setItem('adminOrder', JSON.stringify(data));
+
       alert('삭제되었습니다!');
       clickedOrder();
     });
@@ -183,21 +206,25 @@ function delOrder() {
 // *******************************************************************
 // 배송상태 변경 구현 함수
 function changeShippingState() {
-  // 배송상태 변경
   const orderBox_btn_selects = document.querySelectorAll(
     '.orderBox_btn_select'
   );
   orderBox_btn_selects.forEach((select) => {
-    select.addEventListener('change', async () => {
+    select.addEventListener('change', () => {
       const id = select.parentElement.id;
-      // 선택된 배송상태
       const changedState = select.value;
-      await Api.patch('/api/orders', '', {
-        id: id,
-        reson: changedState,
-      });
-      alert('배송상태가 변경되었습니다');
-      clickedOrder();
+
+      // localStorage의 데이터 수정
+      const dataStr = localStorage.getItem('adminOrder');
+      let data = JSON.parse(dataStr);
+      const orderIndex = data.findIndex((order) => order._id === id);
+      if (orderIndex !== -1) {
+        data[orderIndex].status = changedState;
+        localStorage.setItem('adminOrder', JSON.stringify(data));
+
+        alert('배송상태가 변경되었습니다');
+        clickedOrder();
+      }
     });
   });
 }

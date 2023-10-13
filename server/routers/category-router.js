@@ -1,12 +1,12 @@
-const express = require("express");
-const { Router } = require("express");
+const express = require('express');
+const { Router } = require('express');
 // const { userService } = require("../services/user-service");
-const { CategoryModel } = require("../db/models/category-model");
+const { CategoryModel } = require('../db/models/category-model');
 
 const categoryRouter = Router();
 // 카테고리 생성
-categoryRouter.post("/", async (req, res, next) => {
-  console.log("카테고리 생성");
+categoryRouter.post('/', async (req, res, next) => {
+  console.log('카테고리 생성');
   // request/response 확인을 위해 주석처리
   /*
     const { curRole } = req;
@@ -41,13 +41,13 @@ categoryRouter.post("/", async (req, res, next) => {
 
 // 모든 카테고리 조회
 // 메인 페이지에서 보여지도록
-categoryRouter.get("/", async (req, res, next) => {
-  console.log("모든 카테고리 조회");
+categoryRouter.get('/', async (req, res, next) => {
+  console.log('모든 카테고리 조회');
   try {
     const categories = await CategoryModel.find({ deletedAt: null });
     return res.status(200).json({
       status: 200,
-      msg: "카테고리 조회",
+      msg: '카테고리 조회',
       data: categories,
     });
   } catch (err) {
@@ -56,8 +56,8 @@ categoryRouter.get("/", async (req, res, next) => {
 });
 
 // 하나의 카테고리만 조회
-categoryRouter.get("/:categoryId", async (req, res, next) => {
-  console.log("하나의 카테고리만 조회");
+categoryRouter.get('/:categoryId', async (req, res, next) => {
+  console.log('하나의 카테고리만 조회');
   try {
     const { categoryId } = req.params;
     const category = await CategoryModel.findOne({ _id: categoryId });
@@ -69,13 +69,13 @@ categoryRouter.get("/:categoryId", async (req, res, next) => {
 
 // 카테고리 페이지
 // 서브 카테고리 별 상품 조회
-categoryRouter.get("/mainPart/:categoryId", async (req, res, next) => {
-  console.log("카테고리 별 상품 조회");
+categoryRouter.get('/mainPart/:categoryId', async (req, res, next) => {
+  console.log('카테고리 별 상품 조회');
   if (req.body.parentCategoryId === null) {
     const { categoryId } = req.params;
     const categoryItem = await CategoryModel.findOne({
       _id: categoryId,
-    }).populate("items");
+    }).populate('items');
     res.json(categoryItem);
   } else {
     const { parentCategoryId } = req.body;
@@ -86,13 +86,13 @@ categoryRouter.get("/mainPart/:categoryId", async (req, res, next) => {
   }
 });
 // 서브 카테고리 별 상품 조회
-categoryRouter.get("/subPart/:categoryId", async (req, res, next) => {
-  console.log("카테고리 별 상품 조회");
+categoryRouter.get('/subPart/:categoryId', async (req, res, next) => {
+  console.log('카테고리 별 상품 조회');
   if (req.body.parentCategoryId === null) {
     const { categoryId } = req.params;
     const categoryItem = await CategoryModel.findOne({
       _id: categoryId,
-    }).populate("items");
+    }).populate('items');
     res.json(categoryItem);
   } else {
     const { parentCategoryId } = req.body;
@@ -104,8 +104,8 @@ categoryRouter.get("/subPart/:categoryId", async (req, res, next) => {
 });
 
 // 카테고리 수정
-categoryRouter.put("/update/:categoryId", async (req, res, next) => {
-  console.log("카테고리 수정");
+categoryRouter.put('/update/:categoryId', async (req, res, next) => {
+  console.log('카테고리 수정');
   // request/response 확인을 위해 주석처리
   /*const { curRole } = req;
     if(curRole !== "admin") {
@@ -152,8 +152,8 @@ categoryRouter.delete("/:categoryId", async (req, res, next) => {
 */
 // soft delete
 
-categoryRouter.put("/delete/:categoryId", async (req, res, next) => {
-  console.log("카테고리 삭제");
+categoryRouter.put('/delete/:categoryId', async (req, res, next) => {
+  console.log('카테고리 삭제');
 
   try {
     const { categoryId } = req.params;
