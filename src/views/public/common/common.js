@@ -1,3 +1,6 @@
+// import { get, post, put, del } from "../../api";
+// import axios from 'axios';
+
 // 슬라이드
 document.addEventListener("DOMContentLoaded", function () {
   loadHeader();
@@ -16,6 +19,7 @@ const FOOTER_CSS_URL = "../public/footer/footer.css";
 // header불러오기
 async function loadHeader() {
   try {
+    console.log("load header");
     // header.css 불러오기
     const linkElement = document.createElement("link");
     linkElement.rel = "stylesheet";
@@ -38,6 +42,7 @@ async function loadHeader() {
 
 // footer불러오기
 async function loadFooter() {
+  console.log("load footer");
   try {
     // footer.css 불러오기
     const linkElement = document.createElement("link");
@@ -132,3 +137,50 @@ document.addEventListener("DOMContentLoaded", function () {
       .classList.add("active");
   }
 });
+
+async function fetchCategoryData() {
+  try {
+    const res = await axios.get("/api/category");
+    console.log(res.data);
+    if (res.data && res.data.length > 0) {
+      const ul = document.querySelector(".nav > ul"); // .nav 내부의 ul 선택
+      res.data.forEach((category) => {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = "#";
+        a.textContent = category.name;
+        a.addEventListener("click", function (event) {
+          event.preventDefault();
+          navigateToCategory(category.name); // 카테고리 이름을 바탕으로 이동하는 함수 호출
+        });
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+    }
+    console.log(res.status);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+function navigateToCategory(categoryName) {
+  switch (categoryName) {
+    case "헬스보충제":
+      window.location.href = "../category/carbohydrate.html"; // 헬스보충제 페이지로 이동
+      break;
+    case "영양제":
+      window.location.href = "../category/nutrients.html"; // 영양제 페이지로 이동
+      break;
+    case "헬스용품":
+      window.location.href = "../category/fitness.html"; // 헬스용품 페이지로 이동
+      break;
+    case "다이어트/보조식품":
+      window.location.href = "../category/diet.html"; // 다이어트 페이지로 이동
+      break;
+    // 필요한 다른 카테고리도 위와 같은 방식으로 추가
+    default:
+      console.log("Unknown category:", categoryName);
+  }
+}
+
+fetchCategoryData();
