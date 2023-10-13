@@ -302,7 +302,6 @@ function addItemBtn() {
       '#modalBox_categorySelect'
     );
     const dataStr = localStorage.getItem('adminCategory');
-    console.log('wjwjwjwj');
     const categories = JSON.parse(dataStr).data;
     console.log('category', categories);
 
@@ -352,7 +351,7 @@ function addItemBtn() {
         mainImgUrl: mainImgUrl,
         createdAt: new Date().toISOString(),
       };
-      items.push(newItem);
+      items.unshift(newItem);
       localStorage.setItem('adminItem', JSON.stringify(items));
       alert('상품이 추가되었습니다.');
       // const result = await res.json();
