@@ -18,8 +18,12 @@
 }
 .footer .logo a {
 }
-.footer .logo a img {
-  width: 155px;
+.footer .logo a div {
+  width: 165px;
+  height: 80px;
+  background-image: url("../img/logo.png");
+  background-repeat: no-repeat;
+  border: none;
 }
 .footer .footerBox {
   margin: 0 auto;
