@@ -131,11 +131,11 @@ function getAccountInfo() {
     // 예시 - 목업 data !!!!!
     // recipient: userData.recipient,
     recipient: "홍길동",
-    contact: "010-5118-1571",
-    postcode: "12345",
-    address: "서울시 양천구 목동동로 50",
-    detailAddress: "목동아파트 12단지 ",
-    email: "abc@abc.com",
+    contact: "010-3313-1323",
+    postcode: "13485",
+    address: "경기 성남시 분당구 판교로 20",
+    detailAddress: "판교원마을 103동 103호",
+    email: "hong@gmail.com",
   };
 }
 // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
@@ -234,7 +234,7 @@ async function handleOrder(e) {
         buyer: orderInfo.recipient,
         buyerEmail: orderInfo.email,
         address: userAddress,
-        orderInfo: products,
+        items: products,
         totalPrice: orderInfo.totalPrice,
       };
       console.log(orderData);
