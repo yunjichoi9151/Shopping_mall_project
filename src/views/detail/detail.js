@@ -6,9 +6,6 @@ const itemMainImg = document.querySelector('.mainImg');
 const itemCategory = document.querySelector('.categoryName');
 const itemName = document.querySelector('.itemName');
 const itemPrice = document.querySelector('.price');
-// const itemDeliveryHow = document.querySelector('.deliveryHowInfo');
-// const itemDeliveryPrice = document.querySelector('.deliveryPriceInfo');
-// const itemDeliveryWhen = document.querySelector('.deliveryWhenInfo');
 const itemDetailImg = document.querySelector('.detailImg');
 const minusBtn = document.querySelector('.minusButton');
 const plusBtn = document.querySelector('.plusButton');
@@ -38,9 +35,6 @@ function addProductToCart() {
 }
 
 function buyProduct() {
-  // localStorage.removeItem('cartInfo');
-  // localStorage.setItem('cartInfo', JSON.stringify([createProductData()]));
-
   const newProduct = createProductData();
 
   // 기존 cartInfo에 새로운 상품을 추가
@@ -97,25 +91,12 @@ async function getDetail() {
   // 임시 테스트용
   const res = await axios.get('../data/itemDetail.json');
 
-  const {
-    _id,
-    name,
-    category,
-    price,
-    // deliveryHow,
-    // deliveryPrice,
-    // deliveryWhen,
-    mainImgUrl,
-    detailImgUrl,
-  } = res.data;
+  const { _id, name, category, price, mainImgUrl, detailImgUrl } = res.data;
 
   id = _id;
   itemName.innerHTML = name;
   itemCategory.innerHTML = category;
   itemPrice.innerHTML = `${addCommas(price)}원`;
-  // itemDeliveryHow.innerHTML = deliveryHow;
-  // itemDeliveryPrice.innerHTML = `${addCommas(deliveryPrice)}원`;
-  // itemDeliveryWhen.innerHTML = deliveryWhen;
   itemMainImg.src = mainImgUrl;
   itemDetailImg.src = detailImgUrl;
 }

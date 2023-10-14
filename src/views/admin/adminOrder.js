@@ -91,7 +91,6 @@ async function makeOrderList() {
     orderBox.className = 'orderBox box';
 
     // ------------------------------------------------
-    // orderBox = orderBox_order + orderBox_user + orderBox_btn
     //상품배송정보
     const orderBox_order = document.createElement('div');
     orderBox_order.className = 'orderBox_order';
@@ -123,22 +122,14 @@ async function makeOrderList() {
     }
 
     // 상품수량
-    // const orderBox_order_amount = document.createElement('div');
-    // orderBox_order_amount.innerHTML = `<p>${data[i].itemAmount}</>`;
 
     // 배송상태
     const orderBox_order_shippingState = document.createElement('p');
     orderBox_order_shippingState.innerHTML = `<div class="orderBox_ship">${data[i].status}</div>`;
 
-    // 요청메세지(배송메시지)
-    // const orderBox_order_shippingMsg = document.createElement('p');
-    // orderBox_order_shippingMsg.innerText = data[i].요청사항;
-
     orderBox_order.appendChild(orderBox_order_date);
     orderBox_order.appendChild(orderBox_order_items);
-    // orderBox_order.appendChild(orderBox_order_amount);
     orderBox_order.appendChild(orderBox_order_shippingState);
-    // orderBox_order.appendChild(orderBox_order_shippingMsg);
 
     // -------------------------------------------------------
     // 주문자 정보
@@ -155,7 +146,6 @@ async function makeOrderList() {
     const orderBox_btn = document.createElement('div');
     orderBox_btn.className = 'orderBox_btn';
     orderBox_btn.id = data[i]._id;
-    // <label>배송상태변경</label>
     orderBox_btn.innerHTML = `
       <select class="orderBox_btn_select">
       <option>선택</option>

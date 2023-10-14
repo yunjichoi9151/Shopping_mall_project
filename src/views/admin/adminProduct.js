@@ -10,7 +10,6 @@ const categoryBtn = document.querySelector('#category-btn');
 // 모달창
 const modalBox = document.querySelector('#modal-container');
 // 카테고리 목록 불러옴
-// let categories = (await axios.get('../data/adminCategory.json')).data;
 
 // *******************************************************************
 document.addEventListener('DOMContentLoaded', () => {
@@ -45,10 +44,6 @@ async function clickedItem(e) {
     page_list.innerHTML = '';
   }
 
-  // 상품추가 버튼 생성
-  // if (document.querySelector('#items-btn__add').innerText === '') {
-  //   addItemBtn();
-  // }
   orderBtn.style.backgroundColor = 'white';
   orderBtn.style.color = 'black';
   itemBtn.style.backgroundColor = 'black';
@@ -56,20 +51,10 @@ async function clickedItem(e) {
   categoryBtn.style.backgroundColor = 'white';
   categoryBtn.style.color = 'black';
 
-  // 카테고리 셀렉터 구현
   makeCategorySelecter();
-
-  // 전체 상품 리스트 출력
-  // makeItemsList('전체보기');
 }
 
-// *******************************************************************
-// 카테고리 셀렉트 생성, 구현
-
 async function makeCategorySelecter() {
-  // const itemsCategorySelecter = document.querySelector(
-  //   '#itemsCategorySelecter'
-  // );
   const admin_item_title = document.createElement('div');
   admin_item_title.innerHTML = `
     <div class="item_header_wrap">
@@ -88,27 +73,7 @@ async function makeCategorySelecter() {
     <p class="itemBox_change">상품변경</p>
   `;
   listContainer.appendChild(titleBox);
-  // 카테고리 데이터 새로고침 (카테고리 추가하고 넘어왔을 시 대비)
-  // let categories = (await axios.get('../data/adminCategory.json')).data.data;
-  // console.log(categories);
-  // // option에 카테고리 + 미설정 넣음
-  // categories.forEach((category) => {
-  //   let option = document.createElement('option');
-  //   option.innerText = category.name;
-  //   itemsCategorySelecter.appendChild(option);
-  // });
-
-  // let noOption = document.createElement('option');
-  // noOption.innerText = '미설정';
-  // itemsCategorySelecter.appendChild(noOption);
-
-  // 이벤트리스너 넣음
-  // itemsCategorySelecter.addEventListener('change', async () => {
-  // const pickCategoryName = itemsCategorySelecter.value;
   makeItemsList();
-  // });
-  // 클릭하면 해당 카테고리 값의 데이터 return
-  // makeIemsList에 data 넘겨줌
 }
 
 // *******************************************************************
@@ -146,11 +111,7 @@ async function makeItemsList() {
     listContainer.appendChild(itemBox);
   }
 
-  // 상품 삭제 버튼
   delItem();
-  // 상품 판매시작 버튼
-  // restartSaleItem();
-  // 상품 수정 버튼
   modifyItem();
   addItemBtn();
 }
@@ -417,27 +378,3 @@ function delItem() {
     });
   });
 }
-
-// *******************************************************************
-// 상품 판매시작 버튼
-// function restartSaleItem() {
-//   const itemTableBody_row_restartBtns = document.querySelectorAll(
-//     '.itemTableBody_row_restartBtn'
-//   );
-
-//   itemTableBody_row_restartBtns.forEach((btn) => {
-//     btn.addEventListener('click', async () => {
-//       const id = btn.parentElement.id;
-//       await Api.patch(`/api/items/${id}`, '', {
-//         name: undefined,
-//         category: undefined,
-//         price: undefined,
-//         imageUrl: undefined,
-//         itemDetail: undefined,
-//         onSale: true,
-//       });
-//       alert('해당 상품이 판매 시작되었습니다.');
-//       clickedItem();
-//     });
-//   });
-// }
